@@ -1,0 +1,544 @@
+/* =====================================================
+   SERVICE TOOLBAR
+===================================================== */
+
+.service-toolbar {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    width: 100%;
+
+    padding: 14px;
+
+    margin-bottom: 20px;
+
+    box-sizing: border-box;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.05);
+
+}
+
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+.service-toolbar-search {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    flex: 1;
+
+    min-width: 280px;
+
+    height: 42px;
+
+    padding: 0 13px;
+
+    box-sizing: border-box;
+
+    background: #ffffff;
+
+    border: 1px solid #dbe2ea;
+
+    border-radius: 8px;
+
+    color: #64748b;
+
+}
+
+
+.service-toolbar-search:focus-within {
+
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.08);
+
+}
+
+
+.service-toolbar-search input {
+
+    width: 100%;
+
+    height: 100%;
+
+    padding: 0;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: #111827;
+
+    font-size: 14px;
+
+}
+
+
+.service-toolbar-search input::placeholder {
+
+    color: #94a3b8;
+
+}
+
+
+/* =====================================================
+   SELECT
+===================================================== */
+
+.service-toolbar select {
+
+    width: 170px;
+
+    height: 42px;
+
+    padding: 0 12px;
+
+    box-sizing: border-box;
+
+    background: #ffffff;
+
+    border: 1px solid #dbe2ea;
+
+    border-radius: 8px;
+
+    outline: none;
+
+    color: #111827;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+}
+
+
+.service-toolbar select:focus {
+
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.08);
+
+}
+
+
+/* =====================================================
+   DATE FILTER
+===================================================== */
+
+.service-toolbar-date {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    height: 42px;
+
+    flex-shrink: 0;
+
+}
+
+
+/* =====================================================
+   DATE LABEL
+===================================================== */
+
+.service-toolbar-date label {
+
+    color: #64748b;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    white-space: nowrap;
+
+}
+
+
+/* =====================================================
+   DATE INPUT
+===================================================== */
+
+.service-toolbar-date input {
+
+    width: 145px;
+
+    height: 42px;
+
+    padding: 0 10px;
+
+    box-sizing: border-box;
+
+    background: #ffffff;
+
+    border: 1px solid #dbe2ea;
+
+    border-radius: 8px;
+
+    outline: none;
+
+    color: #111827;
+
+    font-size: 13px;
+
+    font-family: inherit;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+
+}
+
+
+.service-toolbar-date input:hover {
+
+    border-color: #94a3b8;
+
+}
+
+
+.service-toolbar-date input:focus {
+
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.08);
+
+}
+
+
+/* =====================================================
+   DATE INPUT PLACEHOLDER / EMPTY STATE
+===================================================== */
+
+.service-toolbar-date input:invalid {
+
+    color: #64748b;
+
+}
+
+
+/* =====================================================
+   RESET BUTTON
+===================================================== */
+
+.service-toolbar-reset {
+
+    height: 42px;
+
+    padding: 0 15px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    flex-shrink: 0;
+
+    background: #ffffff;
+
+    border: 1px solid #dbe2ea;
+
+    border-radius: 8px;
+
+    color: #334155;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+
+}
+
+
+.service-toolbar-reset:hover {
+
+    background: #f8fafc;
+
+    border-color: #94a3b8;
+
+    color: #111827;
+
+}
+
+
+.service-toolbar-reset:active {
+
+    transform: translateY(1px);
+
+}
+
+
+/* =====================================================
+   LARGE DESKTOP
+===================================================== */
+
+@media (min-width: 1400px) {
+
+    .service-toolbar {
+
+        padding: 15px;
+
+        gap: 14px;
+
+    }
+
+
+    .service-toolbar-search {
+
+        height: 44px;
+
+    }
+
+
+    .service-toolbar select {
+
+        width: 180px;
+
+        height: 44px;
+
+    }
+
+
+    .service-toolbar-date {
+
+        height: 44px;
+
+    }
+
+
+    .service-toolbar-date input {
+
+        width: 150px;
+
+        height: 44px;
+
+    }
+
+
+    .service-toolbar-reset {
+
+        height: 44px;
+
+    }
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1200px) {
+
+    .service-toolbar {
+
+        flex-wrap: wrap;
+
+    }
+
+
+    .service-toolbar-search {
+
+        min-width: 100%;
+
+        flex-basis: 100%;
+
+    }
+
+
+    .service-toolbar select {
+
+        flex: 1;
+
+        width: auto;
+
+        min-width: 150px;
+
+    }
+
+
+    .service-toolbar-date {
+
+        flex: 1;
+
+    }
+
+
+    .service-toolbar-date input {
+
+        width: 100%;
+
+        min-width: 135px;
+
+    }
+
+}
+
+
+/* =====================================================
+   SMALL TABLET
+===================================================== */
+
+@media (max-width: 850px) {
+
+    .service-toolbar {
+
+        flex-wrap: wrap;
+
+    }
+
+
+    .service-toolbar select {
+
+        flex: 1;
+
+        min-width: 140px;
+
+    }
+
+
+    .service-toolbar-date {
+
+        flex: 1;
+
+        min-width: 220px;
+
+    }
+
+
+    .service-toolbar-date input {
+
+        flex: 1;
+
+    }
+
+
+    .service-toolbar-reset {
+
+        min-width: 100px;
+
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .service-toolbar {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 10px;
+
+        padding: 12px;
+
+    }
+
+
+    .service-toolbar-search {
+
+        min-width: 100%;
+
+        width: 100%;
+
+        flex-basis: auto;
+
+    }
+
+
+    .service-toolbar select {
+
+        width: 100%;
+
+        min-width: 100%;
+
+        flex: none;
+
+    }
+
+
+    /* ---------------------------------------------
+       DATE FILTERS
+    --------------------------------------------- */
+
+    .service-toolbar-date {
+
+        width: 100%;
+
+        min-width: 100%;
+
+        height: 42px;
+
+        flex: none;
+
+    }
+
+
+    .service-toolbar-date label {
+
+        width: 45px;
+
+        flex-shrink: 0;
+
+    }
+
+
+    .service-toolbar-date input {
+
+        width: 100%;
+
+        flex: 1;
+
+    }
+
+
+    /* ---------------------------------------------
+       RESET
+    --------------------------------------------- */
+
+    .service-toolbar-reset {
+
+        width: 100%;
+
+    }
+
+}

@@ -1,0 +1,427 @@
+/* =====================================================
+   INVENTORY TABLE WRAPPER
+===================================================== */
+
+.inventory-table-wrapper {
+    width: 100%;
+    background: #fff;
+    border-radius: 12px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+.inventory-table {
+    width: 100%;
+    min-width: 900px;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.inventory-table thead {
+    background: #f5f7fb;
+}
+
+.inventory-table th {
+    padding: 13px 10px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #374151;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+    white-space: nowrap;
+}
+
+
+/* =====================================================
+   BODY
+===================================================== */
+
+.inventory-table td {
+    padding: 12px 10px;
+    font-size: 13px;
+    border-bottom: 1px solid #f1f5f9;
+    vertical-align: middle;
+}
+
+.inventory-table tbody tr {
+    transition: background 0.2s ease;
+}
+
+.inventory-table tbody tr:hover {
+    background: #f9fafb;
+}
+
+
+/* =====================================================
+   COLUMN WIDTHS
+===================================================== */
+
+/* # */
+.inventory-table th:nth-child(1),
+.inventory-table td:nth-child(1) {
+    width: 4%;
+    text-align: center;
+}
+
+
+/* Product */
+.inventory-table th:nth-child(2),
+.inventory-table td:nth-child(2) {
+    width: 30%;
+}
+
+
+/* Warehouse */
+.inventory-table th:nth-child(3),
+.inventory-table td:nth-child(3) {
+    width: 16%;
+}
+
+
+/* Rack */
+.inventory-table th:nth-child(4),
+.inventory-table td:nth-child(4) {
+    width: 8%;
+}
+
+
+/* Available */
+.inventory-table th:nth-child(5),
+.inventory-table td:nth-child(5) {
+    width: 9%;
+    text-align: center;
+}
+
+
+/* Purchase Price */
+.inventory-table th:nth-child(6),
+.inventory-table td:nth-child(6) {
+    width: 12%;
+    white-space: nowrap;
+}
+
+
+/* Status */
+.inventory-table th:nth-child(7),
+.inventory-table td:nth-child(7) {
+    width: 11%;
+}
+
+
+/* Actions */
+.inventory-table th:nth-child(8),
+.inventory-table td:nth-child(8) {
+    width: 10%;
+}
+
+
+/* =====================================================
+   PRODUCT
+===================================================== */
+
+.product-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.product-name {
+    font-weight: 600;
+    color: #111827;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.product-sku {
+    font-size: 11px;
+    color: #6b7280;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.status {
+    padding: 5px 9px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 600;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    white-space: nowrap;
+}
+
+.status.success {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.status.warning {
+    background: #fef3c7;
+    color: #b45309;
+}
+
+.status.danger {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+
+/* =====================================================
+   ACTION BUTTONS
+===================================================== */
+
+.action-buttons {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+}
+
+.action-buttons button {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+
+    border: none;
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.action-buttons button:hover {
+    transform: scale(1.06);
+    opacity: 0.9;
+}
+
+.btn-view {
+    background: #dbeafe;
+    color: #2563eb;
+}
+
+.btn-edit {
+    background: #fef3c7;
+    color: #d97706;
+}
+
+.btn-delete {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+
+/* =====================================================
+   SEARCH / TABLE LOADING
+===================================================== */
+
+/*
+   Keeps the table header visible while
+   inventory/search results are loading.
+*/
+
+.inventory-loading-cell {
+    padding: 0 !important;
+
+    height: 220px;
+
+    text-align: center;
+
+    vertical-align: middle;
+
+    background: #ffffff;
+}
+
+
+/* =====================================================
+   LOADING CONTAINER
+===================================================== */
+
+.inventory-table-loading {
+    width: 100%;
+    min-height: 220px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    background: #ffffff;
+
+    color: #64748b;
+
+    font-size: 13px;
+
+    font-weight: 500;
+}
+
+
+/* =====================================================
+   SPINNER
+===================================================== */
+
+.inventory-spinner {
+    width: 32px;
+    height: 32px;
+
+    border: 3px solid #e5e7eb;
+
+    border-top: 3px solid #2563eb;
+
+    border-radius: 50%;
+
+    animation: inventorySpin 0.7s linear infinite;
+}
+
+
+/* =====================================================
+   SPINNER ANIMATION
+===================================================== */
+
+@keyframes inventorySpin {
+
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =====================================================
+   LOADING TEXT
+===================================================== */
+
+.inventory-loading-text {
+    font-size: 13px;
+
+    font-weight: 500;
+
+    color: #64748b;
+
+    text-align: center;
+}
+
+
+/* =====================================================
+   NO DATA
+===================================================== */
+
+.no-data {
+    text-align: center;
+
+    padding: 40px 20px !important;
+
+    color: #6b7280;
+
+    font-size: 14px;
+
+    font-weight: 500;
+}
+
+
+/* =====================================================
+   SCROLLBAR
+===================================================== */
+
+.inventory-table-wrapper::-webkit-scrollbar {
+    height: 7px;
+}
+
+.inventory-table-wrapper::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+    border-radius: 10px;
+}
+
+.inventory-table-wrapper::-webkit-scrollbar-track {
+    background: #f8fafc;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1100px) {
+
+    .inventory-table {
+        min-width: 850px;
+    }
+
+    .inventory-table th {
+        padding: 12px 8px;
+    }
+
+    .inventory-table td {
+        padding: 11px 8px;
+    }
+
+    .action-buttons {
+        gap: 4px;
+    }
+
+    .action-buttons button {
+        width: 30px;
+        height: 30px;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE LOADING
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .inventory-loading-cell {
+        height: 180px;
+    }
+
+    .inventory-table-loading {
+        min-height: 180px;
+    }
+
+    .inventory-spinner {
+        width: 28px;
+        height: 28px;
+
+        border-width: 3px;
+    }
+
+}

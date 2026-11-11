@@ -1,0 +1,387 @@
+.sales-toolbar {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 14px;
+
+    margin-bottom: 18px;
+
+    background: #ffffff;
+
+    border: 1px solid #edf0f2;
+    border-radius: 12px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   Search
+========================================= */
+
+.sales-search-box {
+    position: relative;
+
+    width: 240px;
+    min-width: 200px;
+}
+
+.sales-search-box input {
+    width: 100%;
+    height: 40px;
+
+    padding: 0 12px 0 38px;
+
+    border: 1px solid #d9dee3;
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    color: #111827;
+
+    font-size: 13px;
+
+    outline: none;
+
+    box-sizing: border-box;
+}
+
+.sales-search-box input:focus {
+    border-color: #0b6b2d;
+}
+
+.sales-search-box input::placeholder {
+    color: #9ca3af;
+}
+
+.sales-search-icon {
+    position: absolute;
+
+    left: 12px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #9ca3af;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   Filters
+========================================= */
+
+.sales-toolbar-filters {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    flex: 1;
+}
+
+.sales-toolbar-filters select,
+.sales-toolbar-filters input {
+    height: 40px;
+
+    padding: 0 11px;
+
+    border: 1px solid #d9dee3;
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    color: #374151;
+
+    font-size: 13px;
+
+    outline: none;
+
+    box-sizing: border-box;
+}
+
+.sales-toolbar-filters select {
+    min-width: 145px;
+}
+
+.sales-toolbar-filters input {
+    min-width: 135px;
+}
+
+.sales-toolbar-filters select:focus,
+.sales-toolbar-filters input:focus {
+    border-color: #0b6b2d;
+}
+
+
+/* =========================================
+   Actions
+========================================= */
+
+.sales-toolbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sales-toolbar-actions button {
+    height: 40px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    padding: 0 13px;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+/* =========================================
+   Reset
+========================================= */
+
+.sales-reset-btn {
+    border: 1px solid #d9dee3;
+
+    background: #ffffff;
+
+    color: #4b5563;
+}
+
+.sales-reset-btn:hover {
+    background: #f8fafc;
+}
+
+
+/* =========================================
+   Export
+========================================= */
+
+.sales-export-toolbar-btn {
+    border: 1px solid #d9dee3;
+
+    background: #ffffff;
+
+    color: #374151;
+}
+
+.sales-export-toolbar-btn:hover {
+    background: #f8fafc;
+}
+
+
+/* =========================================
+   New Sale
+========================================= */
+
+.sales-new-btn {
+    border: 1px solid #0b6b2d;
+
+    background: #0b6b2d;
+
+    color: #ffffff;
+}
+
+.sales-new-btn:hover {
+    background: #095a26;
+}
+
+
+/* =========================================
+   Responsive
+========================================= */
+
+@media (max-width: 1200px) {
+
+    .sales-toolbar {
+        flex-wrap: wrap;
+    }
+
+    .sales-search-box {
+        width: 100%;
+    }
+
+    .sales-toolbar-filters {
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .sales-toolbar-actions {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .sales-toolbar-filters {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .sales-toolbar-filters select,
+    .sales-toolbar-filters input {
+        width: 100%;
+    }
+
+    .sales-toolbar-actions {
+        flex-wrap: wrap;
+    }
+
+    .sales-toolbar-actions button {
+        flex: 1;
+    }
+}
+/* =========================================
+   Searchable Customer Dropdown
+========================================= */
+
+.sales-customer-dropdown {
+    position: relative;
+    width: 195px;
+}
+
+
+/* Selected field */
+
+.sales-customer-select {
+    height: 40px;
+    padding: 0 12px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+
+    background: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    font-size: 14px;
+    color: #1f2937;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+
+/* Hover */
+
+.sales-customer-select:hover {
+    border-color: #16a34a;
+}
+
+
+/* Arrow */
+
+.sales-customer-arrow {
+    font-size: 10px;
+    margin-left: 8px;
+    flex-shrink: 0;
+}
+
+
+/* Dropdown */
+
+.sales-customer-menu {
+    position: absolute;
+
+    top: calc(100% + 4px);
+    left: 0;
+
+    width: 100%;
+
+    background: #ffffff;
+
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.12);
+
+    z-index: 1000;
+
+    overflow: hidden;
+}
+
+
+/* Search box */
+
+.sales-customer-search {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 8px;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+
+.sales-customer-search svg {
+    color: #9ca3af;
+    flex-shrink: 0;
+}
+
+
+.sales-customer-search input {
+    width: 100%;
+
+    border: none;
+    outline: none;
+
+    font-size: 13px;
+
+    background: transparent;
+}
+
+
+/* Options */
+
+.sales-customer-option {
+    padding: 9px 12px;
+
+    font-size: 13px;
+
+    color: #1f2937;
+
+    cursor: pointer;
+}
+
+
+.sales-customer-option:hover {
+    background: #f0fdf4;
+}
+
+
+/* No results */
+
+.sales-customer-no-results {
+    padding: 12px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    color: #9ca3af;
+}

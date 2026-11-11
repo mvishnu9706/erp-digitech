@@ -1,0 +1,231 @@
+.delete-service-modal-overlay {
+    position: fixed;
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 24px;
+
+    background: rgba(15, 23, 42, 0.48);
+
+    backdrop-filter: blur(4px);
+}
+
+
+.delete-service-modal {
+    position: relative;
+
+    width: min(460px, 100%);
+
+    padding: 30px 30px 26px;
+
+    background: #ffffff;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 24px 70px rgba(15, 23, 42, 0.24);
+
+    text-align: center;
+}
+
+
+.delete-service-modal-close {
+    position: absolute;
+
+    top: 14px;
+    right: 14px;
+
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #dbe3ef;
+
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    color: #64748b;
+
+    cursor: pointer;
+}
+
+
+.delete-service-modal-close:hover:not(:disabled) {
+    background: #f8fafc;
+    color: #0f172a;
+}
+
+
+.delete-service-modal-icon {
+    width: 58px;
+    height: 58px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #fff1f2;
+
+    color: #dc2626;
+}
+
+
+.delete-service-modal h2 {
+    margin: 0 0 10px;
+
+    color: #172033;
+
+    font-size: 21px;
+    font-weight: 700;
+}
+
+
+.delete-service-modal-message {
+    margin: 0 auto;
+
+    max-width: 390px;
+
+    color: #64748b;
+
+    font-size: 14px;
+
+    line-height: 1.65;
+}
+
+
+.delete-service-modal-message strong {
+    color: #334155;
+
+    font-weight: 700;
+}
+
+
+.delete-service-modal-note {
+    margin: 10px auto 0;
+
+    max-width: 390px;
+
+    color: #64748b;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+.delete-service-modal-note strong {
+    color: #dc2626;
+
+    font-weight: 700;
+}
+
+
+.delete-service-modal-actions {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-top: 24px;
+}
+
+
+.delete-service-modal-actions button {
+    min-width: 125px;
+
+    min-height: 42px;
+
+    padding: 0 18px;
+
+    border-radius: 9px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.15s ease,
+        border-color 0.15s ease,
+        color 0.15s ease,
+        opacity 0.15s ease;
+}
+
+
+.delete-service-modal-cancel {
+    border: 1px solid #d7e0ec;
+
+    background: #ffffff;
+
+    color: #334155;
+}
+
+
+.delete-service-modal-cancel:hover:not(:disabled) {
+    background: #f8fafc;
+}
+
+
+.delete-service-modal-confirm {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    border: 1px solid #dc2626;
+
+    background: #dc2626;
+
+    color: #ffffff;
+}
+
+
+.delete-service-modal-confirm:hover:not(:disabled) {
+    border-color: #b91c1c;
+
+    background: #b91c1c;
+}
+
+
+.delete-service-modal-actions button:disabled,
+.delete-service-modal-close:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+}
+
+
+@media (max-width: 520px) {
+
+    .delete-service-modal {
+        padding: 26px 20px 22px;
+    }
+
+
+    .delete-service-modal-actions {
+        flex-direction: column-reverse;
+    }
+
+
+    .delete-service-modal-actions button {
+        width: 100%;
+    }
+
+}

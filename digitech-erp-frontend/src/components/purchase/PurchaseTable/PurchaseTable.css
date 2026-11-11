@@ -1,0 +1,121 @@
+.purchase-table-container{
+
+    background:white;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 4px 18px rgba(0,0,0,.06);
+
+}
+
+.purchase-table{
+
+    width:100%;
+    border-collapse:collapse;
+
+}
+
+.purchase-table th{
+
+    background:#f8fafc;
+    padding:18px;
+    text-align:left;
+    color:#475569;
+    font-size:14px;
+
+}
+
+.purchase-table td{
+
+    padding:18px;
+    border-top:1px solid #eef2f7;
+
+}
+
+.purchase-table tbody tr:hover{
+
+    background:#f8fafc;
+
+}
+
+.empty-row{
+
+    text-align:center;
+    color:#94a3b8;
+    padding:50px;
+
+}
+
+.purchase-actions{
+
+    display:flex;
+    gap:8px;
+
+}
+
+.purchase-actions button{
+
+    width:36px;
+    height:36px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+
+}
+
+.view-btn{
+
+    background:#2563eb;
+    color:white;
+
+}
+
+.edit-btn{
+
+    background:#16a34a;
+    color:white;
+
+}
+
+.delete-btn{
+
+    background:#ef4444;
+    color:white;
+
+}
+
+.status{
+
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:600;
+
+}
+
+.status.completed{
+
+    background:#dcfce7;
+    color:#15803d;
+
+}
+
+.status.partially_received{
+
+    background:#fef3c7;
+    color:#b45309;
+
+}
+
+.status.draft{
+
+    background:#dbeafe;
+    color:#1d4ed8;
+
+}
+
+.status.cancelled{
+
+    background:#fee2e2;
+    color:#b91c1c;
+
+}

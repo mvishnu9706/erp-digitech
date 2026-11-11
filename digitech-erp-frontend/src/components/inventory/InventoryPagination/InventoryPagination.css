@@ -1,0 +1,95 @@
+.inventory-pagination{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 20px;
+
+    border-top:1px solid #e5e7eb;
+
+    background:#ffffff;
+
+    flex-wrap:wrap;
+
+    gap:16px;
+
+}
+
+.pagination-info{
+
+    font-size:14px;
+
+    color:#6b7280;
+
+}
+
+.pagination-info strong{
+
+    color:#111827;
+
+}
+
+.pagination-controls{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+}
+
+.pagination-controls button{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    padding:8px 14px;
+
+    border:1px solid #d1d5db;
+
+    background:#ffffff;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    font-size:14px;
+
+}
+
+.pagination-controls button:hover:not(:disabled){
+
+    background:#2563eb;
+
+    color:#ffffff;
+
+    border-color:#2563eb;
+
+}
+
+.pagination-controls button.active{
+
+    background:#2563eb;
+
+    color:#ffffff;
+
+    border-color:#2563eb;
+
+}
+
+.pagination-controls button:disabled{
+
+    opacity:.5;
+
+    cursor:not-allowed;
+
+}

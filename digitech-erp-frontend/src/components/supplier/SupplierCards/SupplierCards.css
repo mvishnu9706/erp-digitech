@@ -1,0 +1,253 @@
+/* =====================================================
+   SUPPLIER CARDS
+   COMPACT VERSION
+===================================================== */
+
+.supplier-cards {
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 10px;
+
+    width: 100%;
+
+    margin: 0;
+
+    padding: 0;
+}
+
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.supplier-card {
+    min-width: 0;
+
+    height: 76px;
+    min-height: 76px;
+
+    padding: 11px 13px;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    background: #ffffff;
+
+    border: 1px solid #e8edf5;
+
+    border-radius: 11px;
+
+    box-shadow:
+        0 3px 10px rgba(15, 23, 42, 0.045);
+
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+
+/* =====================================================
+   HOVER
+===================================================== */
+
+.supplier-card:hover {
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 6px 15px rgba(15, 23, 42, 0.07);
+}
+
+
+/* =====================================================
+   LEFT CONTENT
+===================================================== */
+
+.supplier-card-left {
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.supplier-card-left p {
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 9px;
+
+    line-height: 1.2;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.05em;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+/* =====================================================
+   VALUE
+===================================================== */
+
+.supplier-card-left h2 {
+    margin: 5px 0 0;
+
+    color: #0f172a;
+
+    font-size: 25px;
+
+    line-height: 1;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+/* =====================================================
+   ICON BOX
+===================================================== */
+
+.supplier-card-icon {
+    width: 40px;
+
+    height: 40px;
+
+    min-width: 40px;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+}
+
+
+/* =====================================================
+   ICON
+===================================================== */
+
+.supplier-card-icon svg {
+    width: 19px;
+
+    height: 19px;
+
+    stroke-width: 2;
+}
+
+
+/* =====================================================
+   LARGE DESKTOP
+===================================================== */
+
+@media (min-width: 1400px) {
+
+    .supplier-cards {
+        gap: 10px;
+    }
+
+    .supplier-card {
+        height: 78px;
+        min-height: 78px;
+
+        padding: 11px 14px;
+    }
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1000px) {
+
+    .supplier-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 9px;
+    }
+
+    .supplier-card {
+        height: 76px;
+        min-height: 76px;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .supplier-cards {
+        grid-template-columns: 1fr;
+
+        gap: 8px;
+    }
+
+    .supplier-card {
+        height: 70px;
+
+        min-height: 70px;
+
+        padding: 10px 12px;
+
+        border-radius: 9px;
+    }
+
+    .supplier-card-left p {
+        font-size: 8px;
+    }
+
+    .supplier-card-left h2 {
+        font-size: 22px;
+    }
+
+    .supplier-card-icon {
+        width: 36px;
+
+        height: 36px;
+
+        min-width: 36px;
+
+        border-radius: 9px;
+    }
+
+    .supplier-card-icon svg {
+        width: 17px;
+
+        height: 17px;
+    }
+
+}

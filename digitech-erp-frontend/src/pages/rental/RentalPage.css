@@ -1,0 +1,2661 @@
+/* DIGITECH RENTAL MANAGEMENT - POLISHED RESPONSIVE UI */
+
+.rental-layout{min-height:100vh;width:100%;display:flex;background:#f5f7fb;color:#172033}
+.rental-layout,.rental-layout *{box-sizing:border-box}
+.rental-page{flex:1 1 auto;width:auto;min-width:0;min-height:100vh;margin-left:0!important;background:#f5f7fb}
+
+/* The Sidebar is already a sibling flex item. Do not add another sidebar width. */
+.rental-page>.navbar,.rental-page>header.navbar,.rental-page .navbar{margin-left:0!important}
+
+.rental-header{width:100%;padding:26px 30px 20px;display:flex;align-items:flex-start;justify-content:space-between;gap:24px}
+.rental-title-row{display:flex;align-items:center;gap:13px}
+.rental-title-icon{width:44px;height:44px;flex:0 0 44px;border:1px solid #d8e4f2;border-radius:11px;background:#fff;color:#2563eb;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 5px rgba(15,23,42,.04)}
+.rental-header h1{margin:0;color:#142033;font-size:24px;line-height:1.15;font-weight:800;letter-spacing:-.3px}
+.rental-header p{margin:5px 0 0;color:#64748b;font-size:12px;line-height:1.4}
+.rental-header-actions{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.refresh-btn,.create-rental-bill-btn,.start-month-btn{height:40px;padding:0 14px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;gap:7px;border:1px solid transparent;font-family:inherit;font-size:12px;font-weight:700;white-space:nowrap;cursor:pointer;transition:.16s ease}
+.refresh-btn{border-color:#d6e0eb;background:#fff;color:#475569}
+.refresh-btn:hover{background:#f8fafc;border-color:#cbd5e1}
+.create-rental-bill-btn,.start-month-btn{border-color:#2563eb;background:#2563eb;color:#fff}
+.create-rental-bill-btn:hover,.start-month-btn:hover{background:#1d4ed8;border-color:#1d4ed8}
+.rental-layout button:disabled{opacity:.55;cursor:not-allowed}
+
+.rental-summary-grid{padding:0 30px 20px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.rental-summary-card{min-width:0;min-height:78px;padding:15px 16px;border:1px solid #dce5ef;border-radius:11px;background:#fff;display:flex;align-items:center;gap:12px;box-shadow:0 2px 7px rgba(15,23,42,.035)}
+.summary-icon{width:38px;height:38px;flex:0 0 38px;border-radius:9px;background:#eff6ff;color:#2563eb;display:flex;align-items:center;justify-content:center}
+.rental-summary-card span{display:block;color:#64748b;font-size:11px;line-height:1.25}
+.rental-summary-card strong{display:block;margin-top:3px;color:#172033;font-size:18px;line-height:1.2;font-weight:800}
+.rental-summary-card.amount-card strong{color:#087f3e}
+
+.rental-error{margin:0 30px 16px;padding:12px 14px;border:1px solid #fecaca;border-radius:9px;background:#fff7f7;color:#991b1b;display:flex;align-items:center;gap:10px;font-size:12px}
+.rental-error>div{min-width:0;flex:1;display:flex;flex-direction:column;gap:2px}
+.rental-error button{height:32px;padding:0 10px;border:1px solid #fecaca;border-radius:6px;background:#fff;color:#991b1b;font-size:11px;font-weight:700;cursor:pointer}
+
+.rental-panel{margin:0 30px 20px;border:1px solid #dce5ef;border-radius:12px;background:#fff;overflow:hidden;box-shadow:0 2px 8px rgba(15,23,42,.035)}
+.panel-toolbar{min-height:70px;padding:15px 17px;border-bottom:1px solid #e6ebf1;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.panel-toolbar h2{margin:0;color:#172033;font-size:16px;line-height:1.25;font-weight:800}
+.panel-toolbar>div:first-child>span{display:block;margin-top:4px;color:#64748b;font-size:11px;line-height:1.35}
+.monthly-panel-month{height:36px;padding:0 10px;border:1px solid #d8e3ef;border-radius:7px;background:#f8fbff;display:flex;align-items:center;gap:6px;color:#64748b;font-size:10px;white-space:nowrap}
+.monthly-panel-month svg{color:#2563eb}
+.monthly-panel-month strong{color:#2563eb}
+
+.rental-filter-bar{padding:11px 13px;border-bottom:1px solid #e6ebf1;display:flex;align-items:center;gap:8px}
+.rental-search-box{min-width:220px;height:38px;flex:1 1 auto;border:1px solid #d4deea;border-radius:8px;background:#fff;display:flex;align-items:center;gap:8px;padding:0 10px;color:#64748b;transition:.15s}
+.rental-search-box:focus-within{border-color:#7da7e8;box-shadow:0 0 0 3px rgba(37,99,235,.07)}
+.rental-search-box input{width:100%;min-width:0;height:100%;border:0;outline:0;background:transparent;color:#172033;font-family:inherit;font-size:11px}
+.rental-search-box input::placeholder{color:#94a3b8}
+.rental-search-clear{width:24px;height:24px;padding:0;border:0;border-radius:5px;background:transparent;color:#94a3b8;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.rental-select-filter,.month-filter{height:38px;min-width:128px;padding:0 9px;border:1px solid #d4deea;border-radius:8px;background:#fff;display:flex;align-items:center;gap:6px;color:#64748b;font-size:10px;white-space:nowrap}
+.rental-select-filter select,.month-filter input{min-width:0;flex:1;height:100%;border:0;outline:0;background:transparent;color:#334155;font-family:inherit;font-size:10px}
+.month-filter{min-width:170px}
+.rental-reset-btn{height:38px;padding:0 11px;border:1px solid #d4deea;border-radius:8px;background:#fff;color:#64748b;display:inline-flex;align-items:center;justify-content:center;gap:5px;font-family:inherit;font-size:10px;font-weight:600;cursor:pointer;white-space:nowrap}
+
+.rental-table-wrap{width:100%;overflow-x:auto}
+.rental-readings-table{width:100%;min-width:1320px;border-collapse:separate;border-spacing:0;table-layout:fixed}
+.rental-readings-table th,.rental-readings-table td{padding:10px 9px;border-bottom:1px solid #e9eef4;text-align:left;vertical-align:middle}
+.rental-readings-table th{background:#f7f9fc;color:#526173;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.03em;white-space:nowrap}
+.rental-readings-table td{color:#334155;font-size:11px}
+.rental-readings-table tbody tr:hover{background:#fbfdff}
+.col-number{width:44px}.col-customer{width:180px}.col-machine{width:150px}.col-serial{width:145px}.col-reading{width:112px}.col-billing-month{width:100px}.col-price{width:120px}.col-copies{width:78px}.col-amount{width:96px}.col-status{width:112px}.col-actions{width:118px}
+.row-number{color:#64748b;font-weight:700;text-align:center!important}
+.table-customer-cell,.table-machine-cell{min-width:0;display:flex;flex-direction:column;gap:3px}
+.table-customer-cell strong,.table-machine-cell strong{overflow:hidden;color:#172033;font-size:11px;font-weight:700;white-space:nowrap;text-overflow:ellipsis}
+.table-customer-cell div{display:flex;align-items:center;gap:6px}
+.table-customer-cell span,.table-customer-cell small,.table-machine-cell small{color:#94a3b8;font-size:8px}
+.serial-cell{color:#475569;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:9px}
+.old-reading-cell,.copies-cell{color:#172033;font-weight:700}
+.billing-month-cell{display:inline-flex;padding:4px 7px;border:1px solid #d6e4f3;border-radius:5px;background:#f5f9ff;color:#315a86;font-size:9px;font-weight:700}
+.reading-table-input{width:100%;height:34px;padding:0 8px;border:1px solid #cbd7e4;border-radius:7px;outline:0;background:#fff;color:#172033;font-family:inherit;font-size:10px}
+.reading-table-input:focus{border-color:#5b8edb;box-shadow:0 0 0 3px rgba(37,99,235,.07)}
+.price-table-input{height:34px;border:1px solid #cbd7e4;border-radius:7px;background:#fff;display:flex;align-items:center;overflow:hidden}
+.price-table-input span{padding:0 6px;color:#64748b;font-size:10px}
+.price-table-input input{width:100%;min-width:0;height:100%;border:0;outline:0;font-family:inherit;font-size:10px}
+.amount-cell.has-value{color:#087f3e;font-weight:800}
+.payment-status-select{width:100%;height:34px;padding:0 7px;border-radius:7px;outline:0;font-family:inherit;font-size:9px;font-weight:700}
+.payment-status-select.pending{border:1px solid #f4c56f;background:#fffaf0;color:#9a6700}
+.payment-status-select.received{border:1px solid #86d7ad;background:#effcf5;color:#087f3e}
+.table-action-group{display:flex;align-items:center;gap:5px}
+.table-save-btn,.table-reset-btn{height:32px;border-radius:7px;display:inline-flex;align-items:center;justify-content:center;gap:4px;font-family:inherit;font-size:9px;font-weight:700;cursor:pointer}
+.table-save-btn{padding:0 9px;border:1px solid #8db2ef;background:#8db2ef;color:#fff}
+.table-reset-btn{width:32px;padding:0;border:1px solid #d7e0eb;background:#fff;color:#64748b}
+.table-total-label{text-align:right!important;color:#172033!important;font-weight:800}
+.rental-readings-table tfoot td{background:#fbfcfe;border-bottom:0}
+.rental-table-note{min-height:38px;padding:9px 12px;display:flex;align-items:center;justify-content:space-between;gap:12px;color:#64748b;font-size:9px}
+.rental-table-note strong{color:#475569}
+
+.rental-filter-summary{padding:9px 12px;display:flex;justify-content:space-between;gap:10px;color:#64748b;font-size:10px}
+.active-filter-summary{color:#2563eb;font-weight:700}
+.rental-loading,.empty-state,.rental-search-empty{min-height:240px;padding:25px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:#64748b;text-align:center}
+.rental-loading svg,.empty-state svg,.rental-empty-icon svg{color:#2563eb}
+
+.rental-search-results{padding:14px}
+.search-results-heading{padding-bottom:11px;display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.search-results-heading strong{display:block;color:#172033;font-size:12px}
+.search-results-heading span{display:block;margin-top:3px;color:#64748b;font-size:10px}
+.search-results-count{color:#2563eb!important;font-weight:700}
+.customer-search-results{display:flex;flex-direction:column;gap:8px}
+.customer-result-card{overflow:hidden;border:1px solid #dce5ef;border-radius:9px;background:#fff}
+.customer-result-card.selected{border-color:#9ab9f6;box-shadow:0 0 0 2px rgba(37,99,235,.05)}
+.customer-result-main{width:100%;min-height:58px;padding:9px 11px;border:0;background:#fff;display:flex;align-items:center;gap:10px;cursor:pointer;text-align:left;font-family:inherit}
+.customer-result-main:hover{background:#fbfdff}
+.customer-avatar{width:32px;height:32px;flex:0 0 32px;border-radius:50%;background:#eff6ff;color:#2563eb;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800}
+.customer-result-info{min-width:0;flex:1}
+.customer-result-info strong{display:block;color:#172033;font-size:11px}
+.customer-result-info small{display:block;margin-top:3px;color:#94a3b8;font-size:9px}
+.customer-result-machine-count{color:#64748b;font-size:9px;white-space:nowrap}
+.customer-result-details{padding:11px;border-top:1px solid #e8edf3;background:#fbfdff}
+.machine-select-row{display:flex;align-items:flex-end;gap:10px}
+.machine-select-row label{flex:1;display:flex;flex-direction:column;gap:4px}
+.machine-select-row label span,.selected-machine-mini span{color:#64748b;font-size:9px}
+.machine-select-row select{width:100%;height:35px;padding:0 8px;border:1px solid #cfd9e5;border-radius:7px;background:#fff;color:#172033;font-family:inherit;font-size:10px}
+.selected-machine-mini{min-width:190px;padding:8px 9px;border:1px solid #dce5ef;border-radius:7px;background:#fff}
+.selected-machine-mini strong{display:block;margin-top:2px;color:#172033;font-size:10px}
+.selected-machine-mini small{color:#94a3b8;font-size:8px}
+.selected-machine-history{margin-top:11px;overflow:hidden;border:1px solid #dce5ef;border-radius:9px;background:#fff}
+.history-heading{padding:11px;border-bottom:1px solid #e8edf3;display:flex;justify-content:space-between;gap:12px}
+.history-kicker{color:#2563eb;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.03em}
+.history-heading h3{margin:3px 0 0;color:#172033;font-size:13px}
+.history-heading p{margin:3px 0 0;color:#64748b;font-size:9px}
+.history-current-rate{text-align:right}
+.history-current-rate span{display:block;color:#64748b;font-size:8px}
+.history-current-rate strong{display:block;margin-top:2px;color:#087f3e;font-size:12px}
+.history-machine-summary{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid #e8edf3}
+.history-machine-summary div{padding:10px;border-right:1px solid #e8edf3}
+.history-machine-summary div:last-child{border-right:0}
+.history-machine-summary span{display:block;color:#64748b;font-size:8px}
+.history-machine-summary strong{display:block;margin-top:3px;color:#172033;font-size:12px}
+.history-table-wrap{overflow-x:auto}
+.machine-history-table{width:100%;min-width:680px;border-collapse:collapse}
+.machine-history-table th,.machine-history-table td{padding:8px 9px;border-bottom:1px solid #edf1f5;text-align:left;font-size:9px}
+.machine-history-table th{background:#f7f9fc;color:#64748b;font-size:8px;font-weight:800;text-transform:uppercase}
+.history-month{color:#2563eb}.history-amount{color:#087f3e}
+.history-status-pill{display:inline-flex;padding:3px 7px;border-radius:20px;font-size:8px;font-weight:800}
+.history-status-pill.received{background:#ecfdf5;color:#087f3e}
+.history-status-pill.pending{background:#fff7ed;color:#9a6700}
+.history-empty{min-height:150px;padding:22px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:#64748b;font-size:10px}
+
+/* BILL TABLE */
+.rental-invoices-panel{margin-top:0}
+.rental-invoices-panel .panel-toolbar{min-height:70px}
+.create-rental-bill-inline-btn{height:34px;padding:0 11px;border:1px solid #2563eb;border-radius:7px;background:#2563eb;color:#fff;display:inline-flex;align-items:center;gap:5px;font-family:inherit;font-size:10px;font-weight:700;cursor:pointer}
+.rental-invoice-table-wrap{width:100%;overflow-x:auto;border-top:1px solid #e7edf4}
+.rental-invoice-table{width:100%;min-width:1180px;border-collapse:collapse}
+.rental-invoice-table th,.rental-invoice-table td{padding:10px;border-bottom:1px solid #e7edf4;text-align:left;white-space:nowrap;font-size:10px}
+.rental-invoice-table th{background:#f7f9fc;color:#526173;font-size:8px;font-weight:800;text-transform:uppercase;letter-spacing:.03em}
+.rental-invoice-table tbody tr:hover{background:#fbfdff}
+.invoice-number-cell{color:#2563eb;font-weight:800}
+.invoice-customer-cell,.invoice-machine-cell{display:flex;flex-direction:column;gap:3px}
+.invoice-customer-cell strong,.invoice-machine-cell strong{color:#172033;font-size:10px}
+.invoice-customer-cell small,.invoice-machine-cell small{color:#94a3b8;font-size:8px}
+.invoice-serial-cell{color:#475569;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:9px}
+.invoice-month-cell{display:inline-flex;padding:4px 7px;border:1px solid #d7e4f1;border-radius:5px;background:#f5f9ff;color:#315a86;font-size:8px;font-weight:700}
+.invoice-amount-cell{color:#087f3e;font-weight:800}
+.invoice-action-buttons{display:flex;align-items:center;gap:5px}
+.invoice-view-btn,.invoice-pdf-btn{height:30px;padding:0 8px;border-radius:6px;display:inline-flex;align-items:center;justify-content:center;gap:4px;font-family:inherit;font-size:9px;font-weight:700;cursor:pointer}
+.invoice-view-btn{border:1px solid #d6e0eb;background:#fff;color:#475569}
+.invoice-pdf-btn{border:1px solid #087f3e;background:#087f3e;color:#fff}
+.rental-invoice-empty{min-height:170px;padding:25px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;color:#64748b;text-align:center}
+.rental-invoice-empty svg{color:#2563eb}
+.rental-invoice-empty strong{color:#172033;font-size:13px}
+.rental-invoice-empty span{font-size:10px}
+
+/* BILL DRAWER */
+.rental-bill-drawer-overlay,.rental-invoice-preview-overlay{position:fixed;inset:0;z-index:5000;background:rgba(15,23,42,.48);display:flex}
+.rental-bill-drawer-overlay{justify-content:flex-end}
+.rental-bill-drawer{width:min(780px,100vw);height:100vh;background:#fff;display:flex;flex-direction:column;box-shadow:-12px 0 35px rgba(15,23,42,.2);animation:rentalBillDrawerIn .2s ease-out}
+@keyframes rentalBillDrawerIn{from{transform:translateX(100%)}to{transform:translateX(0)}}
+.rental-bill-drawer-header{min-height:70px;padding:13px 20px;border-bottom:1px solid #e5eaf0;background:#fff;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-shrink:0}
+.rental-bill-drawer-header h2{margin:0;color:#172033;font-size:18px;font-weight:800}
+.rental-bill-drawer-header p{margin:4px 0 0;color:#64748b;font-size:10px}
+.rental-bill-close-btn{width:34px;height:34px;border:1px solid #d8e1eb;border-radius:7px;background:#fff;color:#64748b;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.rental-bill-form{flex:1;overflow-y:auto;padding:17px 20px 90px}
+.rental-bill-section{padding-bottom:15px;margin-bottom:15px;border-bottom:1px solid #edf1f5}
+.rental-bill-section:last-child{border-bottom:0}
+.rental-bill-section-title{margin-bottom:10px;display:flex;align-items:center;gap:7px;color:#172033;font-size:12px;font-weight:800}
+.rental-bill-section-title svg{color:#2563eb}
+.rental-bill-section-title small{margin-left:3px;color:#94a3b8;font-size:9px;font-weight:500}
+.rental-bill-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.rental-bill-field{min-width:0;display:flex;flex-direction:column;gap:5px}
+.rental-bill-field.full{grid-column:1/-1}
+.rental-bill-field>span{color:#475569;font-size:10px;font-weight:700}
+.rental-bill-field>span em{color:#dc2626;font-style:normal}
+.rental-bill-field input,.rental-bill-field select{width:100%;height:37px;padding:0 9px;border:1px solid #cfd9e5;border-radius:7px;outline:0;background:#fff;color:#172033;font-family:inherit;font-size:11px}
+.rental-bill-field input:focus,.rental-bill-field select:focus{border-color:#5b8edb;box-shadow:0 0 0 3px rgba(37,99,235,.07)}
+.rental-bill-customer-details{margin-top:10px;padding:10px;border:1px solid #dce5ef;border-radius:8px;background:#f8fafc}
+.rental-bill-customer-details.full{grid-column:1/-1}
+.rental-bill-customer-details>div{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.rental-bill-customer-details .customer-detail-wide{grid-column:1/-1}
+.rental-bill-customer-details span,.rental-bill-machine-info span,.rental-bill-readonly-field span{color:#64748b;font-size:8px;font-weight:600}
+.rental-bill-customer-details strong,.rental-bill-machine-info strong,.rental-bill-readonly-field strong{color:#172033;font-size:10px;line-height:1.35;word-break:break-word}
+.rental-bill-machine-info{padding:10px;border:1px solid #dce5ef;border-radius:8px;background:#f8fafc}
+.rental-bill-machine-info>div{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.rental-bill-machine-info>div>div{display:flex;flex-direction:column;gap:3px}
+.rental-bill-terms-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+.rental-bill-readonly-box{min-width:0;padding:10px;border:1px solid #dbe5ef;border-radius:8px;background:#f8fbff}
+.rental-bill-readonly-box span{display:block;color:#64748b;font-size:8px;font-weight:600}
+.rental-bill-readonly-box strong{display:block;margin-top:4px;color:#172033;font-size:12px}
+.rental-bill-readonly-box:nth-child(1) strong{color:#087f3e}
+.rental-bill-calculation{padding:11px 12px;border:1px solid #dce5ef;border-radius:9px;background:#f8fafc}
+.rental-bill-calculation>div:not(.rental-bill-grand-total){min-height:31px;padding:5px 0;border-bottom:1px dashed #dce3eb;display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:10px}
+.rental-bill-calculation>div span{color:#64748b}
+.rental-bill-calculation>div strong{color:#172033;font-weight:700}
+.rental-bill-grand-total{margin-top:8px;padding-top:10px;border-top:1px solid #cfd9e5;display:flex;align-items:center;justify-content:space-between;color:#087f3e;font-size:14px;font-weight:800}
+.rental-bill-preview{margin-top:12px;padding:10px 11px;border:1px solid #b9e2ca;border-radius:8px;background:#f0fdf4;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.rental-bill-preview>div{display:flex;flex-direction:column;gap:3px}
+.rental-bill-preview span{color:#64748b;font-size:9px}
+.rental-bill-preview strong{color:#087f3e;font-size:11px}
+.rental-bill-preview button{height:31px;padding:0 9px;border:1px solid #087f3e;border-radius:6px;background:#087f3e;color:#fff;display:inline-flex;align-items:center;gap:5px;font-size:9px;font-weight:700;cursor:pointer}
+.rental-bill-drawer-footer{min-height:62px;padding:11px 20px;border-top:1px solid #e5eaf0;background:#fff;display:flex;align-items:center;justify-content:flex-end;gap:8px;flex-shrink:0}
+.rental-bill-cancel-btn,.rental-bill-generate-btn{height:38px;padding:0 14px;border-radius:7px;display:inline-flex;align-items:center;justify-content:center;gap:6px;font-size:10px;font-weight:700;cursor:pointer}
+.rental-bill-cancel-btn{border:1px solid #d5dee8;background:#fff;color:#475569}
+.rental-bill-generate-btn{border:1px solid #087f3e;background:#087f3e;color:#fff}
+
+/* INVOICE PREVIEW */
+.rental-invoice-preview-overlay{align-items:center;justify-content:center;padding:22px}
+.rental-invoice-preview-modal{width:min(780px,100%);max-height:90vh;overflow:hidden;border-radius:11px;background:#fff;box-shadow:0 20px 55px rgba(15,23,42,.25);display:flex;flex-direction:column}
+.rental-invoice-preview-header{min-height:65px;padding:12px 18px;border-bottom:1px solid #e5eaf0;display:flex;align-items:center;justify-content:space-between}
+.rental-invoice-preview-header span{color:#64748b;font-size:9px}
+.rental-invoice-preview-header h2{margin:3px 0 0;color:#172033;font-size:16px}
+.rental-invoice-preview-header button{width:32px;height:32px;border:1px solid #d8e1eb;border-radius:7px;background:#fff;color:#64748b;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.rental-invoice-preview-body{overflow-y:auto;padding:18px}
+.invoice-preview-customer{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}
+.invoice-preview-customer>div,.invoice-preview-readings>div{padding:10px;border:1px solid #e0e7ef;border-radius:7px;background:#f8fafc}
+.invoice-preview-customer span,.invoice-preview-readings span{display:block;color:#64748b;font-size:8px}
+.invoice-preview-customer strong,.invoice-preview-readings strong{display:block;margin-top:3px;color:#172033;font-size:10px}
+.invoice-preview-readings{margin-top:10px;display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.invoice-preview-total-box{margin-top:12px;padding:11px;border:1px solid #dce5ef;border-radius:8px;background:#fff}
+.invoice-preview-total-box>div{min-height:31px;padding:5px 0;border-bottom:1px dashed #e2e8f0;display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:10px}
+.invoice-preview-total-box>div span{color:#64748b}
+.preview-grand-total{margin-top:6px;padding-top:9px!important;border-top:1px solid #cfd9e5!important;border-bottom:0!important;color:#087f3e;font-size:13px!important}
+.rental-invoice-preview-footer{min-height:62px;padding:11px 18px;border-top:1px solid #e5eaf0;display:flex;justify-content:flex-end;gap:8px}
+
+/* START MONTH MODAL */
+.rental-modal-backdrop{position:fixed;inset:0;z-index:6000;padding:20px;background:rgba(15,23,42,.48);display:flex;align-items:center;justify-content:center}
+.rental-confirm-modal{width:min(470px,100%);padding:21px;border-radius:11px;background:#fff;box-shadow:0 20px 55px rgba(15,23,42,.25)}
+.rental-confirm-icon{width:43px;height:43px;border-radius:10px;background:#eff6ff;color:#2563eb;display:flex;align-items:center;justify-content:center}
+.rental-confirm-modal h3{margin:12px 0 5px;color:#172033;font-size:17px}
+.rental-confirm-modal>p{margin:0;color:#64748b;font-size:11px;line-height:1.5}
+.rollover-info-box{margin:14px 0;display:grid;gap:7px}
+.rollover-info-box div{padding:9px;border:1px solid #e5eaf0;border-radius:7px;background:#f8fafc}
+.rollover-info-box strong{display:block;color:#172033;font-size:9px}
+.rollover-info-box span{display:block;margin-top:3px;color:#64748b;font-size:9px;line-height:1.4}
+.rental-confirm-warning{padding:9px;border:1px solid #fde68a;border-radius:7px;background:#fffbeb;color:#92400e;display:flex;gap:7px;font-size:9px;line-height:1.45}
+.rental-confirm-actions{margin-top:15px;display:flex;justify-content:flex-end;gap:7px}
+.rental-cancel-btn,.rental-confirm-btn{height:35px;padding:0 12px;border-radius:7px;display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:700;cursor:pointer}
+.rental-cancel-btn{border:1px solid #d5dee8;background:#fff;color:#475569}
+.rental-confirm-btn{border:1px solid #2563eb;background:#2563eb;color:#fff}
+
+.spin{animation:rentalSpin 1s linear infinite}
+@keyframes rentalSpin{to{transform:rotate(360deg)}}
+
+@media (max-width:1200px){
+    .rental-header,.rental-summary-grid{padding-left:22px;padding-right:22px}
+    .rental-panel,.rental-error{margin-left:22px;margin-right:22px}
+    .rental-summary-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .rental-filter-bar{flex-wrap:wrap}
+    .rental-search-box{flex:1 1 100%}
+}
+@media (max-width:900px){
+    .rental-header{flex-direction:column;align-items:stretch}
+    .rental-header-actions{width:100%}
+    .rental-header-actions button{flex:1}
+    .panel-toolbar{align-items:flex-start;flex-direction:column}
+    .monthly-panel-month{align-self:flex-start}
+    .rental-bill-drawer{width:100%}
+}
+@media (max-width:700px){
+    .rental-header{padding:18px 14px 15px}
+    .rental-summary-grid{padding:0 14px 15px;grid-template-columns:1fr 1fr}
+    .rental-panel,.rental-error{margin-left:14px;margin-right:14px}
+    .rental-header-actions{display:grid;grid-template-columns:1fr}
+    .rental-header-actions button{width:100%}
+    .rental-bill-grid,.invoice-preview-customer{grid-template-columns:1fr}
+    .rental-bill-field.full{grid-column:auto}
+    .rental-bill-terms-grid{grid-template-columns:1fr 1fr}
+    .rental-bill-customer-details>div,.rental-bill-machine-info>div{grid-template-columns:1fr 1fr}
+    .invoice-preview-readings{grid-template-columns:repeat(2,1fr)}
+    .machine-select-row{flex-direction:column;align-items:stretch}
+    .selected-machine-mini{min-width:0}
+}
+@media (max-width:520px){
+    .rental-summary-grid{grid-template-columns:1fr}
+    .rental-filter-bar{align-items:stretch}
+    .rental-select-filter,.month-filter,.rental-reset-btn{flex:1 1 100%}
+    .rental-bill-terms-grid,.rental-bill-customer-details>div,.rental-bill-machine-info>div,.invoice-preview-readings{grid-template-columns:1fr}
+    .rental-bill-drawer-header,.rental-bill-form,.rental-bill-drawer-footer{padding-left:13px;padding-right:13px}
+    .rental-bill-drawer-footer{flex-direction:column-reverse}
+    .rental-bill-cancel-btn,.rental-bill-generate-btn{width:100%}
+    .rental-invoice-preview-overlay{padding:8px}
+    .rental-invoice-preview-modal{max-height:95vh}
+}
+
+@media print{
+    body *{visibility:hidden!important}
+    .rental-invoice-print-area,.rental-invoice-print-area *{visibility:visible!important}
+    .rental-invoice-print-area{position:absolute;left:0;top:0;width:100%}
+}
+
+
+/* ============================================================
+   RENTAL MAIN TABS
+   Keeps Monthly Readings and Rental Bills/Invoices separate.
+============================================================ */
+
+.rental-main-tabs {
+    margin: 0 30px 16px;
+    padding: 4px;
+    border: 1px solid #dce5ef;
+    border-radius: 10px;
+    background: #eef2f7;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 4px;
+}
+
+.rental-main-tab {
+    min-height: 54px;
+    padding: 8px 15px;
+    border: 0;
+    border-radius: 7px;
+    background: transparent;
+    color: #64748b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all .16s ease;
+}
+
+.rental-main-tab span {
+    color: inherit;
+    font-size: 12px;
+    line-height: 1.2;
+    font-weight: 800;
+}
+
+.rental-main-tab small {
+    color: #94a3b8;
+    font-size: 9px;
+    line-height: 1.2;
+}
+
+.rental-main-tab:hover {
+    background: #f8fafc;
+    color: #334155;
+}
+
+.rental-main-tab.active {
+    background: #ffffff;
+    color: #2563eb;
+    box-shadow: 0 2px 7px rgba(15, 23, 42, .07);
+}
+
+.rental-main-tab.active small {
+    color: #64748b;
+}
+
+@media (max-width: 1200px) {
+    .rental-main-tabs {
+        margin-left: 22px;
+        margin-right: 22px;
+    }
+}
+
+@media (max-width: 700px) {
+    .rental-main-tabs {
+        margin-left: 14px;
+        margin-right: 14px;
+    }
+
+    .rental-main-tab {
+        min-height: 50px;
+        padding: 7px 8px;
+    }
+
+    .rental-main-tab span {
+        font-size: 10px;
+    }
+
+    .rental-main-tab small {
+        font-size: 8px;
+    }
+}
+
+
+/* ============================================================
+   RENTAL TAB ORDER
+   Bills/Invoices is intentionally the first and default tab.
+============================================================ */
+.rental-main-tabs .rental-main-tab:first-child {
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+}
+
+.rental-main-tabs .rental-main-tab:last-child {
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+
+
+/* ============================================================
+   FIXED ERP SHELL / LAYOUT
+   Sidebar stays fixed, Navbar stays fixed, content uses the
+   remaining viewport width and never gets a second left offset.
+============================================================ */
+:root {
+    --rental-sidebar-width: 244px;
+    --rental-navbar-height: 64px;
+}
+
+html,
+body,
+#root {
+    min-height: 100%;
+    margin: 0;
+}
+
+.rental-layout {
+    position: relative;
+    display: block;
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: #f5f7fb;
+}
+
+/* Sidebar is the first direct child of RentalPage. */
+.rental-layout > :first-child {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    width: var(--rental-sidebar-width) !important;
+    height: 100vh !important;
+    z-index: 1200 !important;
+    flex: none !important;
+}
+
+.rental-page-shell {
+    position: relative;
+    width: calc(100% - var(--rental-sidebar-width)) !important;
+    min-width: 0 !important;
+    min-height: 100vh;
+    margin-left: var(--rental-sidebar-width) !important;
+    padding-top: var(--rental-navbar-height);
+    overflow-x: hidden;
+    background: #f5f7fb;
+}
+
+/* Navbar is the first child inside the main content. */
+.rental-page-shell > .navbar,
+.rental-page-shell > header.navbar,
+.rental-page-shell > nav,
+.rental-page-shell > div.navbar {
+    position: fixed !important;
+    top: 0 !important;
+    left: var(--rental-sidebar-width) !important;
+    right: 0 !important;
+    width: calc(100% - var(--rental-sidebar-width)) !important;
+    height: var(--rental-navbar-height) !important;
+    min-height: var(--rental-navbar-height) !important;
+    margin: 0 !important;
+    z-index: 1100 !important;
+}
+
+/* Never let generic Navbar margins push the rental page sideways. */
+.rental-page-shell .navbar,
+.rental-page-shell .navbar-container,
+.rental-page-shell .nav-container {
+    margin-left: 0 !important;
+}
+
+.rental-header {
+    position: relative;
+    z-index: 1;
+    padding-top: 22px;
+}
+
+.rental-summary-grid,
+.rental-main-tabs,
+.rental-panel,
+.rental-error {
+    position: relative;
+    z-index: 1;
+}
+
+/* Prevent very wide content from changing the page width. */
+.rental-header,
+.rental-summary-grid,
+.rental-main-tabs,
+.rental-panel,
+.rental-error {
+    max-width: none;
+}
+
+/* Keep tables inside their own horizontal scrolling area. */
+.rental-table-wrap,
+.rental-invoice-table-wrap,
+.history-table-wrap {
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.rental-readings-table,
+.rental-invoice-table,
+.machine-history-table {
+    margin: 0;
+}
+
+/* Tabs should remain visually connected to the panels. */
+.rental-main-tabs {
+    margin-top: 0;
+    margin-bottom: 14px;
+}
+
+/* Invoice page gets a clean full-width table without causing body scroll. */
+.rental-invoices-panel {
+    width: auto;
+    max-width: none;
+}
+
+/* Avoid fixed-position children from creating horizontal overflow. */
+.rental-page-shell * {
+    max-width: 100%;
+}
+
+.rental-page-shell .rental-readings-table,
+.rental-page-shell .rental-invoice-table,
+.rental-page-shell .machine-history-table {
+    max-width: none;
+}
+
+/* Desktop/tablet */
+@media (max-width: 1100px) {
+    :root {
+        --rental-sidebar-width: 220px;
+        --rental-navbar-height: 60px;
+    }
+
+    .rental-header {
+        padding-left: 22px;
+        padding-right: 22px;
+    }
+
+    .rental-summary-grid,
+    .rental-main-tabs {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+/* Mobile: let the application's responsive Sidebar/Navbar control their own layout. */
+@media (max-width: 800px) {
+    :root {
+        --rental-sidebar-width: 0px;
+        --rental-navbar-height: 58px;
+    }
+
+    .rental-layout > :first-child {
+        position: relative !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        bottom: auto !important;
+    }
+
+    .rental-page-shell {
+        width: 100% !important;
+        margin-left: 0 !important;
+        padding-top: var(--rental-navbar-height);
+    }
+
+    .rental-page-shell > .navbar,
+    .rental-page-shell > header.navbar,
+    .rental-page-shell > nav,
+    .rental-page-shell > div.navbar {
+        left: 0 !important;
+        width: 100% !important;
+    }
+}
+
+/* ============================================================
+   RENTAL TABS - FINAL COMPACT LEFT ALIGNED DESIGN
+============================================================ */
+
+.rental-main-tabs {
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 0 14px 0 !important;
+    padding: 3px;
+    display: inline-flex !important;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 3px;
+
+    border: 1px solid #dbe3ec;
+    border-radius: 8px;
+    background: #eef2f7;
+    box-sizing: border-box;
+}
+
+/* Individual tab */
+.rental-main-tab {
+    min-width: 155px;
+    width: 155px;
+    height: 40px;
+    min-height: 40px;
+
+    padding: 5px 12px;
+    margin: 0;
+
+    border: 1px solid transparent;
+    border-radius: 6px;
+    background: transparent;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1px;
+
+    text-align: left;
+    font-family: inherit;
+    color: #0f172a;
+    cursor: pointer;
+
+    box-sizing: border-box;
+    transition:
+        background-color 0.15s ease,
+        color 0.15s ease,
+        box-shadow 0.15s ease,
+        border-color 0.15s ease;
+}
+
+/* Main tab title - BLACK */
+.rental-main-tab span {
+    margin: 0;
+    color: #0f172a;
+    font-size: 10px;
+    line-height: 1.15;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+/* Subtitle - dark grey */
+.rental-main-tab small {
+    margin: 0;
+    color: #64748b;
+    font-size: 7px;
+    line-height: 1.15;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+/* Hover */
+.rental-main-tab:hover:not(.active) {
+    background: #f8fafc;
+    border-color: #e2e8f0;
+}
+
+.rental-main-tab:hover:not(.active) span {
+    color: #0f172a;
+}
+
+/* ACTIVE TAB - BLUE */
+.rental-main-tab.active {
+    background: #ffffff;
+    border-color: #dbe5f1;
+    color: #2563eb;
+
+    box-shadow:
+        0 1px 3px rgba(15, 23, 42, 0.08);
+}
+
+.rental-main-tab.active span {
+    color: #2563eb;
+    font-weight: 800;
+}
+
+.rental-main-tab.active small {
+    color: #64748b;
+}
+
+/* Remove browser focus black outline */
+.rental-main-tab:focus {
+    outline: none;
+}
+
+.rental-main-tab:focus-visible {
+    outline: 2px solid rgba(37, 99, 235, 0.25);
+    outline-offset: 1px;
+}
+
+/* ============================================================
+   MATCH TAB LEFT MARGIN WITH CONTENT
+============================================================ */
+
+.rental-main-tabs,
+.rental-panel,
+.rental-stats-grid,
+.rental-page-header {
+    box-sizing: border-box;
+}
+
+/* Keep the tab exactly aligned with the main content */
+.rental-main-tabs {
+    margin-left: 0 !important;
+}
+
+/* ============================================================
+   MOBILE
+============================================================ */
+
+@media (max-width: 700px) {
+    .rental-main-tabs {
+        width: fit-content;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        margin-bottom: 12px !important;
+    }
+
+    .rental-main-tab {
+        width: 140px;
+        min-width: 140px;
+        height: 38px;
+        min-height: 38px;
+        padding: 4px 10px;
+    }
+
+    .rental-main-tab span {
+        font-size: 9px;
+    }
+
+    .rental-main-tab small {
+        font-size: 7px;
+    }
+}
+
+@media (max-width: 420px) {
+    .rental-main-tab {
+        width: 125px;
+        min-width: 125px;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .rental-main-tab span {
+        font-size: 8px;
+    }
+
+    .rental-main-tab small {
+        display: none;
+    }
+}
+
+/* ============================================================
+   CREATE RENTAL BILL - FULL CONTENT WIDTH
+   Starts after the fixed sidebar and reaches the right edge.
+============================================================ */
+
+.rental-bill-drawer-overlay {
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: 5000 !important;
+    background: rgba(15, 23, 42, 0.48) !important;
+    display: flex !important;
+    justify-content: flex-end !important;
+}
+
+.rental-bill-drawer {
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    left: 244px !important;
+    width: auto !important;
+    height: 100vh !important;
+    max-width: none !important;
+    background: #ffffff !important;
+    display: flex !important;
+    flex-direction: column !important;
+    box-shadow: -10px 0 30px rgba(15, 23, 42, 0.16) !important;
+    animation: rentalBillFullWidthIn 0.18s ease-out !important;
+    overflow: hidden !important;
+}
+
+@keyframes rentalBillFullWidthIn {
+    from { transform: translateX(22px); opacity: .96; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.rental-bill-drawer-header {
+    min-height: 70px !important;
+    padding: 12px 20px !important;
+    flex-shrink: 0 !important;
+}
+
+.rental-bill-form {
+    flex: 1 !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    padding: 16px 20px 90px !important;
+}
+
+.rental-bill-section {
+    margin-bottom: 14px !important;
+    padding-bottom: 14px !important;
+}
+
+/* Searchable customer field */
+.rental-customer-search-field {
+    position: relative;
+    z-index: 30;
+}
+
+.rental-customer-search-wrap {
+    position: relative;
+    width: 100%;
+}
+
+.rental-customer-search-wrap > input {
+    width: 100%;
+    height: 40px;
+    box-sizing: border-box;
+    padding: 0 13px 0 38px;
+    border: 1px solid #cfd8e3;
+    border-radius: 7px;
+    background: #fff;
+    color: #0f172a;
+    font-family: inherit;
+    font-size: 12px;
+    outline: none;
+}
+
+.rental-customer-search-wrap > input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, .09);
+}
+
+.rental-customer-search-icon {
+    position: absolute;
+    left: 13px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #64748b;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.rental-customer-search-results {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+    max-height: 260px;
+    overflow-y: auto;
+    background: #fff;
+    border: 1px solid #dbe3ec;
+    border-radius: 8px;
+    box-shadow: 0 12px 28px rgba(15, 23, 42, .14);
+    z-index: 100;
+    padding: 4px;
+}
+
+.rental-customer-search-option {
+    width: 100%;
+    min-height: 52px;
+    padding: 8px 10px;
+    border: 0;
+    border-radius: 6px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 3px;
+    text-align: left;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.rental-customer-search-option:hover {
+    background: #f1f5f9;
+}
+
+.customer-search-option-main {
+    color: #0f172a;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.customer-search-option-meta {
+    color: #64748b;
+    font-size: 10px;
+    font-weight: 500;
+}
+
+.rental-customer-search-empty {
+    padding: 14px 10px;
+    color: #64748b;
+    font-size: 11px;
+    text-align: center;
+}
+
+.rental-bill-customer-selected {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    min-height: 32px;
+    padding: 7px 10px;
+    border: 1px solid #bbf7d0;
+    border-radius: 7px;
+    background: #f0fdf4;
+    color: #15803d;
+    font-size: 11px;
+}
+
+.rental-bill-customer-selected strong {
+    color: #166534;
+    font-size: 11px;
+}
+
+.rental-bill-customer-selected span {
+    color: #4d7c5a;
+    font-size: 10px;
+}
+
+/* Use the available width efficiently */
+.rental-bill-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px 16px !important;
+}
+
+.rental-bill-grid .full {
+    grid-column: 1 / -1 !important;
+}
+
+.rental-bill-machine-info,
+.rental-bill-terms-grid,
+.rental-bill-calculation {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.rental-bill-terms-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+}
+
+.rental-bill-machine-info {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+}
+
+.rental-bill-drawer-footer {
+    min-height: 62px !important;
+    padding: 10px 20px !important;
+    flex-shrink: 0 !important;
+}
+
+@media (max-width: 900px) {
+    .rental-bill-drawer {
+        left: 0 !important;
+    }
+
+    .rental-bill-machine-info,
+    .rental-bill-terms-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+}
+
+@media (max-width: 650px) {
+    .rental-bill-drawer {
+        left: 0 !important;
+        width: 100% !important;
+    }
+
+    .rental-bill-form {
+        padding: 13px 12px 85px !important;
+    }
+
+    .rental-bill-grid,
+    .rental-bill-machine-info,
+    .rental-bill-terms-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .rental-bill-grid .full {
+        grid-column: auto !important;
+    }
+
+    .rental-bill-drawer-header,
+    .rental-bill-drawer-footer {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+    }
+}
+
+
+/* ============================================================
+   CREATE RENTAL BILL - SIDE-BY-SIDE COLUMN LAYOUT
+   Desktop:
+   1. Customer & Machine  -> full width
+   2. Machine Information | Rental Details
+   3. Meter Reading       | Bill Calculation
+============================================================ */
+
+@media (min-width: 1001px) {
+
+    .rental-bill-form {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+        align-content: start;
+        align-items: start;
+        column-gap: 16px;
+        row-gap: 0;
+    }
+
+    /* Customer & Machine section */
+    .rental-bill-form > .rental-bill-section:nth-of-type(1) {
+        grid-column: 1 / -1 !important;
+        width: 100%;
+    }
+
+    /* Machine Information */
+    .rental-bill-form > .rental-bill-section:nth-of-type(2) {
+        grid-column: 1;
+        width: 100%;
+    }
+
+    /* Rental Details */
+    .rental-bill-form > .rental-bill-section:nth-of-type(3) {
+        grid-column: 2;
+        width: 100%;
+    }
+
+    /* Meter Reading */
+    .rental-bill-form > .rental-bill-section:nth-of-type(4) {
+        grid-column: 1;
+        width: 100%;
+    }
+
+    /* Bill Calculation */
+    .rental-bill-form > .rental-bill-section:nth-of-type(5) {
+        grid-column: 2;
+        width: 100%;
+    }
+
+    /* Preview, if generated, uses the full width */
+    .rental-bill-form > .rental-bill-preview {
+        grid-column: 1 / -1 !important;
+        width: 100%;
+    }
+
+    /* Make the customer section compact */
+    .rental-bill-form > .rental-bill-section:nth-of-type(1) {
+        padding-bottom: 12px !important;
+        margin-bottom: 4px !important;
+    }
+
+    /* Machine information becomes three small columns */
+    .rental-bill-form > .rental-bill-section:nth-of-type(2) .rental-bill-machine-info > div {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    /* Rental terms stay in three columns */
+    .rental-bill-form > .rental-bill-section:nth-of-type(3) .rental-bill-terms-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    }
+
+    /* Meter fields remain two columns */
+    .rental-bill-form > .rental-bill-section:nth-of-type(4) .rental-bill-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 10px 12px !important;
+    }
+
+    /* Calculation fits cleanly inside the second column */
+    .rental-bill-form > .rental-bill-section:nth-of-type(5) .rental-bill-calculation {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Keep section heights natural and aligned */
+    .rental-bill-form > .rental-bill-section {
+        box-sizing: border-box;
+    }
+}
+
+/* ============================================================
+   CUSTOMER + MACHINE SELECT ROW
+============================================================ */
+
+.rental-bill-customer-machine-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 12px 16px;
+}
+
+.rental-bill-customer-machine-grid .rental-bill-field {
+    min-width: 0;
+}
+
+/* If the current JSX does not have the wrapper above,
+   make the first customer and machine controls side-by-side
+   where possible. */
+@media (min-width: 1001px) {
+    .rental-bill-form > .rental-bill-section:nth-of-type(1) .rental-bill-grid {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+        gap: 10px 16px !important;
+    }
+
+    .rental-bill-form > .rental-bill-section:nth-of-type(1)
+    .rental-bill-grid > .rental-bill-customer-details {
+        grid-column: 1 / -1 !important;
+    }
+
+    .rental-bill-form > .rental-bill-section:nth-of-type(1)
+    .rental-bill-grid > .rental-bill-customer-selected {
+        grid-column: 1 / -1 !important;
+    }
+
+    .rental-bill-form > .rental-bill-section:nth-of-type(1)
+    .rental-bill-grid > .rental-bill-field.full {
+        grid-column: 1 / -1 !important;
+    }
+}
+
+/* ============================================================
+   BETTER COLUMN CARDS
+============================================================ */
+
+@media (min-width: 1001px) {
+    .rental-bill-form > .rental-bill-section:nth-of-type(2),
+    .rental-bill-form > .rental-bill-section:nth-of-type(3),
+    .rental-bill-form > .rental-bill-section:nth-of-type(4),
+    .rental-bill-form > .rental-bill-section:nth-of-type(5) {
+        padding: 13px;
+        border: 1px solid #e1e8f0;
+        border-radius: 9px;
+        background: #ffffff;
+        margin-bottom: 14px;
+    }
+
+    .rental-bill-form > .rental-bill-section:nth-of-type(2) .rental-bill-section-title,
+    .rental-bill-form > .rental-bill-section:nth-of-type(3) .rental-bill-section-title,
+    .rental-bill-form > .rental-bill-section:nth-of-type(4) .rental-bill-section-title,
+    .rental-bill-form > .rental-bill-section:nth-of-type(5) .rental-bill-section-title {
+        margin-bottom: 9px;
+    }
+}
+
+/* ============================================================
+   TABLET / MOBILE - RETURN TO SINGLE COLUMN
+============================================================ */
+
+@media (max-width: 1000px) {
+    .rental-bill-form {
+        display: block !important;
+    }
+
+    .rental-bill-form > .rental-bill-section,
+    .rental-bill-form > .rental-bill-preview {
+        width: 100%;
+        grid-column: auto !important;
+    }
+
+    .rental-bill-form > .rental-bill-section:nth-of-type(1)
+    .rental-bill-grid {
+        grid-template-columns: 1fr 1fr !important;
+    }
+}
+
+@media (max-width: 650px) {
+    .rental-bill-form > .rental-bill-section:nth-of-type(1)
+    .rental-bill-grid,
+    .rental-bill-form > .rental-bill-section:nth-of-type(4)
+    .rental-bill-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .rental-bill-form > .rental-bill-section:nth-of-type(1)
+    .rental-bill-field.full,
+    .rental-bill-form > .rental-bill-section:nth-of-type(1)
+    .rental-bill-customer-details.full,
+    .rental-bill-form > .rental-bill-section:nth-of-type(1)
+    .rental-bill-customer-selected.full {
+        grid-column: auto !important;
+    }
+}
+
+
+/* ============================================================
+   FINAL ERP SHELL ALIGNMENT
+   Match the existing Digitech sidebar shown in the ERP.
+   Existing sidebar width: 180px.
+============================================================ */
+
+:root {
+    --rental-sidebar-width: 180px;
+    --rental-navbar-height: 64px;
+}
+
+html,
+body,
+#root {
+    margin: 0 !important;
+    min-height: 100%;
+    width: 100%;
+}
+
+.rental-layout {
+    position: relative !important;
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 100vh !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden !important;
+    background: #f5f7fb;
+}
+
+/* Keep the existing Sidebar on the left. */
+.rental-layout > .sidebar,
+.rental-layout > :first-child {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    width: 180px !important;
+    min-width: 180px !important;
+    max-width: 180px !important;
+    height: 100vh !important;
+    min-height: 100vh !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    z-index: 1200 !important;
+    flex: 0 0 180px !important;
+}
+
+/* Main content starts exactly after the existing sidebar. */
+.rental-page,
+.rental-page-shell {
+    position: relative !important;
+    display: block !important;
+    width: calc(100% - 180px) !important;
+    min-width: 0 !important;
+    min-height: 100vh !important;
+    margin: 0 0 0 180px !important;
+    padding: 64px 0 30px !important;
+    overflow-x: hidden !important;
+    background: #f5f7fb !important;
+}
+
+/* Navbar must stay at the top, beside the sidebar. */
+.rental-page-shell > .navbar,
+.rental-page-shell > header.navbar,
+.rental-page-shell > nav,
+.rental-page-shell > div.navbar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 180px !important;
+    right: 0 !important;
+    width: calc(100% - 180px) !important;
+    height: 64px !important;
+    min-height: 64px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    z-index: 1100 !important;
+}
+
+/* Do not let generic navbar/page styles add another offset. */
+.rental-page-shell .navbar,
+.rental-page-shell .navbar-container,
+.rental-page-shell .nav-container {
+    margin-left: 0 !important;
+}
+
+/* Main rental content should use the full remaining width. */
+.rental-header {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 22px 24px 16px !important;
+}
+
+.rental-summary-grid {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 24px 16px !important;
+}
+
+.rental-main-tabs {
+    margin-left: 24px !important;
+    margin-right: 24px !important;
+}
+
+.rental-panel {
+    margin-left: 24px !important;
+    margin-right: 24px !important;
+}
+
+.rental-error {
+    margin-left: 24px !important;
+    margin-right: 24px !important;
+}
+
+/* Keep the bill drawer aligned with the same 180px sidebar. */
+.rental-bill-drawer {
+    left: 180px !important;
+}
+
+/* Customer search empty state. */
+.rental-customer-search-empty-create {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 22px 18px;
+    text-align: center;
+}
+
+.rental-customer-search-empty-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2px;
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+.rental-customer-search-empty-create strong {
+    font-size: 14px;
+    color: #172033;
+}
+
+.rental-customer-search-empty-create > span {
+    max-width: 320px;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #64748b;
+}
+
+.rental-create-customer-inline-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    margin-top: 8px;
+    min-height: 36px;
+    padding: 0 14px;
+    border: 0;
+    border-radius: 8px;
+    background: #2563eb;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform .15s ease, opacity .15s ease;
+}
+
+.rental-create-customer-inline-btn:hover {
+    opacity: .92;
+    transform: translateY(-1px);
+}
+
+.rental-create-customer-inline-btn:active {
+    transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+    .rental-layout > .sidebar,
+    .rental-layout > :first-child {
+        position: relative !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: none !important;
+        height: auto !important;
+        min-height: 0 !important;
+        bottom: auto !important;
+    }
+
+    .rental-page,
+    .rental-page-shell {
+        width: 100% !important;
+        margin-left: 0 !important;
+        padding-top: 58px !important;
+    }
+
+    .rental-page-shell > .navbar,
+    .rental-page-shell > header.navbar,
+    .rental-page-shell > nav,
+    .rental-page-shell > div.navbar {
+        left: 0 !important;
+        width: 100% !important;
+        height: 58px !important;
+        min-height: 58px !important;
+    }
+
+    .rental-header {
+        padding: 18px 14px 15px !important;
+    }
+
+    .rental-summary-grid {
+        padding: 0 14px 15px !important;
+    }
+
+    .rental-main-tabs,
+    .rental-panel,
+    .rental-error {
+        margin-left: 14px !important;
+        margin-right: 14px !important;
+    }
+
+    .rental-bill-drawer {
+        left: 0 !important;
+    }
+}
+
+
+/* ============================================================
+   COMPACT CUSTOMER SEARCH / CREATE CUSTOMER
+   Keeps the Create New Rental Bill drawer clean and compact.
+============================================================ */
+
+/* Customer field */
+.rental-customer-search-field {
+    position: relative !important;
+    z-index: 50 !important;
+}
+
+/* Search wrapper */
+.rental-customer-search-wrap {
+    position: relative !important;
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+/* Compact search box */
+.rental-customer-search-wrap > input {
+    width: 100% !important;
+    height: 36px !important;
+    min-height: 36px !important;
+    padding: 0 11px 0 34px !important;
+
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 6px !important;
+
+    background: #ffffff !important;
+    color: #172033 !important;
+
+    font-family: inherit !important;
+    font-size: 10px !important;
+    font-weight: 500 !important;
+
+    outline: none !important;
+    box-sizing: border-box !important;
+
+    box-shadow: none !important;
+    transition: border-color .15s ease, box-shadow .15s ease !important;
+}
+
+.rental-customer-search-wrap > input::placeholder {
+    color: #94a3b8 !important;
+    font-size: 10px !important;
+}
+
+.rental-customer-search-wrap > input:focus {
+    border-color: #2563eb !important;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, .08) !important;
+}
+
+/* Search icon */
+.rental-customer-search-icon {
+    position: absolute !important;
+    left: 11px !important;
+    top: 50% !important;
+
+    width: 14px !important;
+    height: 14px !important;
+
+    transform: translateY(-50%) !important;
+
+    color: #64748b !important;
+    pointer-events: none !important;
+    z-index: 2 !important;
+}
+
+/* Customer search dropdown */
+.rental-customer-search-results {
+    position: absolute !important;
+    top: calc(100% + 4px) !important;
+    left: 0 !important;
+    right: 0 !important;
+
+    max-height: 210px !important;
+    overflow-y: auto !important;
+
+    padding: 3px !important;
+
+    border: 1px solid #dbe3ec !important;
+    border-radius: 7px !important;
+
+    background: #ffffff !important;
+
+    box-shadow: 0 8px 22px rgba(15, 23, 42, .12) !important;
+
+    z-index: 500 !important;
+}
+
+/* Search result */
+.rental-customer-search-option {
+    width: 100% !important;
+    min-height: 42px !important;
+
+    padding: 7px 9px !important;
+
+    border: 0 !important;
+    border-radius: 5px !important;
+
+    background: #ffffff !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+    gap: 2px !important;
+
+    text-align: left !important;
+    font-family: inherit !important;
+
+    cursor: pointer !important;
+}
+
+.rental-customer-search-option:hover {
+    background: #f5f8fc !important;
+}
+
+.customer-search-option-main {
+    color: #172033 !important;
+    font-size: 10px !important;
+    font-weight: 700 !important;
+}
+
+.customer-search-option-meta {
+    color: #64748b !important;
+    font-size: 8px !important;
+    font-weight: 500 !important;
+}
+
+/* Compact "No customer found" box */
+.rental-customer-search-empty {
+    min-height: 0 !important;
+
+    padding: 12px 12px !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 4px !important;
+
+    color: #64748b !important;
+
+    text-align: center !important;
+}
+
+/* If the JSX uses the enhanced empty-state class */
+.rental-customer-search-empty-create {
+    min-height: 88px !important;
+
+    padding: 10px 14px !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 4px !important;
+
+    text-align: center !important;
+}
+
+.rental-customer-search-empty-icon {
+    width: 28px !important;
+    height: 28px !important;
+
+    margin: 0 0 2px !important;
+
+    border-radius: 7px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    background: #eff6ff !important;
+    color: #2563eb !important;
+}
+
+.rental-customer-search-empty-create strong {
+    margin: 0 !important;
+
+    color: #172033 !important;
+
+    font-size: 11px !important;
+    line-height: 1.2 !important;
+    font-weight: 800 !important;
+}
+
+.rental-customer-search-empty-create > span {
+    max-width: 280px !important;
+
+    margin: 0 !important;
+
+    color: #64748b !important;
+
+    font-size: 9px !important;
+    line-height: 1.3 !important;
+}
+
+/* Small Create New Customer button */
+.rental-create-customer-inline-btn {
+    min-width: 0 !important;
+    width: auto !important;
+    height: 30px !important;
+    min-height: 30px !important;
+
+    margin: 5px 0 0 !important;
+    padding: 0 11px !important;
+
+    border: 1px solid #2563eb !important;
+    border-radius: 6px !important;
+
+    background: #2563eb !important;
+    color: #ffffff !important;
+
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 5px !important;
+
+    font-family: inherit !important;
+    font-size: 9px !important;
+    line-height: 1 !important;
+    font-weight: 700 !important;
+
+    cursor: pointer !important;
+
+    box-shadow: none !important;
+
+    transition:
+        background-color .15s ease,
+        border-color .15s ease,
+        transform .15s ease !important;
+}
+
+.rental-create-customer-inline-btn:hover {
+    background: #1d4ed8 !important;
+    border-color: #1d4ed8 !important;
+    transform: translateY(-1px) !important;
+}
+
+.rental-create-customer-inline-btn:active {
+    transform: translateY(0) !important;
+}
+
+/* If button uses a lucide icon */
+.rental-create-customer-inline-btn svg {
+    width: 12px !important;
+    height: 12px !important;
+}
+
+/* Selected customer box */
+.rental-bill-customer-selected {
+    min-height: 30px !important;
+
+    padding: 6px 9px !important;
+
+    border-radius: 6px !important;
+
+    font-size: 9px !important;
+}
+
+.rental-bill-customer-selected strong {
+    font-size: 10px !important;
+}
+
+.rental-bill-customer-selected span {
+    font-size: 8px !important;
+}
+
+/* Compact drawer form fields */
+.rental-bill-field > span {
+    font-size: 9px !important;
+}
+
+.rental-bill-field input,
+.rental-bill-field select {
+    height: 34px !important;
+    min-height: 34px !important;
+
+    padding: 0 8px !important;
+
+    border-radius: 6px !important;
+
+    font-size: 10px !important;
+}
+
+/* Keep customer section compact */
+.rental-bill-section {
+    padding-bottom: 12px !important;
+    margin-bottom: 12px !important;
+}
+
+.rental-bill-section-title {
+    margin-bottom: 8px !important;
+    font-size: 11px !important;
+}
+
+.rental-bill-section-title svg {
+    width: 14px !important;
+    height: 14px !important;
+}
+
+.rental-bill-section-title small {
+    font-size: 8px !important;
+}
+
+/* Compact customer information after selection */
+.rental-bill-customer-details {
+    margin-top: 7px !important;
+    padding: 8px !important;
+    border-radius: 6px !important;
+}
+
+.rental-bill-customer-details > div {
+    gap: 6px !important;
+}
+
+.rental-bill-customer-details span,
+.rental-bill-machine-info span,
+.rental-bill-readonly-field span {
+    font-size: 7px !important;
+}
+
+.rental-bill-customer-details strong,
+.rental-bill-machine-info strong,
+.rental-bill-readonly-field strong {
+    font-size: 9px !important;
+}
+
+/* Compact machine information */
+.rental-bill-machine-info {
+    padding: 8px !important;
+    border-radius: 6px !important;
+}
+
+.rental-bill-machine-info > div {
+    gap: 6px !important;
+}
+
+/* Keep the bill drawer content neat */
+.rental-bill-form {
+    padding: 13px 18px 78px !important;
+}
+
+/* Smaller drawer header */
+.rental-bill-drawer-header {
+    min-height: 62px !important;
+    padding: 10px 18px !important;
+}
+
+.rental-bill-drawer-header h2 {
+    font-size: 16px !important;
+}
+
+.rental-bill-drawer-header p {
+    margin-top: 3px !important;
+    font-size: 8px !important;
+}
+
+.rental-bill-close-btn {
+    width: 30px !important;
+    height: 30px !important;
+}
+
+/* Smaller footer buttons */
+.rental-bill-drawer-footer {
+    min-height: 56px !important;
+    padding: 9px 18px !important;
+}
+
+@media (max-width: 700px) {
+    .rental-customer-search-wrap > input {
+        height: 35px !important;
+        min-height: 35px !important;
+    }
+
+    .rental-customer-search-empty-create {
+        min-height: 82px !important;
+    }
+
+    .rental-create-customer-inline-btn {
+        height: 29px !important;
+        min-height: 29px !important;
+        font-size: 9px !important;
+    }
+}
+
+
+/* ============================================================
+   FINAL COMPACT CUSTOMER SEARCH
+============================================================ */
+
+.rental-customer-search-compact {
+    width: 100% !important;
+    max-width: 520px !important;
+}
+
+.rental-customer-search-compact > input {
+    width: 100% !important;
+    height: 32px !important;
+    min-height: 32px !important;
+    padding: 0 9px 0 30px !important;
+    border-radius: 5px !important;
+    font-size: 9px !important;
+    box-shadow: none !important;
+}
+
+.rental-customer-search-compact > input::placeholder {
+    font-size: 9px !important;
+}
+
+.rental-customer-search-compact .rental-customer-search-icon {
+    left: 9px !important;
+    width: 12px !important;
+    height: 12px !important;
+}
+
+.rental-customer-search-compact .rental-customer-search-results {
+    max-width: 520px !important;
+    max-height: 170px !important;
+    padding: 2px !important;
+    border-radius: 6px !important;
+}
+
+/* Very small no-customer result box */
+.rental-customer-search-compact .rental-customer-search-empty-create {
+    min-height: 70px !important;
+    padding: 7px 10px !important;
+    gap: 3px !important;
+}
+
+.rental-customer-search-compact .rental-customer-search-empty-icon {
+    width: 24px !important;
+    height: 24px !important;
+    border-radius: 6px !important;
+    margin: 0 !important;
+}
+
+.rental-customer-search-compact .rental-customer-search-empty-icon svg {
+    width: 13px !important;
+    height: 13px !important;
+}
+
+.rental-customer-search-compact .rental-customer-search-empty-create strong {
+    font-size: 9px !important;
+}
+
+.rental-customer-search-compact .rental-customer-search-empty-create > span {
+    font-size: 7px !important;
+    line-height: 1.25 !important;
+}
+
+.rental-create-customer-compact-btn {
+    height: 25px !important;
+    min-height: 25px !important;
+    margin-top: 3px !important;
+    padding: 0 8px !important;
+    border-radius: 5px !important;
+    font-size: 8px !important;
+    gap: 4px !important;
+}
+
+.rental-create-customer-compact-btn svg {
+    width: 10px !important;
+    height: 10px !important;
+}
+
+/* Keep the customer label compact too */
+.rental-customer-search-field > span {
+    margin-bottom: 1px !important;
+    font-size: 8px !important;
+}
+
+/* On large screens keep the field from becoming unnecessarily huge */
+@media (min-width: 1000px) {
+    .rental-customer-search-compact {
+        max-width: 520px !important;
+    }
+}
+
+@media (max-width: 700px) {
+    .rental-customer-search-compact {
+        max-width: 100% !important;
+    }
+
+    .rental-customer-search-compact > input {
+        height: 32px !important;
+        min-height: 32px !important;
+    }
+}
+
+
+/* ============================================================
+   SHARED CUSTOMER FORM FROM RENTAL BILL
+   Opens the exact CustomerForm used by Customers.
+   Match the existing 180px ERP sidebar.
+============================================================ */
+
+.customer-drawer-overlay {
+    z-index: 3000 !important;
+}
+
+.customer-drawer {
+    width: calc(100vw - 180px) !important;
+    max-width: none !important;
+    min-width: 0 !important;
+}
+
+/* Keep the existing CustomerForm layout unchanged, only align
+   its workspace with the Rental/ERP sidebar. */
+@media (min-width: 951px) {
+    .customer-drawer {
+        width: calc(100vw - 180px) !important;
+    }
+}
+
+/* When CustomerForm is opened from Rental Bill, its close/save
+   controls remain above the form content. */
+.customer-drawer-header,
+.customer-drawer-footer {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* ============================================================
+   CREATE NEW RENTAL BILL - COMPACT CUSTOMER SEARCH
+   Search box + "No customer found" box are intentionally small.
+============================================================ */
+
+/* Do not let the customer search consume the full drawer width. */
+.rental-bill-grid > .rental-customer-search-field {
+    grid-column: 1 / -1 !important;
+    width: 500px !important;
+    max-width: 100% !important;
+}
+
+/* Compact search input */
+.rental-customer-search-field .rental-customer-search-wrap {
+    width: 500px !important;
+    max-width: 100% !important;
+}
+
+.rental-customer-search-field .rental-customer-search-wrap > input {
+    width: 500px !important;
+    max-width: 100% !important;
+    height: 36px !important;
+    min-height: 36px !important;
+    padding: 0 10px 0 33px !important;
+    border-radius: 6px !important;
+    font-size: 10px !important;
+    box-sizing: border-box !important;
+}
+
+/* Keep the dropdown the same compact width as the search box. */
+.rental-customer-search-field .rental-customer-search-results {
+    width: 500px !important;
+    max-width: 100% !important;
+    left: 0 !important;
+    right: auto !important;
+    padding: 4px !important;
+    border-radius: 7px !important;
+}
+
+/* Compact customer result rows */
+.rental-customer-search-field .rental-customer-search-option {
+    min-height: 40px !important;
+    padding: 6px 8px !important;
+    border-radius: 5px !important;
+}
+
+.rental-customer-search-field .customer-search-option-main {
+    font-size: 10px !important;
+}
+
+.rental-customer-search-field .customer-search-option-meta {
+    font-size: 8px !important;
+}
+
+/* Small "No customer found" box */
+.rental-customer-search-field .rental-customer-search-empty-create {
+    width: 100% !important;
+    min-height: 118px !important;
+    box-sizing: border-box !important;
+    padding: 12px 10px !important;
+    gap: 5px !important;
+}
+
+/* Small icon */
+.rental-customer-search-field .rental-customer-search-empty-icon {
+    width: 28px !important;
+    height: 28px !important;
+    margin-bottom: 1px !important;
+}
+
+.rental-customer-search-field .rental-customer-search-empty-icon svg {
+    width: 15px !important;
+    height: 15px !important;
+}
+
+/* Small empty-state text */
+.rental-customer-search-field .rental-customer-search-empty-create strong {
+    font-size: 10px !important;
+}
+
+.rental-customer-search-field .rental-customer-search-empty-create > span {
+    font-size: 8px !important;
+}
+
+/* Small Create New Customer button */
+.rental-customer-search-field .rental-create-customer-inline-btn {
+    height: 29px !important;
+    min-height: 29px !important;
+    padding: 0 10px !important;
+    margin-top: 2px !important;
+    border-radius: 5px !important;
+    gap: 4px !important;
+    font-size: 9px !important;
+}
+
+.rental-customer-search-field .rental-create-customer-inline-btn svg {
+    width: 12px !important;
+    height: 12px !important;
+}
+
+/* On smaller screens, use the available width. */
+@media (max-width: 650px) {
+    .rental-bill-grid > .rental-customer-search-field,
+    .rental-customer-search-field .rental-customer-search-wrap,
+    .rental-customer-search-field .rental-customer-search-wrap > input,
+    .rental-customer-search-field .rental-customer-search-results {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+}
+
+
+/* ============================================================
+   CUSTOMER FORM MUST OPEN ABOVE CREATE RENTAL BILL
+   The Rental Bill drawer stays underneath. The shared
+   CustomerForm is the top-most layer, exactly like Customers > Add.
+============================================================ */
+
+/* Wrapper created only when CustomerForm is opened from Rental. */
+.rental-shared-customer-form-layer {
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: 99999 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    pointer-events: auto !important;
+}
+
+/* CustomerForm's own overlay becomes the top layer. */
+.rental-shared-customer-form-layer .customer-drawer-overlay {
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: 100000 !important;
+}
+
+/* Exact Customers-page drawer, aligned to the existing 180px sidebar. */
+.rental-shared-customer-form-layer .customer-drawer {
+    position: relative !important;
+    z-index: 100001 !important;
+    width: calc(100vw - 180px) !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    height: 100vh !important;
+}
+
+/* Keep the CustomerForm contents and footer above its overlay. */
+.rental-shared-customer-form-layer .customer-drawer-header,
+.rental-shared-customer-form-layer .customer-form,
+.rental-shared-customer-form-layer .customer-drawer-footer {
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+/* The Create Rental Bill remains underneath the CustomerForm. */
+.rental-bill-drawer-overlay {
+    z-index: 3000 !important;
+}
+
+.rental-bill-drawer {
+    z-index: 3001 !important;
+}
+
+/* Desktop: CustomerForm uses all workspace to the right of sidebar. */
+@media (min-width: 951px) {
+    .rental-shared-customer-form-layer .customer-drawer {
+        width: calc(100vw - 180px) !important;
+    }
+}
+
+/* Tablet/mobile: use full screen just like the Customers page. */
+@media (max-width: 950px) {
+    .rental-shared-customer-form-layer .customer-drawer {
+        width: 100vw !important;
+    }
+}
+
+
+/* Assigned-machine cards shown after selecting a customer in Create Rental Bill */
+.rental-assigned-machines {
+  grid-column: 1 / -1;
+  min-width: 0;
+  margin: 4px 0 8px;
+  padding: 18px;
+  border: 1px solid #dfe6f0;
+  border-radius: 16px;
+  background: #f8faff;
+}
+.rental-assigned-machines-heading { display:flex; align-items:center; justify-content:space-between; gap:14px; margin-bottom:15px; }
+.rental-assigned-machines-heading h3 { margin:0; color:#172033; font-size:16px; font-weight:800; }
+.rental-assigned-machines-heading p { margin:5px 0 0; color:#667085; font-size:12px; line-height:1.5; }
+.rental-assigned-machine-count { display:inline-flex; align-items:center; justify-content:center; flex:0 0 32px; width:32px; height:32px; border-radius:10px; background:#e8efff; color:#2449a6; font-weight:800; }
+.rental-assigned-machines-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:13px; }
+.rental-assigned-machine-card { min-width:0; padding:15px; border:1px solid #e0e6ef; border-radius:13px; background:#fff; transition:border-color .15s,box-shadow .15s; }
+.rental-assigned-machine-card.is-selected { border-color:#3767d6; box-shadow:0 0 0 2px rgba(55,103,214,.1); }
+.rental-assigned-machine-card-top { display:flex; align-items:center; gap:10px; min-width:0; }
+.rental-assigned-machine-icon { display:flex; align-items:center; justify-content:center; flex:0 0 40px; width:40px; height:40px; border-radius:11px; color:#3158b7; background:#edf2ff; }
+.rental-assigned-machine-title { flex:1; min-width:0; }
+.rental-assigned-machine-title h4 { overflow-wrap:anywhere; margin:0; color:#172033; font-size:14px; font-weight:800; }
+.rental-assigned-machine-title p { overflow-wrap:anywhere; margin:4px 0 0; color:#7a8497; font-size:11px; }
+.rental-assigned-machine-selected { display:inline-flex; align-items:center; gap:4px; color:#217348; font-size:11px; font-weight:700; white-space:nowrap; }
+.rental-assigned-machine-meta { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; margin-top:14px; }
+.rental-assigned-machine-meta>div,.rental-assigned-machine-rates>div { min-width:0; padding:9px 10px; border-radius:9px; background:#f6f8fc; }
+.rental-assigned-machine-meta span,.rental-assigned-machine-rates span { display:block; color:#7a8497; font-size:10px; line-height:1.4; }
+.rental-assigned-machine-meta strong,.rental-assigned-machine-rates strong { display:block; margin-top:4px; color:#202b40; font-size:12px; font-weight:800; overflow-wrap:anywhere; }
+.rental-assigned-machine-rates-title { margin:13px 0 7px; color:#475467; font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.04em; }
+.rental-assigned-machine-rates { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:7px; }
+.rental-assigned-machine-rates>div { padding:9px 8px; border:1px solid #e8edf5; background:#fbfcff; }
+.rental-assigned-machine-select { width:100%; min-height:38px; margin-top:13px; padding:9px 12px; border:1px solid #cbd5e5; border-radius:9px; background:#fff; color:#344054; font-size:12px; font-weight:800; cursor:pointer; }
+.rental-assigned-machine-select:hover { border-color:#3767d6; color:#2449a6; }
+.rental-assigned-machine-select.is-selected { border-color:#3158b7; background:#3158b7; color:#fff; }
+.rental-assigned-machines-empty { padding:18px; border:1px dashed #cbd5e1; border-radius:10px; background:#fff; color:#667085; font-size:13px; text-align:center; }
+@media (max-width: 800px) { .rental-assigned-machines-grid { grid-template-columns:1fr; } }
+@media (max-width: 520px) { .rental-assigned-machines { padding:12px; } .rental-assigned-machine-rates { grid-template-columns:repeat(2,minmax(0,1fr)); } .rental-assigned-machine-card-top { align-items:flex-start; } .rental-assigned-machine-selected { font-size:10px; } }
+
+
+/* Separate A4/A3 meter-reading inputs in Create New Rental Bill */
+.rental-print-reading-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  width: 100%;
+}
+.rental-print-reading-card {
+  min-width: 0;
+  padding: 13px;
+  border: 1px solid #dbe5f3;
+  border-radius: 10px;
+  background: #f8fbff;
+}
+.rental-print-reading-card-heading {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+.rental-print-reading-card-heading strong {
+  color: #172554;
+  font-size: 12px;
+}
+.rental-print-reading-card-heading span {
+  color: #315bb7;
+  font-size: 11px;
+  font-weight: 700;
+}
+.rental-print-reading-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+.rental-print-reading-fields .rental-bill-readonly-field,
+.rental-print-reading-fields .rental-bill-field {
+  min-width: 0;
+  box-sizing: border-box;
+}
+.rental-print-reading-fields input { width: 100%; min-width: 0; box-sizing: border-box; }
+.rental-print-reading-copies {
+  margin-top: 9px;
+  color: #64748b;
+  font-size: 11px;
+}
+.rental-print-reading-copies strong { color: #0f766e; }
+.rental-print-reading-footer { margin-top: 12px; }
+@media (max-width: 760px) {
+  .rental-print-reading-grid { grid-template-columns: 1fr; }
+  .rental-print-reading-fields { grid-template-columns: 1fr 1fr; }
+}
+
+/* ================================================================
+   ACCESSIBILITY / READABILITY OVERRIDES — larger text, bold labels,
+   stronger contrast and clearer bill-reading cards.
+   ================================================================ */
+.rental-layout {
+  color: #14213d;
+  background: #f3f6fc;
+  font-size: 14px;
+}
+.rental-layout button,
+.rental-layout input,
+.rental-layout select,
+.rental-layout textarea {
+  font: inherit;
+}
+.rental-header h1,
+.rental-bill-drawer-header h2 {
+  color: #10234a;
+  font-size: 27px;
+  font-weight: 850;
+  letter-spacing: -.35px;
+}
+.rental-header p,
+.rental-bill-drawer-header p {
+  color: #526581;
+  font-size: 13px;
+  line-height: 1.55;
+}
+.rental-bill-section {
+  border-color: #cbdaf0;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 3px 12px rgba(24, 54, 100, .055);
+}
+.rental-bill-section-title {
+  color: #142b52;
+  font-size: 16px;
+  font-weight: 850;
+  line-height: 1.4;
+}
+.rental-bill-section-title small {
+  color: #526581;
+  font-size: 12px;
+  font-weight: 600;
+}
+.rental-bill-field > span,
+.rental-bill-customer-details span,
+.rental-bill-machine-info span,
+.rental-bill-readonly-field span {
+  color: #526581;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.45;
+}
+.rental-bill-field input,
+.rental-bill-field select,
+.rental-bill-field textarea,
+.rental-print-reading-fields input {
+  min-height: 43px;
+  padding: 10px 12px;
+  border: 1px solid #b8cbe6;
+  border-radius: 8px;
+  background: #fff;
+  color: #132747;
+  font-size: 14px;
+  font-weight: 600;
+  outline: none;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+.rental-bill-field input:focus,
+.rental-bill-field select:focus,
+.rental-bill-field textarea:focus,
+.rental-print-reading-fields input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, .15);
+}
+.rental-bill-customer-selected {
+  border-color: #86efac;
+  background: #effdf5;
+  color: #166534;
+}
+.rental-bill-customer-selected strong,
+.rental-bill-customer-details strong,
+.rental-bill-machine-info strong,
+.rental-bill-readonly-field strong {
+  color: #142747;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.5;
+}
+.rental-print-reading-grid {
+  gap: 14px;
+}
+.rental-print-reading-card {
+  padding: 15px;
+  border: 1px solid #c7d8f2;
+  border-radius: 11px;
+  background: #f6f9ff;
+  box-shadow: 0 2px 7px rgba(29, 78, 160, .045);
+}
+.rental-print-reading-card-heading strong {
+  color: #173b78;
+  font-size: 15px;
+  font-weight: 850;
+}
+.rental-print-reading-card-heading span {
+  color: #1d4ed8;
+  font-size: 13px;
+  font-weight: 800;
+}
+.rental-print-reading-fields {
+  gap: 12px;
+}
+.rental-print-reading-copies {
+  margin-top: 10px;
+  color: #334967;
+  font-size: 13px;
+  font-weight: 700;
+}
+.rental-print-reading-copies strong {
+  color: #087f5b;
+  font-size: 14px;
+  font-weight: 900;
+}
+.rental-bill-preview,
+.rental-bill-calculation,
+.rental-bill-summary {
+  border-color: #cbdaf0;
+  border-radius: 12px;
+  background: #fff;
+}
+.rental-bill-preview,
+.rental-bill-calculation,
+.rental-bill-summary,
+.rental-bill-preview * {
+  color: #243957;
+}
+.rental-bill-preview h3,
+.rental-bill-preview h4,
+.rental-bill-calculation h3,
+.rental-bill-summary h3 {
+  color: #142b52;
+  font-size: 16px;
+  font-weight: 850;
+}
+.rental-bill-preview label,
+.rental-bill-preview p,
+.rental-bill-preview span,
+.rental-bill-calculation label,
+.rental-bill-calculation span {
+  font-size: 13px;
+  font-weight: 600;
+}
+.rental-bill-preview strong,
+.rental-bill-calculation strong,
+.rental-bill-summary strong {
+  color: #10234a;
+  font-size: 14px;
+  font-weight: 850;
+}
+.rental-bill-preview [class*="total"],
+.rental-bill-calculation [class*="total"],
+.rental-bill-summary [class*="total"] {
+  color: #10234a;
+  font-weight: 900;
+}
+.rental-bill-drawer-footer button,
+.rental-bill-drawer-footer .create-rental-bill-btn,
+.rental-bill-drawer-footer .start-month-btn {
+  min-height: 42px;
+  padding: 10px 16px;
+  border-radius: 9px;
+  font-size: 13px;
+  font-weight: 850;
+}
+.rental-bill-drawer-footer .create-rental-bill-btn,
+.rental-bill-drawer-footer .start-month-btn {
+  color: #fff;
+  background: #16734a;
+  border-color: #16734a;
+}
+.rental-bill-drawer-footer .create-rental-bill-btn:hover,
+.rental-bill-drawer-footer .start-month-btn:hover {
+  background: #105d3b;
+  border-color: #105d3b;
+}
+.rental-bill-close-btn {
+  color: #294365;
+  border-color: #c4d2e6;
+  background: #fff;
+}
+@media (max-width: 768px) {
+  .rental-header h1,
+  .rental-bill-drawer-header h2 { font-size: 23px; }
+  .rental-bill-section-title { font-size: 15px; }
+  .rental-print-reading-card-heading strong { font-size: 14px; }
+  .rental-bill-field input,
+  .rental-bill-field select,
+  .rental-print-reading-fields input { font-size: 14px; }
+}
+
+
+/* ============================================================
+   RESPONSIVE RENTAL PAGE + INVOICE SEARCH TOOLBAR
+   Appended overrides: keeps existing desktop design and improves
+   tablet/mobile layouts without changing component functionality.
+============================================================ */
+
+.rental-invoice-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+  min-width: 0;
+}
+.rental-invoice-heading { flex: 1 1 220px; min-width: 0; }
+.rental-invoice-toolbar-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  flex: 1 1 520px;
+  min-width: 0;
+  flex-wrap: wrap;
+}
+.rental-invoice-search-form {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1 1 360px;
+  min-width: 0;
+  max-width: 760px;
+}
+.rental-invoice-search-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 40px;
+  padding: 0 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #fff;
+  color: #64748b;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+.rental-invoice-search-input-wrap:focus-within {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, .12);
+}
+.rental-invoice-search-input-wrap input {
+  flex: 1 1 auto;
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #0f172a;
+  font: inherit;
+  font-size: 13px;
+}
+.rental-invoice-search-input-wrap input::placeholder { color: #94a3b8; }
+.rental-invoice-search-clear {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 3px;
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
+  color: #64748b;
+  cursor: pointer;
+}
+.rental-invoice-search-clear:hover { background: #f1f5f9; color: #0f172a; }
+.rental-invoice-search-btn {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 40px;
+  padding: 0 14px;
+  border: 1px solid #2563eb;
+  border-radius: 8px;
+  background: #2563eb;
+  color: #fff;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background .15s ease, border-color .15s ease;
+}
+.rental-invoice-search-btn:hover { background: #1d4ed8; border-color: #1d4ed8; }
+.rental-invoice-search-btn:focus-visible,
+.rental-invoice-search-clear:focus-visible {
+  outline: 2px solid rgba(37, 99, 235, .35);
+  outline-offset: 2px;
+}
+.rental-invoices-panel .panel-toolbar { min-width: 0; }
+.rental-invoice-table-wrap { max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.rental-invoice-table { min-width: 1180px; }
+
+/* Small desktop and tablets */
+@media (max-width: 1100px) {
+  .rental-header { gap: 16px; }
+  .rental-header-actions { gap: 8px; }
+  .rental-invoice-toolbar { align-items: stretch; }
+  .rental-invoice-toolbar-actions { flex-basis: 100%; justify-content: flex-start; }
+  .rental-invoice-search-form { flex: 1 1 420px; max-width: none; }
+}
+
+@media (max-width: 800px) {
+  .rental-header { padding: 18px 16px 15px; }
+  .rental-header h1 { font-size: 22px; }
+  .rental-summary-grid { padding: 0 16px 16px; gap: 10px; }
+  .rental-panel { margin-left: 16px; margin-right: 16px; }
+  .rental-error { margin-left: 16px; margin-right: 16px; }
+  .panel-toolbar { gap: 12px; }
+  .rental-invoice-toolbar { width: 100%; }
+  .rental-invoice-toolbar-actions { width: 100%; flex: 1 1 100%; }
+  .rental-invoice-search-form { width: 100%; flex: 1 1 100%; }
+  .rental-invoice-toolbar-actions > .create-rental-bill-inline-btn { min-height: 38px; }
+  .rental-bill-drawer { left: 0 !important; width: 100% !important; }
+}
+
+/* Phones */
+@media (max-width: 560px) {
+  .rental-header { padding: 15px 12px 13px; }
+  .rental-title-row { align-items: flex-start; gap: 9px; }
+  .rental-title-icon { width: 38px; height: 38px; flex-basis: 38px; }
+  .rental-header h1 { font-size: 19px; }
+  .rental-header p { font-size: 11px; }
+  .rental-header-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; }
+  .rental-header-actions button { width: 100%; min-width: 0; padding: 0 8px; white-space: normal; }
+  .rental-summary-grid { padding: 0 12px 13px; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .rental-summary-card { min-height: 70px; padding: 10px; gap: 8px; }
+  .summary-icon { width: 32px; height: 32px; flex-basis: 32px; }
+  .rental-summary-card span { font-size: 10px; }
+  .rental-summary-card strong { font-size: 15px; overflow-wrap: anywhere; }
+  .rental-panel { margin: 0 12px 14px; border-radius: 10px; }
+  .rental-error { margin: 0 12px 14px; }
+  .panel-toolbar { padding: 12px; }
+  .panel-toolbar h2 { font-size: 14px; }
+  .rental-invoice-toolbar-actions { align-items: stretch; flex-direction: column; }
+  .rental-invoice-search-form { min-width: 0; flex-direction: column; align-items: stretch; }
+  .rental-invoice-search-input-wrap { width: 100%; min-height: 42px; }
+  .rental-invoice-search-btn { width: 100%; min-height: 40px; }
+  .rental-invoice-toolbar-actions > .create-rental-bill-inline-btn { width: 100%; justify-content: center; }
+  .rental-invoice-table { min-width: 1080px; }
+  .rental-invoice-table th, .rental-invoice-table td { padding: 9px 8px; }
+  .rental-main-tabs { max-width: calc(100% - 24px); }
+  .rental-bill-drawer-header { min-height: 60px !important; padding: 10px 12px !important; }
+  .rental-bill-drawer-header h2 { font-size: 17px; }
+  .rental-bill-form { padding: 12px 12px 80px !important; }
+  .rental-bill-drawer-footer { gap: 7px; }
+  .rental-invoice-preview-overlay { padding: 7px; }
+  .rental-invoice-preview-body { padding: 12px; }
+  .rental-invoice-preview-footer { flex-wrap: wrap; }
+}
+
+@media (max-width: 360px) {
+  .rental-summary-grid { grid-template-columns: 1fr; }
+  .rental-header-actions { grid-template-columns: 1fr; }
+  .rental-main-tab { width: 120px; min-width: 120px; }
+  .rental-invoice-search-input-wrap input { font-size: 12px; }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .rental-bill-drawer,
+  .rental-invoice-search-btn,
+  .rental-invoice-search-input-wrap { animation: none !important; transition: none !important; }
+}
+
+
+/* LIVE INVOICE SEARCH + LAZY-RENDER STATUS */
+.rental-invoice-search-status {
+  min-width: 100px;
+  height: 40px;
+  padding: 0 13px;
+  border: 1px solid #d6e0eb;
+  border-radius: 8px;
+  background: #fff;
+  color: #475569;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  font: 600 11px/1.2 inherit;
+  white-space: nowrap;
+}
+.rental-invoice-search-status.is-loading {
+  border-color: #bfdbfe;
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+.rental-invoice-search-status .spin,
+.rental-invoice-lazy-status .spin { animation: rentalSpin 1s linear infinite; }
+.rental-invoice-lazy-status {
+  min-height: 36px;
+  padding: 9px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  color: #64748b;
+  font-size: 10px;
+  border-top: 1px solid #e7edf4;
+  background: #fbfdff;
+}
+.rental-invoice-table-wrap { max-height: min(65vh, 680px); overflow: auto; }
+@media (max-width: 900px) {
+  .rental-invoice-toolbar-actions { width: 100%; flex-wrap: wrap; }
+  .rental-invoice-search-form { flex: 1 1 100%; min-width: 0; }
+  .rental-invoice-search-input-wrap { min-width: 0; flex: 1 1 auto; }
+  .rental-invoice-search-status { flex: 0 0 auto; }
+}
+@media (max-width: 560px) {
+  .rental-invoice-search-form { display: flex; flex-direction: column; align-items: stretch; }
+  .rental-invoice-search-status { width: 100%; }
+  .rental-invoice-search-input-wrap { width: 100%; }
+}
+
+
+/* Inline spinner shown only while invoice search is processing. */
+.rental-invoice-search-spinner {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  margin-left: 8px;
+  color: #2563eb;
+}

@@ -1,0 +1,151 @@
+/* =====================================================
+   Drawer & Overlay Base
+===================================================== */
+.purchase-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .35);
+    z-index: 100;
+}
+
+.purchase-drawer {
+    position: fixed;
+    top: 0;
+    /* Increased width to 1250px to fit all table columns */
+    right: -1250px;
+    width: 1250px; 
+    height: 100vh;
+    background: #f8fafc; 
+    transition: right .3s ease-in-out;
+    z-index: 101;
+    display: flex;
+    flex-direction: column;
+}
+
+.purchase-drawer.open {
+    right: 0;
+}
+
+/* =====================================================
+   Header
+===================================================== */
+.drawer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    background: #fff;
+}
+
+.drawer-header h2 {
+    margin: 0;
+    font-size: 20px;
+    color: #0f172a;
+}
+
+.drawer-header .close-btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #64748b;
+    transition: color 0.2s;
+}
+
+.drawer-header .close-btn:hover {
+    color: #ef4444;
+}
+
+/* =====================================================
+   Body & Content Layout
+===================================================== */
+.drawer-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px 20px 40px 20px; /* Added extra bottom padding so it doesn't hit footer */
+}
+
+.drawer-body > * {
+    margin-bottom: 14px;
+}
+
+/* Stack the Table and Summary Vertically */
+.purchase-content {
+    display: flex;
+    flex-direction: column; 
+    gap: 20px;
+}
+
+.purchase-items {
+    width: 100%; 
+    overflow-x: auto; 
+}
+
+.purchase-summary-container {
+    width: 350px;
+    /* Center the summary container below the table */
+    align-self: center; 
+    margin-top: 15px;
+}
+
+/* =====================================================
+   Footer
+===================================================== */
+.drawer-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    padding: 20px;
+    border-top: 1px solid #eee;
+    background: #fff;
+    /* Ensures footer always stays at the bottom */
+    margin-top: auto; 
+}
+
+.cancel-btn {
+    padding: 12px 20px;
+    border: none;
+    background: #e5e7eb;
+    color: #374151;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.cancel-btn:hover {
+    background: #d1d5db;
+}
+
+.save-btn {
+    padding: 12px 24px;
+    border: none;
+    background: #2563eb;
+    color: #fff;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.save-btn:hover {
+    background: #1d4ed8;
+}
+
+/* =====================================================
+   Responsive Adjustments
+===================================================== */
+@media (max-width: 1300px) {
+    .purchase-drawer {
+        width: 100vw; /* Take up whole screen if monitor is too small */
+        right: -100vw;
+    }
+}
+
+@media (max-width: 900px) {
+    .purchase-summary-container {
+        width: 100%;
+        align-self: center;
+    }
+}

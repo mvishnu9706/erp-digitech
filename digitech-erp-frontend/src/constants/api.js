@@ -1,0 +1,17 @@
+export const API_ROUTES = {
+  auth: '/auth',
+  customers: '/customers',
+  suppliers: '/suppliers',
+  products: '/products',
+  warehouses: '/warehouses',
+  inventory: '/inventory',
+  purchase: '/purchase',
+  sales: '/sales',
+  service: '/service',
+  machines: '/machines',
+  amc: '/amc',
+  rental: '/rental',
+  finance: '/finance',
+  reports: '/reports',
+  dashboard: '/dashboard',
+};

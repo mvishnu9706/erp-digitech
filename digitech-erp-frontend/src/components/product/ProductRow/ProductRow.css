@@ -1,0 +1,169 @@
+.product-info{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+}
+
+.product-image{
+
+    width:46px;
+
+    height:46px;
+
+    border-radius:12px;
+
+    background:#eef4ff;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:#2563eb;
+
+}
+
+.product-info h4{
+
+    margin:0;
+
+    font-size:15px;
+
+    font-weight:600;
+
+}
+
+.product-info p{
+
+    margin-top:4px;
+
+    font-size:13px;
+
+    color:#64748b;
+
+}
+
+.category{
+
+    background:#eef2ff;
+
+    color:#4338ca;
+
+    padding:5px 12px;
+
+    border-radius:18px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+.stock-good{
+
+    color:#16a34a;
+
+    font-weight:700;
+
+}
+
+.stock-low{
+
+    color:#dc2626;
+
+    font-weight:700;
+
+}
+
+.status{
+
+    padding:6px 12px;
+
+    border-radius:18px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+.status.active{
+
+    background:#dcfce7;
+
+    color:#15803d;
+
+}
+
+.status.inactive{
+
+    background:#fee2e2;
+
+    color:#b91c1c;
+
+}
+
+.actions{
+
+    display:flex;
+
+    gap:10px;
+
+}
+
+.action-btn{
+
+    width:36px;
+
+    height:36px;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    transition:.25s;
+
+}
+
+.action-btn.view{
+
+    background:#e0f2fe;
+
+    color:#0284c7;
+
+}
+
+.action-btn.edit{
+
+    background:#fef3c7;
+
+    color:#ca8a04;
+
+}
+
+.action-btn.delete{
+
+    background:#fee2e2;
+
+    color:#dc2626;
+
+}
+
+.action-btn:hover{
+
+    transform:scale(1.08);
+
+}

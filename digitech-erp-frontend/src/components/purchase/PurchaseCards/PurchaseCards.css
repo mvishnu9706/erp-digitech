@@ -1,0 +1,173 @@
+/* ==========================================
+   Purchase Cards
+========================================== */
+
+.purchase-cards {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 14px;
+
+    margin-bottom: 18px;
+}
+
+
+/* ==========================================
+   Purchase Card
+========================================== */
+
+.purchase-card {
+    background: #fff;
+
+    /* Changed from 14px to 30px */
+    border-radius: 30px;
+
+    padding: 16px 18px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    box-shadow: 0 4px 12px rgba(15, 23, 42, .05);
+
+    min-height: 92px;
+
+    transition: .25s;
+}
+
+
+/* ==========================================
+   Purchase Card Hover
+========================================== */
+
+.purchase-card:hover {
+    transform: translateY(-2px);
+}
+
+
+/* ==========================================
+   Purchase Card Title
+========================================== */
+
+.purchase-card h4 {
+    margin: 0 0 6px;
+
+    font-size: 13px;
+
+    color: #64748b;
+
+    font-weight: 500;
+}
+
+
+/* ==========================================
+   Purchase Card Value
+========================================== */
+
+.purchase-card h2 {
+    margin: 0;
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    color: #0f172a;
+
+    line-height: 1.1;
+}
+
+
+/* ==========================================
+   Purchase Card Icon
+========================================== */
+
+.purchase-card-icon {
+    width: 52px;
+
+    height: 52px;
+
+    border-radius: 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+/* ==========================================
+   Purchase Card Icon SVG
+========================================== */
+
+.purchase-card-icon svg {
+    width: 24px;
+
+    height: 24px;
+}
+
+
+/* ==========================================
+   Second Row
+========================================== */
+
+.purchase-card:nth-child(5),
+.purchase-card:nth-child(6) {
+    max-width: 380px;
+}
+
+
+/* ==========================================
+   Responsive - 1200px
+========================================== */
+
+@media (max-width: 1200px) {
+
+    .purchase-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* ==========================================
+   Responsive - 768px
+========================================== */
+
+@media (max-width: 768px) {
+
+    .purchase-cards {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* ==========================================
+   Purchase Items Table
+========================================== */
+
+.purchase-items-card {
+    padding: 14px;
+
+    border-radius: 12px;
+}
+
+
+.purchase-items-table th {
+    padding: 10px 8px;
+}
+
+
+.purchase-items-table td {
+    padding: 10px 8px;
+}
+
+
+.purchase-items-table input,
+.purchase-items-table select {
+    height: 38px;
+}

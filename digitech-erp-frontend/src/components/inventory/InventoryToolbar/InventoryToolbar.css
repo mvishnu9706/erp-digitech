@@ -1,0 +1,439 @@
+/* =====================================================
+   INVENTORY TOOLBAR
+===================================================== */
+
+.inventory-toolbar {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    flex-wrap: nowrap;
+
+    background: #ffffff;
+
+    padding: 16px 18px;
+
+    border-radius: 12px;
+
+    margin-bottom: 20px;
+
+    box-sizing: border-box;
+
+    box-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.07);
+}
+
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+.toolbar-search {
+    flex: 1;
+
+    min-width: 0;
+
+    height: 44px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 0 14px;
+
+    background: #ffffff;
+
+    border: 1px solid #d9e0ea;
+
+    border-radius: 9px;
+
+    box-sizing: border-box;
+
+    color: #64748b;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* =====================================================
+   SEARCH FOCUS
+===================================================== */
+
+.toolbar-search:focus-within {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.10);
+}
+
+
+/* =====================================================
+   SEARCH ICON
+===================================================== */
+
+.toolbar-search svg {
+    flex-shrink: 0;
+
+    color: #64748b;
+}
+
+
+/* =====================================================
+   SEARCH INPUT
+===================================================== */
+
+.toolbar-search input {
+    width: 100%;
+
+    min-width: 0;
+
+    height: 100%;
+
+    padding: 0;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: #111827;
+
+    font-size: 14px;
+
+    font-family: inherit;
+}
+
+
+/* =====================================================
+   SEARCH PLACEHOLDER
+===================================================== */
+
+.toolbar-search input::placeholder {
+    color: #94a3b8;
+
+    opacity: 1;
+}
+
+
+/* =====================================================
+   SELECT
+===================================================== */
+
+.inventory-toolbar select {
+    width: 180px;
+
+    min-width: 180px;
+
+    height: 44px;
+
+    padding: 0 12px;
+
+    border: 1px solid #d9e0ea;
+
+    border-radius: 9px;
+
+    outline: none;
+
+    background: #ffffff;
+
+    color: #111827;
+
+    font-size: 14px;
+
+    font-family: inherit;
+
+    cursor: pointer;
+
+    box-sizing: border-box;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* =====================================================
+   SELECT FOCUS
+===================================================== */
+
+.inventory-toolbar select:focus {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.10);
+}
+
+
+/* =====================================================
+   SELECT HOVER
+===================================================== */
+
+.inventory-toolbar select:hover {
+    border-color: #c5ceda;
+}
+
+
+/* =====================================================
+   TRANSFER HISTORY BUTTON
+===================================================== */
+
+.transfer-history-btn {
+    height: 44px;
+
+    min-width: 155px;
+
+    padding: 0 14px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    border: 1px solid #d9e0ea;
+
+    border-radius: 9px;
+
+    background: #ffffff;
+
+    color: #111827;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    font-family: inherit;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+
+    box-sizing: border-box;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.15s ease;
+}
+
+
+/* =====================================================
+   TRANSFER HISTORY ICON
+===================================================== */
+
+.transfer-history-btn svg {
+    flex-shrink: 0;
+
+    color: #475569;
+}
+
+
+/* =====================================================
+   TRANSFER HISTORY HOVER
+===================================================== */
+
+.transfer-history-btn:hover {
+    background: #f8fafc;
+
+    border-color: #cbd5e1;
+
+    box-shadow:
+        0 2px 6px rgba(15, 23, 42, 0.06);
+}
+
+
+/* =====================================================
+   TRANSFER HISTORY ACTIVE
+===================================================== */
+
+.transfer-history-btn:active {
+    transform: translateY(1px);
+}
+
+
+/* =====================================================
+   TRANSFER HISTORY FOCUS
+===================================================== */
+
+.transfer-history-btn:focus {
+    outline: none;
+
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.10);
+}
+
+
+/* =====================================================
+   LARGE DESKTOP
+===================================================== */
+
+@media (min-width: 1400px) {
+
+    .inventory-toolbar {
+        padding: 16px 18px;
+
+        gap: 14px;
+    }
+
+    .toolbar-search {
+        height: 44px;
+    }
+
+    .inventory-toolbar select {
+        width: 180px;
+
+        min-width: 180px;
+    }
+
+    .transfer-history-btn {
+        min-width: 155px;
+    }
+}
+
+
+/* =====================================================
+   DESKTOP / SMALL LAPTOP
+===================================================== */
+
+@media (max-width: 1200px) {
+
+    .inventory-toolbar {
+        gap: 10px;
+    }
+
+    .inventory-toolbar select {
+        width: 160px;
+
+        min-width: 160px;
+    }
+
+    .transfer-history-btn {
+        min-width: 145px;
+
+        padding: 0 11px;
+    }
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 950px) {
+
+    .inventory-toolbar {
+        flex-wrap: wrap;
+    }
+
+    .toolbar-search {
+        flex: 1 1 100%;
+
+        width: 100%;
+    }
+
+    .inventory-toolbar select {
+        flex: 1;
+
+        width: auto;
+
+        min-width: 150px;
+    }
+
+    .transfer-history-btn {
+        flex: 1;
+
+        min-width: 150px;
+    }
+}
+
+
+/* =====================================================
+   SMALL TABLET
+===================================================== */
+
+@media (max-width: 650px) {
+
+    .inventory-toolbar {
+        padding: 14px;
+
+        gap: 10px;
+
+        margin-bottom: 16px;
+    }
+
+    .toolbar-search {
+        height: 42px;
+    }
+
+    .inventory-toolbar select {
+        width: 100%;
+
+        min-width: 0;
+
+        height: 42px;
+
+        flex: 1 1 100%;
+    }
+
+    .transfer-history-btn {
+        width: 100%;
+
+        min-width: 0;
+
+        height: 42px;
+
+        flex: 1 1 100%;
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 500px) {
+
+    .inventory-toolbar {
+        padding: 12px;
+
+        border-radius: 10px;
+
+        gap: 9px;
+    }
+
+    .toolbar-search {
+        height: 42px;
+
+        padding: 0 12px;
+    }
+
+    .toolbar-search input {
+        font-size: 13px;
+    }
+
+    .inventory-toolbar select {
+        height: 42px;
+
+        font-size: 13px;
+    }
+
+    .transfer-history-btn {
+        height: 42px;
+
+        font-size: 13px;
+    }
+}

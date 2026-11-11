@@ -1,0 +1,378 @@
+/* =====================================================
+   SUPPLIER TABLE
+   COMPACT / TIGHT COLUMN UI
+===================================================== */
+
+.supplier-table-container {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid #e5eaf0;
+    border-radius: 10px;
+
+    box-shadow: 0 3px 10px rgba(15, 23, 42, 0.045);
+
+    margin: 0;
+    padding: 0;
+
+    scrollbar-width: thin;
+}
+
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+.supplier-table {
+    width: max-content;
+    min-width: 100%;
+
+    border-collapse: collapse;
+    border-spacing: 0;
+
+    table-layout: auto;
+
+    margin: 0;
+    padding: 0;
+
+    background: #ffffff;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.supplier-table thead {
+    background: #f8fafc;
+}
+
+.supplier-table thead tr {
+    height: 38px;
+}
+
+.supplier-table th {
+    height: 38px;
+
+    padding: 0 9px;
+
+    color: #52627a;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    line-height: 1;
+
+    text-align: left;
+    vertical-align: middle;
+
+    text-transform: uppercase;
+    letter-spacing: 0.035em;
+
+    white-space: nowrap;
+
+    border-bottom: 1px solid #e5eaf0;
+
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   COMPACT COLUMN WIDTHS
+   Prevents unnecessary wide gaps.
+===================================================== */
+
+.supplier-table th:nth-child(1),
+.supplier-table td:nth-child(1) {
+    width: 120px;
+}
+
+.supplier-table th:nth-child(2),
+.supplier-table td:nth-child(2) {
+    width: 145px;
+}
+
+.supplier-table th:nth-child(3),
+.supplier-table td:nth-child(3) {
+    width: 135px;
+}
+
+.supplier-table th:nth-child(4),
+.supplier-table td:nth-child(4) {
+    width: 105px;
+}
+
+.supplier-table th:nth-child(5),
+.supplier-table td:nth-child(5) {
+    width: 165px;
+}
+
+.supplier-table th:nth-child(6),
+.supplier-table td:nth-child(6) {
+    width: 105px;
+}
+
+.supplier-table th:nth-child(7),
+.supplier-table td:nth-child(7) {
+    width: 82px;
+}
+
+.supplier-table th:nth-child(8),
+.supplier-table td:nth-child(8) {
+    width: 100px;
+}
+
+.supplier-table th:nth-child(9),
+.supplier-table td:nth-child(9) {
+    width: 105px;
+}
+
+
+/* =====================================================
+   BODY
+===================================================== */
+
+.supplier-table tbody tr {
+    height: 46px;
+
+    background: #ffffff;
+
+    transition: background 0.12s ease;
+}
+
+.supplier-table tbody tr:hover {
+    background: #f8fafc;
+}
+
+.supplier-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.supplier-table td {
+    height: 46px;
+
+    padding: 0 9px;
+
+    color: #334155;
+
+    font-size: 10px;
+    font-weight: 500;
+
+    line-height: 1.2;
+
+    text-align: left;
+    vertical-align: middle;
+
+    white-space: nowrap;
+
+    border-bottom: 1px solid #edf1f5;
+
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   PREVENT TEXT FROM CREATING HUGE GAPS
+===================================================== */
+
+.supplier-table td:not(:last-child) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.supplier-table .status {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 55px;
+    height: 24px;
+
+    padding: 0 8px;
+
+    border-radius: 999px;
+
+    font-size: 8px;
+    font-weight: 700;
+
+    line-height: 1;
+
+    box-sizing: border-box;
+}
+
+.supplier-table .status.active {
+    color: #15803d;
+    background: #dcfce7;
+}
+
+.supplier-table .status.inactive {
+    color: #dc2626;
+    background: #fee2e2;
+}
+
+
+/* =====================================================
+   ACTIONS
+===================================================== */
+
+.supplier-actions {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+    gap: 5px;
+
+    white-space: nowrap;
+}
+
+.supplier-actions button {
+    width: 30px;
+    height: 30px;
+
+    min-width: 30px;
+
+    padding: 0;
+
+    border: none;
+
+    border-radius: 6px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.15s ease,
+        opacity 0.15s ease;
+}
+
+.supplier-actions button:hover {
+    transform: translateY(-1px);
+}
+
+.supplier-actions button svg {
+    width: 14px;
+    height: 14px;
+}
+
+.supplier-actions .view-btn {
+    background: #2563eb;
+    color: #ffffff;
+}
+
+.supplier-actions .edit-btn {
+    background: #16a34a;
+    color: #ffffff;
+}
+
+.supplier-actions .delete-btn {
+    background: #ef4444;
+    color: #ffffff;
+}
+
+
+/* =====================================================
+   EMPTY STATE
+===================================================== */
+
+.supplier-empty {
+    height: 100px !important;
+
+    padding: 0 12px !important;
+
+    text-align: center !important;
+
+    color: #64748b !important;
+
+    font-size: 11px !important;
+}
+
+
+/* =====================================================
+   LOADING
+===================================================== */
+
+.supplier-loading {
+    min-height: 100px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #64748b;
+
+    font-size: 11px;
+}
+
+
+/* =====================================================
+   DESKTOP - EVEN TIGHTER
+===================================================== */
+
+@media (min-width: 1400px) {
+
+    .supplier-table th {
+        padding: 0 8px;
+        font-size: 9px;
+    }
+
+    .supplier-table td {
+        padding: 0 8px;
+        font-size: 10px;
+    }
+
+    .supplier-table tbody tr,
+    .supplier-table td {
+        height: 44px;
+    }
+
+    .supplier-actions {
+        gap: 4px;
+    }
+
+    .supplier-actions button {
+        width: 28px;
+        height: 28px;
+        min-width: 28px;
+    }
+
+    .supplier-actions button svg {
+        width: 13px;
+        height: 13px;
+    }
+}
+
+
+/* =====================================================
+   TABLET / MOBILE
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .supplier-table-container {
+        border-radius: 8px;
+    }
+
+    .supplier-table th {
+        padding: 0 8px;
+    }
+
+    .supplier-table td {
+        padding: 0 8px;
+    }
+}

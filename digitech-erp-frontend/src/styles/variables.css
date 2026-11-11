@@ -1,0 +1,96 @@
+:root{
+
+    --primary:#2563eb;
+
+    --background:#101214;
+
+    --sidebar:#181818;
+
+    --navbar:#181818;
+
+    --card:#1d1d1d;
+
+    --border:#2e2e2e;
+
+    --text:#ffffff;
+
+    --text-secondary:#9ca3af;
+
+    --success:#22c55e;
+
+    --danger:#ef4444;
+
+    --warning:#f59e0b;
+
+}
+/* ===========================
+   Light Theme
+=========================== */
+
+:root{
+
+    --primary:#2563eb;
+
+    --background:#f5f6fa;
+
+    --sidebar:#ffffff;
+
+    --navbar:#ffffff;
+
+    --card:#ffffff;
+
+    --border:#d9d9d9;
+
+    --text:#1d1d1d;
+
+    --text-light:#666666;
+
+    --navbar-icon:#ffffff;
+
+    --theme-toggle-bg:#111111;
+
+    --theme-toggle-icon:#ffffff;
+
+    --hover:#f2f2f2;
+
+    --success:#16a34a;
+
+    --danger:#dc2626;
+
+}
+
+/* ===========================
+   Dark Theme
+=========================== */
+
+[data-theme="dark"]{
+
+    --primary:#2563eb;
+
+    --background:#101214;
+
+    --sidebar:#181818;
+
+    --navbar:#181818;
+
+    --card:#1e1e1e;
+
+    --border:#2d2d2d;
+
+    --text:#ffffff;
+
+    --text-light:#b5b5b5;
+
+    --navbar-icon:#ffffff;
+
+    --theme-toggle-bg:#111111;
+
+    --theme-toggle-icon:#ffffff;
+
+    --hover:#292929;
+
+    --success:#22c55e;
+
+    --danger:#ef4444;
+
+}

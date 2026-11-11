@@ -1,0 +1,648 @@
+/* =========================================================
+   SERVICE ENGINEER DETAILS
+   src/components/service/ServiceEngineerDetails/
+   ========================================================= */
+
+.service-engineer-details {
+    width: 100%;
+    min-width: 0;
+    margin-top: 16px;
+    padding: 20px;
+    border: 1px solid #d8e2ee;
+    border-radius: 14px;
+    background: #ffffff;
+    box-shadow: 0 6px 22px rgba(15, 35, 63, 0.06);
+    box-sizing: border-box;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.service-engineer-details-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding-bottom: 17px;
+    border-bottom: 1px solid #e6edf5;
+}
+
+.service-engineer-details-eyebrow {
+    margin-bottom: 5px;
+    color: #2563eb;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+.service-engineer-details-header h3 {
+    margin: 0;
+    color: #102b4c;
+    font-size: 21px;
+    line-height: 1.25;
+    font-weight: 800;
+}
+
+.service-engineer-details-header p {
+    margin: 6px 0 0;
+    color: #6b7f96;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.service-engineer-details-period {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    min-height: 36px;
+    padding: 0 12px;
+    border: 1px solid #d7e2ee;
+    border-radius: 8px;
+    color: #52677f;
+    background: #f8fafc;
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+/* =========================================================
+   ENGINEER SUMMARY CARDS
+   ========================================================= */
+
+.service-engineer-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 12px;
+    margin: 18px 0;
+}
+
+.service-engineer-summary-card {
+    min-width: 0;
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 13px;
+    border: 1px solid #dce5ef;
+    border-radius: 10px;
+    background: #ffffff;
+    box-sizing: border-box;
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        border-color 0.18s ease;
+}
+
+.service-engineer-summary-card:hover {
+    transform: translateY(-1px);
+    border-color: #cbd9e8;
+    box-shadow: 0 5px 15px rgba(15, 35, 63, 0.07);
+}
+
+.service-engineer-summary-icon {
+    width: 38px;
+    height: 38px;
+    flex: 0 0 38px;
+    display: grid;
+    place-items: center;
+    border-radius: 9px;
+    background: #edf4ff;
+    color: #2563eb;
+}
+
+.service-engineer-summary-icon.completed {
+    background: #ecfdf5;
+    color: #059669;
+}
+
+.service-engineer-summary-icon.cost {
+    background: #fff8e8;
+    color: #d97706;
+}
+
+.service-engineer-summary-icon.days {
+    background: #f4efff;
+    color: #7c3aed;
+}
+
+.service-engineer-summary-icon.material {
+    background: #ecfbf9;
+    color: #0f766e;
+}
+
+.service-engineer-summary-card span {
+    display: block;
+    margin-bottom: 4px;
+    color: #71839a;
+    font-size: 9px;
+    line-height: 1.3;
+    font-weight: 700;
+}
+
+.service-engineer-summary-card strong {
+    display: block;
+    overflow: hidden;
+    color: #102b4c;
+    font-size: 16px;
+    line-height: 1.2;
+    font-weight: 800;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* =========================================================
+   PAYMENT SUMMARY
+   IMPORTANT:
+   These styles handle the:
+   Received
+   Pending
+   Total Service Value
+   section.
+   ========================================================= */
+
+.service-engineer-payment-summary {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin: 4px 0 18px;
+}
+
+/* Individual payment card */
+
+.service-engineer-payment-summary-card {
+    position: relative;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 76px;
+    padding: 14px 16px;
+    border: 1px solid #dce5ef;
+    border-radius: 11px;
+    background: #ffffff;
+    box-sizing: border-box;
+    overflow: hidden;
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+.service-engineer-payment-summary-card:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(15, 35, 63, 0.07);
+}
+
+/* Small colored vertical indicator */
+
+.service-engineer-payment-summary-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10px;
+    bottom: 10px;
+    width: 3px;
+    border-radius: 0 4px 4px 0;
+    background: #2563eb;
+}
+
+/* Payment icon */
+
+.service-engineer-payment-summary-icon {
+    width: 40px;
+    height: 40px;
+    flex: 0 0 40px;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    background: #edf4ff;
+    color: #2563eb;
+}
+
+/* Received */
+
+.service-engineer-payment-summary-card.received {
+    border-color: #cdeee1;
+    background: linear-gradient(
+        135deg,
+        #ffffff 0%,
+        #f7fffb 100%
+    );
+}
+
+.service-engineer-payment-summary-card.received::before {
+    background: #10b981;
+}
+
+.service-engineer-payment-summary-card.received
+    .service-engineer-payment-summary-icon {
+    background: #e9fbf3;
+    color: #059669;
+}
+
+/* Pending */
+
+.service-engineer-payment-summary-card.pending {
+    border-color: #f0dfbf;
+    background: linear-gradient(
+        135deg,
+        #ffffff 0%,
+        #fffaf1 100%
+    );
+}
+
+.service-engineer-payment-summary-card.pending::before {
+    background: #f59e0b;
+}
+
+.service-engineer-payment-summary-card.pending
+    .service-engineer-payment-summary-icon {
+    background: #fff4dc;
+    color: #d97706;
+}
+
+/* Total */
+
+.service-engineer-payment-summary-card.total {
+    border-color: #d5e1f5;
+    background: linear-gradient(
+        135deg,
+        #ffffff 0%,
+        #f7faff 100%
+    );
+}
+
+.service-engineer-payment-summary-card.total::before {
+    background: #2563eb;
+}
+
+.service-engineer-payment-summary-card.total
+    .service-engineer-payment-summary-icon {
+    background: #eaf2ff;
+    color: #2563eb;
+}
+
+/* Payment text */
+
+.service-engineer-payment-summary-content {
+    min-width: 0;
+    flex: 1;
+}
+
+.service-engineer-payment-summary-label {
+    display: block;
+    margin-bottom: 4px;
+    color: #71839a;
+    font-size: 10px;
+    line-height: 1.25;
+    font-weight: 700;
+}
+
+.service-engineer-payment-summary-amount {
+    display: block;
+    color: #102b4c;
+    font-size: 18px;
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: -0.2px;
+    white-space: nowrap;
+}
+
+.service-engineer-payment-summary-count {
+    display: block;
+    margin-top: 4px;
+    color: #8191a5;
+    font-size: 9px;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+/* =========================================================
+   SUPPORT FOR EXISTING INLINE PAYMENT SUMMARY MARKUP
+   ========================================================= */
+
+.service-engineer-payment-summary-row {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin: 4px 0 18px;
+}
+
+.service-engineer-payment-summary-item {
+    position: relative;
+    min-width: 0;
+    padding: 14px 16px;
+    border: 1px solid #dce5ef;
+    border-radius: 11px;
+    background: #ffffff;
+    box-sizing: border-box;
+}
+
+.service-engineer-payment-summary-item strong {
+    color: #102b4c;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.service-engineer-payment-summary-item span {
+    color: #71839a;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.service-engineer-payment-summary-item small {
+    display: block;
+    margin-top: 4px;
+    color: #8191a5;
+    font-size: 9px;
+    font-weight: 600;
+}
+
+/* =========================================================
+   COMPLETED SERVICES SECTION
+   ========================================================= */
+
+.service-engineer-completed-section {
+    overflow: hidden;
+    border: 1px solid #dce5ef;
+    border-radius: 11px;
+    background: #ffffff;
+}
+
+.service-engineer-section-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 16px;
+    border-bottom: 1px solid #e4ebf3;
+    background: #fafcff;
+}
+
+.service-engineer-section-title h3 {
+    margin: 0;
+    color: #173454;
+    font-size: 14px;
+    line-height: 1.3;
+    font-weight: 800;
+}
+
+.service-engineer-section-title p {
+    margin: 4px 0 0;
+    color: #788ba1;
+    font-size: 10px;
+    line-height: 1.3;
+}
+
+.service-engineer-count {
+    min-width: 29px;
+    height: 29px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 8px;
+    border: 1px solid #d5e4fa;
+    border-radius: 15px;
+    background: #edf4ff;
+    color: #2563eb;
+    font-size: 11px;
+    font-weight: 800;
+    box-sizing: border-box;
+}
+
+/* =========================================================
+   TABLE
+   ========================================================= */
+
+.service-engineer-completed-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.service-engineer-completed-table {
+    width: 100%;
+    min-width: 900px;
+    border-collapse: collapse;
+    table-layout: auto;
+}
+
+.service-engineer-completed-table th {
+    padding: 11px 9px;
+    border-bottom: 1px solid #dce5ee;
+    background: #f6f9fc;
+    color: #52667e;
+    font-size: 9px;
+    line-height: 1.3;
+    font-weight: 800;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.service-engineer-completed-table td {
+    padding: 12px 9px;
+    border-bottom: 1px solid #edf1f5;
+    color: #314862;
+    font-size: 10px;
+    line-height: 1.35;
+    vertical-align: middle;
+}
+
+.service-engineer-completed-table tbody tr {
+    transition: background 0.15s ease;
+}
+
+.service-engineer-completed-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.service-engineer-completed-table tbody tr:hover {
+    background: #f9fbfe;
+}
+
+.service-engineer-completed-table td:first-child {
+    color: #7b8da2;
+    font-weight: 700;
+}
+
+.service-engineer-completed-table td strong {
+    color: #173454;
+    font-weight: 800;
+}
+
+/* =========================================================
+   PAYMENT BADGE IN TABLE
+   ========================================================= */
+
+.service-engineer-payment {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 62px;
+    min-height: 24px;
+    padding: 4px 8px;
+    border-radius: 6px;
+    border: 1px solid #d7e0ea;
+    background: #f8fafc;
+    color: #53677f;
+    font-size: 8px;
+    line-height: 1;
+    font-weight: 800;
+    box-sizing: border-box;
+}
+
+.service-engineer-payment.received {
+    border-color: #a7efd2;
+    background: #ecfdf5;
+    color: #047857;
+}
+
+.service-engineer-payment.pending {
+    border-color: #f0dfbf;
+    background: #fff9ed;
+    color: #b45309;
+}
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.service-engineer-empty {
+    min-height: 170px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 25px;
+    color: #8a9aae;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.service-engineer-empty svg {
+    margin-bottom: 4px;
+}
+
+.service-engineer-empty strong {
+    color: #52667e;
+    font-size: 12px;
+    line-height: 1.3;
+}
+
+.service-engineer-empty span {
+    color: #8a9aae;
+    font-size: 10px;
+    line-height: 1.4;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1200px) {
+    .service-engineer-summary-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .service-engineer-payment-summary,
+    .service-engineer-payment-summary-row {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 900px) {
+    .service-engineer-details {
+        padding: 16px;
+    }
+
+    .service-engineer-payment-summary,
+    .service-engineer-payment-summary-row {
+        grid-template-columns: 1fr;
+    }
+
+    .service-engineer-payment-summary-card {
+        min-height: 70px;
+    }
+}
+
+@media (max-width: 700px) {
+    .service-engineer-details {
+        margin-top: 12px;
+        padding: 13px;
+        border-radius: 10px;
+    }
+
+    .service-engineer-details-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .service-engineer-details-header h3 {
+        font-size: 18px;
+    }
+
+    .service-engineer-details-period {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .service-engineer-summary-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 9px;
+    }
+
+    .service-engineer-summary-card {
+        padding: 10px;
+    }
+
+    .service-engineer-summary-icon {
+        width: 34px;
+        height: 34px;
+        flex-basis: 34px;
+    }
+
+    .service-engineer-summary-card strong {
+        font-size: 14px;
+    }
+
+    .service-engineer-payment-summary-card {
+        padding: 12px 14px;
+    }
+
+    .service-engineer-payment-summary-amount {
+        font-size: 17px;
+    }
+
+    .service-engineer-section-title {
+        padding: 12px 13px;
+    }
+}
+
+@media (max-width: 450px) {
+    .service-engineer-summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-engineer-summary-card {
+        min-height: 62px;
+    }
+
+    .service-engineer-payment-summary-card {
+        min-height: 68px;
+    }
+
+    .service-engineer-payment-summary-icon {
+        width: 36px;
+        height: 36px;
+        flex-basis: 36px;
+    }
+
+    .service-engineer-payment-summary-amount {
+        font-size: 16px;
+    }
+}

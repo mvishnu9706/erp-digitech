@@ -1,0 +1,757 @@
+/* =====================================================
+   OVERLAY
+===================================================== */
+
+.assign-engineer-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 2000;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 24px;
+
+    background: rgba(
+        15,
+        23,
+        42,
+        0.48
+    );
+
+}
+
+
+/* =====================================================
+   MODAL
+===================================================== */
+
+.assign-engineer-modal {
+
+    width: min(
+        560px,
+        100%
+    );
+
+    max-height: calc(
+        100vh - 48px
+    );
+
+    display: flex;
+
+    flex-direction: column;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 20px 50px
+        rgba(
+            15,
+            23,
+            42,
+            0.20
+        );
+
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.assign-engineer-header {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 16px;
+
+    padding: 20px 22px;
+
+    border-bottom:
+        1px solid #e2e8f0;
+
+}
+
+
+.assign-engineer-title-wrap {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+}
+
+
+.assign-engineer-icon {
+
+    width: 42px;
+
+    height: 42px;
+
+    flex: 0 0 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 11px;
+
+    background: #eef4ff;
+
+    color: #2563eb;
+
+}
+
+
+.assign-engineer-header h2 {
+
+    margin: 0;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    color: #0f172a;
+
+}
+
+
+.assign-engineer-header p {
+
+    margin: 4px 0 0;
+
+    font-size: 13px;
+
+    color: #64748b;
+
+}
+
+
+.assign-engineer-close {
+
+    width: 36px;
+
+    height: 36px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 0;
+
+    border-radius: 8px;
+
+    background: transparent;
+
+    color: #64748b;
+
+    cursor: pointer;
+
+}
+
+
+.assign-engineer-close:hover {
+
+    background: #f1f5f9;
+
+    color: #0f172a;
+
+}
+
+
+/* =====================================================
+   TICKET INFO
+===================================================== */
+
+.assign-engineer-ticket {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 14px;
+
+    padding: 16px 22px;
+
+    background: #f8fafc;
+
+    border-bottom:
+        1px solid #e2e8f0;
+
+}
+
+
+.assign-engineer-label {
+
+    display: block;
+
+    margin-bottom: 4px;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    color: #94a3b8;
+
+}
+
+
+.assign-engineer-ticket strong {
+
+    display: block;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+    font-size: 14px;
+
+    color: #0f172a;
+
+}
+
+
+/* =====================================================
+   BODY
+===================================================== */
+
+.assign-engineer-body {
+
+    padding: 20px 22px;
+
+    overflow-y: auto;
+
+}
+
+
+.assign-engineer-form-label {
+
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: #334155;
+
+}
+
+
+/* =====================================================
+   LOADING
+===================================================== */
+
+.assign-engineer-loading {
+
+    min-height: 120px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    color: #64748b;
+
+    font-size: 14px;
+
+}
+
+
+/* =====================================================
+   ENGINEER LIST
+===================================================== */
+
+.assign-engineer-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+
+    max-height: 300px;
+
+    overflow-y: auto;
+
+}
+
+
+.assign-engineer-option {
+
+    width: 100%;
+
+    min-height: 64px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 10px 12px;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 11px;
+
+    background: #ffffff;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.15s ease,
+        background 0.15s ease;
+
+}
+
+
+.assign-engineer-option:hover {
+
+    border-color: #bfdbfe;
+
+    background: #f8fbff;
+
+}
+
+
+.assign-engineer-option.selected {
+
+    border-color: #2563eb;
+
+    background: #eff6ff;
+
+}
+
+
+/* =====================================================
+   AVATAR
+===================================================== */
+
+.assign-engineer-avatar {
+
+    width: 40px;
+
+    height: 40px;
+
+    flex: 0 0 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #e0e7ff;
+
+    color: #3730a3;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+}
+
+
+/* =====================================================
+   ENGINEER INFO
+===================================================== */
+
+.assign-engineer-info {
+
+    min-width: 0;
+
+    flex: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+}
+
+
+.assign-engineer-info strong {
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+    color: #0f172a;
+
+    font-size: 14px;
+
+}
+
+
+.assign-engineer-info span {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    color: #64748b;
+
+    font-size: 12px;
+
+}
+
+
+/* =====================================================
+   SELECT ICON
+===================================================== */
+
+.assign-engineer-radio {
+
+    width: 24px;
+
+    height: 24px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #2563eb;
+
+}
+
+
+/* =====================================================
+   SELECTED SUMMARY
+===================================================== */
+
+.assign-engineer-selected {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 14px;
+
+    padding: 11px 13px;
+
+    border: 1px solid #bfdbfe;
+
+    border-radius: 10px;
+
+    background: #eff6ff;
+
+    color: #2563eb;
+
+}
+
+
+.assign-engineer-selected > div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 2px;
+
+}
+
+
+.assign-engineer-selected span {
+
+    font-size: 11px;
+
+    color: #64748b;
+
+}
+
+
+.assign-engineer-selected strong {
+
+    font-size: 13px;
+
+    color: #1e3a8a;
+
+}
+
+
+/* =====================================================
+   EMPTY
+===================================================== */
+
+.assign-engineer-empty {
+
+    min-height: 140px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    padding: 20px;
+
+    border: 1px dashed #cbd5e1;
+
+    border-radius: 11px;
+
+    color: #64748b;
+
+    text-align: center;
+
+}
+
+
+.assign-engineer-empty strong {
+
+    color: #334155;
+
+    font-size: 14px;
+
+}
+
+
+.assign-engineer-empty span {
+
+    max-width: 340px;
+
+    font-size: 12px;
+
+}
+
+
+/* =====================================================
+   ERROR
+===================================================== */
+
+.assign-engineer-error {
+
+    margin-top: 12px;
+
+    padding: 10px 12px;
+
+    border: 1px solid #fecaca;
+
+    border-radius: 8px;
+
+    background: #fef2f2;
+
+    color: #b91c1c;
+
+    font-size: 13px;
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.assign-engineer-footer {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    padding: 16px 22px;
+
+    border-top:
+        1px solid #e2e8f0;
+
+}
+
+
+.assign-engineer-cancel,
+.assign-engineer-submit {
+
+    min-height: 40px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    padding: 0 15px;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+}
+
+
+.assign-engineer-cancel {
+
+    border: 1px solid #cbd5e1;
+
+    background: #ffffff;
+
+    color: #475569;
+
+}
+
+
+.assign-engineer-cancel:hover {
+
+    background: #f8fafc;
+
+}
+
+
+.assign-engineer-submit {
+
+    border: 1px solid #2563eb;
+
+    background: #2563eb;
+
+    color: #ffffff;
+
+}
+
+
+.assign-engineer-submit:hover:not(:disabled) {
+
+    background: #1d4ed8;
+
+}
+
+
+.assign-engineer-submit:disabled,
+.assign-engineer-cancel:disabled {
+
+    opacity: 0.55;
+
+    cursor: not-allowed;
+
+}
+
+
+/* =====================================================
+   SPINNER
+===================================================== */
+
+.assign-engineer-spinner {
+
+    animation:
+        assign-engineer-spin
+        0.9s linear infinite;
+
+}
+
+
+@keyframes assign-engineer-spin {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (
+    max-width: 600px
+) {
+
+    .assign-engineer-overlay {
+
+        padding: 12px;
+
+    }
+
+
+    .assign-engineer-modal {
+
+        max-height:
+            calc(
+                100vh - 24px
+            );
+
+    }
+
+
+    .assign-engineer-ticket {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .assign-engineer-footer {
+
+        flex-direction:
+            column-reverse;
+
+    }
+
+
+    .assign-engineer-cancel,
+    .assign-engineer-submit {
+
+        width: 100%;
+
+    }
+
+}

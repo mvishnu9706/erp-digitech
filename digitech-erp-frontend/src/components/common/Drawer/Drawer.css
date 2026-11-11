@@ -1,0 +1,264 @@
+/* ==========================================
+   DRAWER OVERLAY
+========================================== */
+
+.drawer-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(15,23,42,.45);
+
+    backdrop-filter:blur(3px);
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    z-index:9999;
+
+}
+
+/* ==========================================
+   DRAWER
+========================================== */
+
+.drawer{
+
+    width:1000px;
+
+    max-width:95vw;
+
+    height:100vh;
+
+    background:#f8fafc;
+
+    display:flex;
+
+    flex-direction:column;
+
+    box-shadow:-15px 0 40px rgba(0,0,0,.18);
+
+    animation:drawerOpen .28s ease;
+
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.drawer-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:22px 30px;
+
+    background:#ffffff;
+
+    border-bottom:1px solid #e5e7eb;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:50;
+
+}
+
+.drawer-header h2{
+
+    margin:0;
+
+    font-size:28px;
+
+    font-weight:700;
+
+    color:#111827;
+
+}
+
+.drawer-close{
+
+    width:42px;
+
+    height:42px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#f3f4f6;
+
+    cursor:pointer;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    transition:.25s;
+
+}
+
+.drawer-close:hover{
+
+    background:#e5e7eb;
+
+}
+
+/* ==========================================
+   BODY
+========================================== */
+
+.drawer-body{
+
+    flex:1;
+
+    overflow-y:auto;
+
+    /* leave extra bottom padding so body content isn't hidden by sticky footer */
+    padding:30px 30px 120px;
+
+    background:#f8fafc;
+
+}
+
+.drawer-body::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+.drawer-body::-webkit-scrollbar-thumb{
+
+    background:#d1d5db;
+
+    border-radius:20px;
+
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+.drawer-footer{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:20px 30px;
+
+    background:#ffffff;
+
+    border-top:1px solid #e5e7eb;
+
+    position:sticky;
+
+    bottom:0;
+
+    z-index:20;
+
+}
+
+/* ==========================================
+   BUTTONS INSIDE FOOTER
+========================================== */
+
+.drawer-footer button{
+
+    min-width:150px;
+
+    height:48px;
+
+    border-radius:12px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+}
+
+/* ==========================================
+   ANIMATION
+========================================== */
+
+@keyframes drawerOpen{
+
+    from{
+
+        transform:translateX(100%);
+
+        opacity:.5;
+
+    }
+
+    to{
+
+        transform:translateX(0);
+
+        opacity:1;
+
+    }
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:992px){
+
+.drawer{
+
+width:100%;
+
+max-width:100%;
+
+}
+
+.drawer-header{
+
+padding:18px 20px;
+
+}
+
+.drawer-body{
+
+padding:20px;
+
+}
+
+.drawer-footer{
+
+padding:15px 20px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.drawer-footer{
+
+flex-direction:column-reverse;
+
+}
+
+.drawer-footer button{
+
+width:100%;
+
+}
+
+}

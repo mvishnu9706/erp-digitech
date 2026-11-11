@@ -1,0 +1,948 @@
+/* =========================================================
+   SALES FORM
+========================================================= */
+
+.sales-form {
+    width: 100%;
+    min-height: 100%;
+    background: #ffffff;
+    color: #1f2937;
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.sales-form-header {
+    width: 100%;
+    min-height: 68px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 25px;
+
+    border-bottom: 1px solid #e5e7eb;
+
+    background: #ffffff;
+
+    box-sizing: border-box;
+}
+
+
+.sales-form-header h2 {
+    margin: 0;
+
+    font-size: 18px;
+    line-height: 24px;
+
+    font-weight: 800;
+
+    color: #0f172a;
+}
+
+
+.sales-form-header p {
+    margin: 4px 0 0;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    color: #64748b;
+}
+
+
+/* =========================================================
+   TOP SECTION
+========================================================= */
+
+.sales-top-section {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.7fr)
+        minmax(360px, 0.95fr);
+
+    gap: 20px;
+
+    padding: 20px 25px 10px;
+
+    box-sizing: border-box;
+
+    background: #f8fafc;
+}
+
+
+.sales-top-left {
+    min-width: 0;
+}
+
+
+.sales-top-right {
+    min-width: 0;
+
+    display: flex;
+    align-items: flex-start;
+}
+
+
+/* =========================================================
+   LEFT FIELDS GRID
+========================================================= */
+
+.sales-fields-grid {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
+    column-gap: 16px;
+    row-gap: 16px;
+}
+
+
+/* =========================================================
+   FORM FIELD
+========================================================= */
+
+.sales-form-field {
+    width: 100%;
+    min-width: 0;
+
+    box-sizing: border-box;
+}
+
+
+.sales-form-field label {
+    display: block;
+
+    margin-bottom: 6px;
+
+    font-size: 12px;
+
+    line-height: 14px;
+
+    /* UPDATED: Bolder label */
+    font-weight: 700;
+
+    color: #1e293b;
+}
+
+
+.sales-form-field label span {
+    margin-left: 3px;
+    color: #ef4444;
+}
+
+
+/* =========================================================
+   TEXT INPUT
+========================================================= */
+
+.sales-text-input {
+    width: 100%;
+    height: 38px;
+
+    padding: 0 12px;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 8px;
+
+    outline: none;
+
+    background: #ffffff;
+
+    color: #0f172a;
+
+    /* UPDATED: Larger and bolder input text */
+    font-size: 12px;
+    font-weight: 600;
+
+    box-sizing: border-box;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.sales-text-input::placeholder {
+    color: #94a3b8;
+    font-weight: 500;
+}
+
+
+.sales-text-input:focus {
+    border-color: #3b82f6;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(59, 130, 246, 0.15);
+}
+
+
+/* =========================================================
+   SELECT WRAPPER & PAYMENT AMOUNT INPUT
+========================================================= */
+
+.sales-select-wrapper {
+    position: relative;
+
+    width: 100%;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+
+    box-sizing: border-box;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    color: #0f172a;
+    
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.sales-select-wrapper svg {
+    flex: 0 0 auto;
+
+    margin-left: 12px;
+
+    color: #64748b;
+
+    pointer-events: none;
+}
+
+
+.sales-select-wrapper select {
+    width: 100%;
+    height: 100%;
+
+    padding: 0 30px 0 10px;
+
+    border: 0;
+    outline: none;
+    appearance: auto;
+    background: transparent;
+
+    color: #0f172a;
+
+    /* UPDATED: Bolder text inside dropdown */
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+/* 
+ * UPDATED: Special styling for the Payment Amount Input 
+ * to make it bold, clear, and remove the spinner arrows.
+ */
+.sales-select-wrapper input[type="number"] {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 0 10px;
+    
+    color: #0f172a;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.sales-select-wrapper input[type="number"]::placeholder {
+    color: #94a3b8;
+    font-weight: 500;
+    font-size: 12px;
+}
+
+/* Hide number input arrows */
+.sales-select-wrapper input[type="number"]::-webkit-inner-spin-button,
+.sales-select-wrapper input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+.sales-select-wrapper:focus-within {
+    border-color: #3b82f6;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(59, 130, 246, 0.15);
+}
+
+
+/* =========================================================
+   CUSTOMER ADDRESS
+========================================================= */
+
+.customer-address-card {
+    width: 100%;
+    margin-top: 16px;
+    padding: 12px 14px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    background: #f8fafc;
+    box-sizing: border-box;
+}
+
+
+.customer-address-title {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 8px;
+    
+    color: #166534;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+.customer-address-title svg {
+    color: #16a34a;
+}
+
+
+.customer-address-content {
+    width: 100%;
+}
+
+
+.customer-address-text {
+    color: #334155;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 18px;
+}
+
+
+.customer-phone {
+    display: flex;
+    gap: 6px;
+    margin-top: 4px;
+}
+
+
+.customer-phone span {
+    color: #64748b;
+    font-weight: 700;
+}
+
+
+.customer-phone strong {
+    color: #1e293b;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   INVOICE META CARD
+========================================================= */
+
+.invoice-meta-card {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    background: #ffffff;
+    box-sizing: border-box;
+    box-shadow: 0 2px 4px rgba(15, 23, 42, 0.02);
+}
+
+
+/* =========================================================
+   INVOICE META ROW
+========================================================= */
+
+.invoice-meta-row {
+    min-height: 48px;
+    display: grid;
+    grid-template-columns: 120px minmax(0, 1fr);
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid #f1f5f9;
+    box-sizing: border-box;
+}
+
+
+.invoice-meta-row:last-child {
+    border-bottom: 0;
+}
+
+
+.invoice-meta-row > span {
+    color: #475569;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 14px;
+}
+
+
+.invoice-meta-row > strong {
+    display: block;
+    text-align: right;
+    color: #0f172a;
+    font-size: 12px;
+    font-weight: 800;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* =========================================================
+   REFERENCE / DATE INPUTS
+========================================================= */
+
+.invoice-meta-row input {
+    width: 100%;
+    height: 34px;
+    padding: 0 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #0f172a;
+    outline: none;
+    
+    font-size: 12px;
+    font-weight: 600;
+    
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+}
+
+
+.invoice-meta-row input::placeholder {
+    color: #94a3b8;
+    font-weight: 500;
+}
+
+
+.invoice-meta-row input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+
+.invoice-meta-row input[type="date"] {
+    text-align: left;
+    color: #1e293b;
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   PRODUCTS SECTION
+========================================================= */
+
+.sales-products-section {
+    width: 100%;
+    padding: 16px 25px 0;
+    box-sizing: border-box;
+    background: #ffffff;
+}
+
+
+.sales-section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+
+.sales-section-heading h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 800;
+    color: #0f172a;
+}
+
+
+.sales-section-heading p {
+    margin: 4px 0 0;
+    font-size: 11px;
+    font-weight: 600;
+    color: #64748b;
+}
+
+
+/* =========================================================
+   PRODUCTS TABLE WRAPPER
+========================================================= */
+
+.sales-products-table-wrapper {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    overflow-x: visible;
+}
+
+
+/* =========================================================
+   SUMMARY
+========================================================= */
+
+.sales-summary-section {
+    width: 100%;
+    padding: 16px 25px 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   REMARKS
+========================================================= */
+
+.sales-remarks-section {
+    width: 100%;
+    padding: 24px 25px 95px;
+    box-sizing: border-box;
+}
+
+
+.sales-remarks-section textarea {
+    width: 100%;
+    min-height: 80px;
+    resize: vertical;
+    padding: 12px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    outline: none;
+    background: #ffffff;
+    
+    color: #0f172a;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 18px;
+    
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+}
+
+
+.sales-remarks-section textarea::placeholder {
+    color: #94a3b8;
+    font-weight: 500;
+}
+
+
+.sales-remarks-section textarea:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+
+/* =========================================================
+   FOOTER & ACTION BUTTONS
+========================================================= */
+
+.sales-form-footer {
+    position: sticky;
+    bottom: 0;
+    z-index: 50;
+    width: 100%;
+    min-height: 68px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 25px;
+    border-top: 1px solid #e2e8f0;
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 -4px 12px rgba(15, 23, 42, 0.04);
+    box-sizing: border-box;
+}
+
+/* 
+ * UPDATED: Cancel Button Styles
+ */
+.sales-cancel-button {
+    min-width: 100px;
+    height: 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 0 16px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    background: #ffffff;
+    
+    color: #64748b;
+    font-size: 12px;
+    font-weight: 700;
+    
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.sales-cancel-button:hover:not(:disabled) {
+    background: #fef2f2;
+    color: #ef4444;
+    border-color: #fca5a5;
+}
+
+.sales-cancel-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* 
+ * UPDATED: Save As PDF Button Styles
+ */
+.sales-pdf-button {
+    min-width: 120px;
+    height: 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 0 16px;
+    border: 1px solid #3b82f6;
+    border-radius: 8px;
+    background: #ffffff;
+    
+    color: #2563eb;
+    font-size: 12px;
+    font-weight: 700;
+    
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.sales-pdf-button:hover:not(:disabled) {
+    background: #eff6ff;
+    border-color: #1d4ed8;
+    color: #1d4ed8;
+}
+
+.sales-pdf-button:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+/* 
+ * UPDATED: Save Sale Button Styles
+ */
+.sales-save-button {
+    min-width: 120px;
+    height: 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 0 16px;
+    border: 1px solid #16a34a;
+    border-radius: 8px;
+    background: #16a34a;
+    
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(22, 163, 74, 0.2);
+}
+
+.sales-save-button:hover:not(:disabled) {
+    background: #15803d;
+    border-color: #15803d;
+    box-shadow: 0 4px 6px rgba(22, 163, 74, 0.3);
+}
+
+.sales-save-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   GENERAL BUTTON RESET
+========================================================= */
+
+.sales-form button {
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   PRODUCT TABLE SUPPORT
+========================================================= */
+
+.sales-items-table {
+    width: 100%;
+    min-width: 1250px;
+    border-collapse: separate;
+    border-spacing: 0;
+    table-layout: fixed;
+}
+
+.sales-items-table-wrapper {
+    width: 100%;
+}
+
+.sales-items-table-scroll {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: visible;
+}
+
+
+/* =========================================================
+   NEW SERIAL NUMBER COLUMN
+========================================================= */
+
+.sales-items-table .sales-item-serial {
+    width: 145px;
+    min-width: 145px;
+}
+
+
+/* =========================================================
+   NEW HSN/SAC COLUMN
+========================================================= */
+
+.sales-items-table .sales-item-hsn {
+    width: 100px;
+    min-width: 100px;
+}
+
+
+/* =========================================================
+   PRODUCT COLUMN
+========================================================= */
+
+.sales-items-table .sales-item-product {
+    width: 235px;
+    min-width: 235px;
+}
+
+
+/* =========================================================
+   NUMBER COLUMN
+========================================================= */
+
+.sales-items-table .sales-item-number {
+    width: 45px;
+    min-width: 45px;
+}
+
+
+/* =========================================================
+   UNIT COLUMN
+========================================================= */
+
+.sales-items-table .sales-item-unit {
+    width: 65px;
+    min-width: 65px;
+}
+
+
+/* =========================================================
+   QUANTITY COLUMN
+========================================================= */
+
+.sales-items-table .sales-item-qty {
+    width: 75px;
+    min-width: 75px;
+}
+
+
+/* =========================================================
+   PRICE COLUMN
+========================================================= */
+
+.sales-items-table .sales-item-price {
+    width: 120px;
+    min-width: 120px;
+}
+
+
+/* =========================================================
+   DISCOUNT COLUMN
+========================================================= */
+
+.sales-items-table .sales-item-discount {
+    width: 90px;
+    min-width: 90px;
+}
+
+
+/* =========================================================
+   GST COLUMN
+========================================================= */
+
+.sales-items-table .sales-item-gst {
+    width: 75px;
+    min-width: 75px;
+}
+
+
+/* =========================================================
+   TOTAL COLUMN
+========================================================= */
+
+.sales-items-table .sales-item-total {
+    width: 120px;
+    min-width: 120px;
+}
+
+
+/* =========================================================
+   ACTION COLUMN
+========================================================= */
+
+.sales-items-table .sales-item-action {
+    width: 65px;
+    min-width: 65px;
+}
+
+
+/* =========================================================
+   SERIAL / HSN INLINE INPUTS
+========================================================= */
+
+.sales-item-inline-input {
+    width: 100%;
+    height: 36px;
+    padding: 0 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    outline: none;
+    background: #ffffff;
+    
+    color: #0f172a;
+    font-size: 11px;
+    font-weight: 600;
+    
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+}
+
+
+.sales-item-inline-input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+
+.sales-item-inline-input::placeholder {
+    color: #94a3b8;
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   RESPONSIVE TOP SECTION
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .sales-top-section {
+        grid-template-columns: 1fr;
+    }
+
+    .sales-top-right {
+        width: 100%;
+    }
+
+    .invoice-meta-card {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .sales-form-header {
+        padding: 0 16px;
+    }
+
+    .sales-top-section {
+        padding: 16px 16px 8px;
+    }
+
+    .sales-fields-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sales-products-section {
+        padding: 12px 16px 0;
+    }
+
+    .sales-summary-section {
+        padding: 16px 16px 0;
+    }
+
+    .sales-remarks-section {
+        padding: 20px 16px 95px;
+    }
+
+    .sales-form-footer {
+        padding: 12px 16px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .sales-form-header h2 {
+        font-size: 16px;
+    }
+
+    .invoice-meta-row {
+        grid-template-columns: 100px minmax(0, 1fr);
+    }
+
+    .sales-form-footer {
+        justify-content: stretch;
+        flex-wrap: wrap;
+    }
+
+    .sales-cancel-button,
+    .sales-pdf-button,
+    .sales-save-button {
+        flex: 1 1 100%;
+        min-width: 0;
+    }
+
+}

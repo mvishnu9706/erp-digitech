@@ -1,0 +1,459 @@
+/* =====================================================
+   ENGINEER STAT CARDS
+   Path:
+   frontend/src/pages/engineer/EngineerPortal.css
+===================================================== */
+
+
+/* =====================================================
+   CARDS CONTAINER
+===================================================== */
+
+.engineer-cards {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.engineer-stat-card {
+    width: 100%;
+    min-width: 0;
+    min-height: 104px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+    padding: 18px;
+
+    background: #ffffff;
+    border: 1px solid #dbe3ef;
+    border-radius: 14px;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        border-color 0.18s ease;
+}
+
+
+/* =====================================================
+   CARD HOVER
+===================================================== */
+
+.engineer-stat-card:hover {
+    transform: translateY(-1px);
+
+    border-color: #cbd7e8;
+
+    box-shadow:
+        0 6px 18px rgba(15, 23, 42, 0.06);
+}
+
+
+/* =====================================================
+   ICON BOX
+===================================================== */
+
+.engineer-stat-icon {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    box-sizing: border-box;
+
+    flex-shrink: 0;
+}
+
+
+/* =====================================================
+   ICON SVG
+===================================================== */
+
+.engineer-stat-icon svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+
+/* =====================================================
+   ASSIGNED CARD
+===================================================== */
+
+.engineer-card-assigned .engineer-stat-icon {
+    background: #eff6ff;
+    color: #1463ff;
+}
+
+
+/* =====================================================
+   ACCEPTED CARD
+===================================================== */
+
+.engineer-card-accepted .engineer-stat-icon {
+    background: #effbf3;
+    color: #00a63c;
+}
+
+
+/* =====================================================
+   IN PROGRESS CARD
+===================================================== */
+
+.engineer-card-progress .engineer-stat-icon {
+    background: #fff7ed;
+    color: #f97316;
+}
+
+
+/* =====================================================
+   COMPLETED CARD
+===================================================== */
+
+.engineer-card-completed .engineer-stat-icon {
+    background: #f5f3ff;
+    color: #7c3aed;
+}
+
+
+/* =====================================================
+   CARD CONTENT
+===================================================== */
+
+.engineer-stat-content {
+    min-width: 0;
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   CARD TITLE
+===================================================== */
+
+.engineer-stat-title {
+    margin: 0;
+
+    font-size: 13px;
+    line-height: 17px;
+    font-weight: 600;
+
+    color: #45617f;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* =====================================================
+   CARD COUNT
+===================================================== */
+
+.engineer-stat-count {
+    margin: 3px 0 0;
+
+    font-size: 28px;
+    line-height: 32px;
+    font-weight: 700;
+
+    color: #061a36;
+
+    white-space: nowrap;
+}
+
+
+/* =====================================================
+   CARD DESCRIPTION
+===================================================== */
+
+.engineer-stat-description {
+    margin: 3px 0 0;
+
+    font-size: 11px;
+    line-height: 15px;
+    font-weight: 400;
+
+    color: #7187a1;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* =====================================================
+   LARGE TABLET
+===================================================== */
+
+@media (max-width: 1100px) {
+
+    .engineer-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .engineer-stat-card {
+        min-height: 100px;
+        padding: 16px;
+    }
+
+    .engineer-stat-icon {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        border-radius: 10px;
+    }
+
+    .engineer-stat-icon svg {
+        width: 19px;
+        height: 19px;
+    }
+
+    .engineer-stat-title {
+        font-size: 13px;
+        line-height: 17px;
+    }
+
+    .engineer-stat-count {
+        font-size: 27px;
+        line-height: 31px;
+    }
+
+    .engineer-stat-description {
+        font-size: 11px;
+        line-height: 15px;
+    }
+}
+
+
+/* =====================================================
+   TABLET / SMALL SCREEN
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .engineer-cards {
+        gap: 10px;
+    }
+
+    .engineer-stat-card {
+        min-height: 94px;
+        padding: 13px;
+        gap: 10px;
+        border-radius: 12px;
+    }
+
+    .engineer-stat-icon {
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+        border-radius: 9px;
+    }
+
+    .engineer-stat-icon svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .engineer-stat-title {
+        font-size: 11px;
+        line-height: 14px;
+    }
+
+    .engineer-stat-count {
+        margin-top: 2px;
+        font-size: 24px;
+        line-height: 28px;
+    }
+
+    .engineer-stat-description {
+        margin-top: 2px;
+        font-size: 10px;
+        line-height: 13px;
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .engineer-cards {
+        width: 100%;
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 8px;
+    }
+
+    .engineer-stat-card {
+        min-height: 88px;
+
+        padding: 11px;
+
+        gap: 9px;
+
+        border-radius: 11px;
+    }
+
+    .engineer-stat-icon {
+        width: 32px;
+        height: 32px;
+        min-width: 32px;
+
+        border-radius: 8px;
+    }
+
+    .engineer-stat-icon svg {
+        width: 17px;
+        height: 17px;
+    }
+
+    .engineer-stat-title {
+        font-size: 10px;
+        line-height: 13px;
+    }
+
+    .engineer-stat-count {
+        margin-top: 1px;
+
+        font-size: 21px;
+        line-height: 25px;
+    }
+
+    .engineer-stat-description {
+        margin-top: 2px;
+
+        font-size: 9px;
+        line-height: 12px;
+    }
+}
+
+
+/* =====================================================
+   VERY SMALL MOBILE
+===================================================== */
+
+@media (max-width: 380px) {
+
+    .engineer-cards {
+        gap: 6px;
+    }
+
+    .engineer-stat-card {
+        min-height: 82px;
+
+        padding: 9px;
+
+        gap: 7px;
+
+        border-radius: 10px;
+    }
+
+    .engineer-stat-icon {
+        width: 29px;
+        height: 29px;
+        min-width: 29px;
+
+        border-radius: 7px;
+    }
+
+    .engineer-stat-icon svg {
+        width: 15px;
+        height: 15px;
+    }
+
+    .engineer-stat-title {
+        font-size: 9px;
+        line-height: 12px;
+    }
+
+    .engineer-stat-count {
+        margin-top: 1px;
+
+        font-size: 20px;
+        line-height: 23px;
+    }
+
+    .engineer-stat-description {
+        margin-top: 2px;
+
+        font-size: 8px;
+        line-height: 11px;
+    }
+}
+
+
+/* =====================================================
+   EXTRA SMALL WIDTH
+   Prevent card content from becoming cramped.
+===================================================== */
+
+@media (max-width: 320px) {
+
+    .engineer-cards {
+        gap: 5px;
+    }
+
+    .engineer-stat-card {
+        min-height: 78px;
+
+        padding: 8px;
+
+        gap: 6px;
+    }
+
+    .engineer-stat-icon {
+        width: 27px;
+        height: 27px;
+        min-width: 27px;
+    }
+
+    .engineer-stat-icon svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    .engineer-stat-title {
+        font-size: 8px;
+        line-height: 11px;
+    }
+
+    .engineer-stat-count {
+        font-size: 19px;
+        line-height: 22px;
+    }
+
+    .engineer-stat-description {
+        font-size: 7px;
+        line-height: 10px;
+    }
+}

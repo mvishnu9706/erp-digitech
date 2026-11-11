@@ -1,0 +1,287 @@
+/* =========================================================
+   SALES DRAWER OVERLAY
+========================================================= */
+
+.sales-drawer-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1000;
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    background: rgba(15, 23, 42, 0.35);
+
+    backdrop-filter: blur(1px);
+
+    animation: salesOverlayFadeIn 0.2s ease-out;
+}
+
+
+/* =========================================================
+   DRAWER
+========================================================= */
+
+.sales-drawer {
+    width: min(1400px, 96vw);
+
+    height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    position: relative;
+
+    background: #f2f2f2;
+
+    box-shadow:
+        -8px 0 30px rgba(0, 0, 0, 0.12);
+
+    animation: salesDrawerOpen 0.22s ease-out;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   DRAWER ANIMATION
+========================================================= */
+
+@keyframes salesDrawerOpen {
+
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+
+@keyframes salesOverlayFadeIn {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
+.sales-drawer-close {
+    position: absolute;
+
+    top: 18px;
+
+    right: 20px;
+
+    z-index: 50;
+
+    width: 38px;
+
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 6px;
+
+    background: #ffffff;
+
+    color: #64748b;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.15s ease;
+}
+
+
+.sales-drawer-close:hover {
+    background: #f8fafc;
+
+    border-color: #93c5fd;
+
+    color: #1d4ed8;
+}
+
+
+.sales-drawer-close:active {
+    transform: scale(0.96);
+}
+
+
+/* =========================================================
+   DRAWER BODY
+========================================================= */
+
+.sales-drawer-body {
+    flex: 1;
+
+    width: 100%;
+
+    min-width: 0;
+
+    min-height: 0;
+
+    overflow-y: auto;
+
+    overflow-x: hidden;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+    background: #f2f2f2;
+
+    scrollbar-width: thin;
+
+    scrollbar-color: #b8b8b8 #eeeeee;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+.sales-drawer-body::-webkit-scrollbar {
+    width: 9px;
+}
+
+
+.sales-drawer-body::-webkit-scrollbar-track {
+    background: #eeeeee;
+}
+
+
+.sales-drawer-body::-webkit-scrollbar-thumb {
+    background: #b8b8b8;
+
+    border-radius: 8px;
+
+    border: 2px solid #eeeeee;
+}
+
+
+.sales-drawer-body::-webkit-scrollbar-thumb:hover {
+    background: #999999;
+}
+
+
+/* =========================================================
+   MAKE SALES FORM FIT DRAWER
+========================================================= */
+
+.sales-drawer-body .sales-form {
+    width: 100%;
+
+    min-height: 100%;
+
+    box-sizing: border-box;
+
+    background: #f2f2f2;
+}
+
+
+/* =========================================================
+   WHITE SECTION SUPPORT
+========================================================= */
+
+.sales-drawer-body .sales-top-left,
+.sales-drawer-body .invoice-meta-card,
+.sales-drawer-body .sales-products-section,
+.sales-drawer-body .sales-summary-section,
+.sales-drawer-body .sales-remarks-section {
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   RESPONSIVE - LARGE TABLET
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .sales-drawer {
+        width: 97vw;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .sales-drawer {
+        width: 100vw;
+
+        max-width: 100vw;
+    }
+
+
+    .sales-drawer-close {
+        top: 14px;
+
+        right: 14px;
+
+        width: 36px;
+
+        height: 36px;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .sales-drawer {
+        width: 100%;
+
+        height: 100vh;
+    }
+
+
+    .sales-drawer-body {
+        overflow-x: hidden;
+    }
+
+
+    .sales-drawer-close {
+        top: 12px;
+
+        right: 12px;
+
+        width: 34px;
+
+        height: 34px;
+    }
+
+}

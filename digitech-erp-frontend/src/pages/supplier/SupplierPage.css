@@ -1,0 +1,599 @@
+/* =====================================================
+   SUPPLIER PAGE
+   COMPACT ERP UI
+===================================================== */
+
+.supplier-page {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-height: calc(100vh - 70px);
+    background: #eef2ff;
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.supplier-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+
+    padding: 14px 18px;
+
+    border-radius: 12px;
+
+    background: #ffffff;
+
+    box-shadow: 0 5px 16px rgba(15, 23, 42, 0.06);
+
+    border: 1px solid rgba(15, 23, 42, 0.04);
+
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   HEADER LEFT
+===================================================== */
+
+.supplier-header-left {
+    flex: 1;
+    min-width: 0;
+}
+
+.supplier-header-left h1 {
+    margin: 0;
+
+    font-size: 27px;
+    line-height: 1.15;
+
+    font-weight: 700;
+
+    color: #0f172a;
+}
+
+.supplier-header-left p {
+    margin: 4px 0 0;
+
+    color: #64748b;
+
+    font-size: 11px;
+    line-height: 1.4;
+
+    max-width: 650px;
+}
+
+
+/* =====================================================
+   HEADER RIGHT
+===================================================== */
+
+.supplier-header-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 7px;
+
+    flex-wrap: nowrap;
+
+    flex-shrink: 0;
+}
+
+.supplier-header-right button {
+    min-width: auto;
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.btn-light,
+.btn-primary {
+    height: 34px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    border-radius: 7px;
+
+    font-family: inherit;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+
+    box-sizing: border-box;
+
+    transition:
+        transform .15s ease,
+        box-shadow .15s ease,
+        border-color .15s ease,
+        background .15s ease;
+}
+
+
+/* =====================================================
+   LIGHT BUTTON
+===================================================== */
+
+.btn-light {
+    padding: 0 11px;
+
+    background: #ffffff;
+
+    border: 1px solid #dbe3ec;
+
+    color: #0f172a;
+}
+
+.btn-light:hover {
+    background: #f8fafc;
+
+    border-color: #cbd5e1;
+
+    transform: translateY(-1px);
+
+    box-shadow: 0 3px 8px rgba(15, 23, 42, 0.06);
+}
+
+
+/* =====================================================
+   PRIMARY BUTTON
+===================================================== */
+
+.btn-primary {
+    padding: 0 13px;
+
+    background: #2563eb;
+
+    color: #ffffff;
+
+    border: 1px solid #2563eb;
+}
+
+.btn-primary:hover {
+    background: #1d4ed8;
+
+    border-color: #1d4ed8;
+
+    transform: translateY(-1px);
+
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
+}
+
+
+/* =====================================================
+   BUTTON ICONS
+===================================================== */
+
+.supplier-header-right button svg {
+    width: 14px;
+    height: 14px;
+
+    flex-shrink: 0;
+}
+
+
+/* =====================================================
+   DASHBOARD CARDS CONTAINER
+===================================================== */
+
+.supplier-dashboard {
+    margin: 0 !important;
+
+    padding: 0 !important;
+
+    gap: 10px !important;
+}
+
+
+/*
+   If SupplierCards uses a grid internally,
+   reduce the spacing without changing its functionality.
+*/
+
+.supplier-dashboard > div {
+    gap: 10px !important;
+}
+
+
+/* =====================================================
+   COMMON CARD COMPACTION
+===================================================== */
+
+.supplier-dashboard .supplier-card,
+.supplier-dashboard .dashboard-card,
+.supplier-dashboard .stat-card,
+.supplier-dashboard .summary-card,
+.supplier-dashboard [class*="supplier-card"],
+.supplier-dashboard [class*="stat-card"] {
+    min-height: 82px !important;
+
+    padding: 13px 15px !important;
+
+    border-radius: 12px !important;
+
+    box-shadow:
+        0 4px 12px rgba(15, 23, 42, 0.05) !important;
+}
+
+
+/* Card headings */
+
+.supplier-dashboard .supplier-card h3,
+.supplier-dashboard .dashboard-card h3,
+.supplier-dashboard .stat-card h3,
+.supplier-dashboard .summary-card h3 {
+    font-size: 10px !important;
+
+    margin-bottom: 5px !important;
+}
+
+
+/* Card numbers */
+
+.supplier-dashboard .supplier-card strong,
+.supplier-dashboard .dashboard-card strong,
+.supplier-dashboard .stat-card strong,
+.supplier-dashboard .summary-card strong {
+    font-size: 22px !important;
+}
+
+
+/* Card icons */
+
+.supplier-dashboard .supplier-card svg,
+.supplier-dashboard .dashboard-card svg,
+.supplier-dashboard .stat-card svg {
+    width: 17px !important;
+    height: 17px !important;
+}
+
+
+/* =====================================================
+   TOOLBAR
+===================================================== */
+
+.supplier-toolbar {
+    margin: 0 !important;
+
+    padding: 0 !important;
+}
+
+
+/*
+   Keep toolbar compact if it has its own card.
+*/
+
+.supplier-toolbar > div {
+    gap: 8px !important;
+}
+
+
+/* =====================================================
+   TABLE WRAPPER
+===================================================== */
+
+.supplier-table-wrapper {
+    background: #ffffff;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 5px 15px rgba(15, 23, 42, 0.05);
+
+    border: 1px solid rgba(15, 23, 42, 0.05);
+
+    margin: 0;
+
+    padding: 0;
+}
+
+
+/* =====================================================
+   TABLE COMPACT MODE
+===================================================== */
+
+.supplier-table-wrapper table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    table-layout: auto;
+}
+
+
+/* =====================================================
+   TABLE HEADER
+===================================================== */
+
+.supplier-table-wrapper thead th {
+    height: 42px;
+
+    padding: 0 12px;
+
+    background: #f8fafc;
+
+    color: #52627a;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: .03em;
+
+    text-transform: uppercase;
+
+    white-space: nowrap;
+
+    border-bottom: 1px solid #e5eaf0;
+}
+
+
+/* =====================================================
+   TABLE BODY
+===================================================== */
+
+.supplier-table-wrapper tbody td {
+    height: 48px;
+
+    padding: 0 12px;
+
+    color: #334155;
+
+    font-size: 10px;
+
+    font-weight: 500;
+
+    white-space: nowrap;
+
+    border-bottom: 1px solid #eef2f7;
+
+    vertical-align: middle;
+}
+
+
+/* =====================================================
+   TABLE ROW
+===================================================== */
+
+.supplier-table-wrapper tbody tr {
+    height: 48px;
+
+    transition: background .12s ease;
+}
+
+.supplier-table-wrapper tbody tr:hover {
+    background: #f8fafc;
+}
+
+.supplier-table-wrapper tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =====================================================
+   TABLE ACTION BUTTONS
+===================================================== */
+
+.supplier-table-wrapper button {
+    width: 30px;
+    height: 30px;
+
+    padding: 0;
+
+    border-radius: 6px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.supplier-table-wrapper button svg {
+    width: 14px;
+    height: 14px;
+}
+
+
+/* =====================================================
+   STATUS BADGES
+===================================================== */
+
+.supplier-table-wrapper .status,
+.supplier-table-wrapper [class*="status"] {
+    font-size: 9px;
+}
+
+
+/* =====================================================
+   REDUCE COMMON INNER SPACING
+===================================================== */
+
+.supplier-page > * {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+
+/* =====================================================
+   LARGE DESKTOP
+===================================================== */
+
+@media (min-width: 1400px) {
+
+    .supplier-page {
+        padding: 10px 12px;
+        gap: 10px;
+    }
+
+    .supplier-header {
+        padding: 13px 18px;
+    }
+
+    .supplier-header-left h1 {
+        font-size: 27px;
+    }
+
+    .supplier-table-wrapper thead th {
+        padding-left: 11px;
+        padding-right: 11px;
+    }
+
+    .supplier-table-wrapper tbody td {
+        padding-left: 11px;
+        padding-right: 11px;
+    }
+}
+
+
+/* =====================================================
+   1200px
+===================================================== */
+
+@media (max-width: 1200px) {
+
+    .supplier-header {
+        align-items: flex-start;
+    }
+
+    .supplier-header-right {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .supplier-page {
+        padding: 8px;
+        gap: 8px;
+    }
+
+    .supplier-header {
+        padding: 12px 14px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 10px;
+    }
+
+    .supplier-header-left h1 {
+        font-size: 24px;
+    }
+
+    .supplier-header-left p {
+        font-size: 10px;
+    }
+
+    .supplier-header-right {
+        width: 100%;
+
+        justify-content: flex-start;
+
+        flex-wrap: wrap;
+    }
+
+    .supplier-table-wrapper {
+        overflow-x: auto;
+    }
+
+    .supplier-table-wrapper table {
+        min-width: 850px;
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .supplier-page {
+        padding: 7px;
+
+        gap: 7px;
+    }
+
+    .supplier-header {
+        padding: 12px;
+
+        border-radius: 10px;
+    }
+
+    .supplier-header-left h1 {
+        font-size: 22px;
+    }
+
+    .supplier-header-left p {
+        font-size: 10px;
+    }
+
+    .supplier-header-right {
+        display: grid;
+
+        grid-template-columns: repeat(2, 1fr);
+
+        width: 100%;
+
+        gap: 6px;
+    }
+
+    .supplier-header-right button {
+        width: 100%;
+    }
+
+    .btn-light,
+    .btn-primary {
+        height: 32px;
+
+        font-size: 10px;
+    }
+
+    .supplier-dashboard {
+        gap: 7px !important;
+    }
+
+    .supplier-table-wrapper {
+        border-radius: 9px;
+    }
+
+    .supplier-table-wrapper thead th {
+        height: 38px;
+
+        padding: 0 9px;
+
+        font-size: 9px;
+    }
+
+    .supplier-table-wrapper tbody td {
+        height: 44px;
+
+        padding: 0 9px;
+
+        font-size: 9px;
+    }
+}

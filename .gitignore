@@ -1,0 +1,40 @@
+
+# Environment secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+venv/
+.venv/
+
+# Node dependencies
+node_modules/
+**/node_modules/
+
+# Build files
+dist/
+build/
+.next/
+coverage/
+
+# Logs
+logs/
+*.log
+
+# Runtime uploads
+backend/uploads/*
+uploads/*
+!backend/uploads/.gitkeep
+!uploads/.gitkeep
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,346 @@
+.sales-details {
+    width: 100%;
+}
+
+
+/* =========================================
+   Card
+========================================= */
+
+.sales-details-card {
+    margin-bottom: 18px;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   Card Header
+========================================= */
+
+.sales-details-card-header {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 15px 16px;
+
+    background: #f8faf9;
+
+    border-bottom: 1px solid #edf0f2;
+}
+
+.sales-details-card-header h3 {
+    margin: 0;
+
+    font-size: 14px;
+
+    color: #111827;
+}
+
+.sales-details-card-header p {
+    margin: 4px 0 0;
+
+    font-size: 11px;
+
+    color: #9ca3af;
+}
+
+.sales-details-order-number {
+    padding: 6px 10px;
+
+    border-radius: 6px;
+
+    background: #e8f7ee;
+
+    color: #0b6b2d;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   Info Grid
+========================================= */
+
+.sales-details-info-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+
+    padding: 18px 16px;
+}
+
+.sales-detail-info {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+.sales-detail-icon {
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 8px;
+
+    background: #f1f5f9;
+
+    color: #64748b;
+}
+
+.sales-detail-info > div:last-child {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+.sales-detail-info span {
+    font-size: 11px;
+
+    color: #9ca3af;
+}
+
+.sales-detail-info strong {
+    font-size: 13px;
+
+    color: #374151;
+}
+
+
+/* =========================================
+   Items Table
+========================================= */
+
+.sales-details-items-scroll {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+.sales-details-items {
+    width: 100%;
+
+    min-width: 700px;
+
+    border-collapse: collapse;
+
+    font-size: 12px;
+}
+
+.sales-details-items th {
+    height: 40px;
+
+    padding: 0 12px;
+
+    text-align: left;
+
+    background: #f8faf9;
+
+    color: #64748b;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    border-bottom: 1px solid #edf0f2;
+}
+
+.sales-details-items td {
+    padding: 11px 12px;
+
+    color: #374151;
+
+    border-bottom: 1px solid #f0f2f4;
+}
+
+.sales-details-items tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =========================================
+   Product
+========================================= */
+
+.sales-detail-product {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    min-width: 180px;
+
+    font-weight: 500;
+}
+
+.sales-detail-product svg {
+    flex-shrink: 0;
+
+    color: #0b6b2d;
+}
+
+.sales-details-items td strong {
+    color: #111827;
+}
+
+
+/* =========================================
+   Summary
+========================================= */
+
+.sales-details-summary {
+    width: min(360px, 100%);
+
+    margin-left: auto;
+
+    margin-bottom: 18px;
+
+    padding: 16px;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    box-sizing: border-box;
+}
+
+.sales-details-summary-row {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 6px 0;
+
+    font-size: 13px;
+}
+
+.sales-details-summary-row span {
+    color: #64748b;
+}
+
+.sales-details-summary-row strong {
+    color: #374151;
+}
+
+.sales-details-summary-row.discount strong {
+    color: #dc2626;
+}
+
+.sales-details-summary-divider {
+    height: 1px;
+
+    margin: 11px 0;
+
+    background: #e5e7eb;
+}
+
+.sales-details-total {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sales-details-total span {
+    font-size: 15px;
+
+    font-weight: 700;
+
+    color: #111827;
+}
+
+.sales-details-total strong {
+    font-size: 19px;
+
+    font-weight: 800;
+
+    color: #0b6b2d;
+}
+
+
+/* =========================================
+   Remarks
+========================================= */
+
+.sales-details-remarks {
+    padding: 15px 16px;
+
+    margin-bottom: 18px;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+}
+
+.sales-details-remarks h3 {
+    margin: 0 0 7px;
+
+    font-size: 13px;
+
+    color: #374151;
+}
+
+.sales-details-remarks p {
+    margin: 0;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+    color: #64748b;
+}
+
+
+/* =========================================
+   Responsive
+========================================= */
+
+@media (max-width: 650px) {
+
+    .sales-details-info-grid {
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+    }
+
+    .sales-details-summary {
+        width: 100%;
+    }
+
+    .sales-details-card-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+}

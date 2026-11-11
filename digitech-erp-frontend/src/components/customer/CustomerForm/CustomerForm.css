@@ -1,0 +1,1188 @@
+/* =========================================================
+   CUSTOMER DRAWER OVERLAY
+========================================================= */
+
+.customer-drawer-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.45);
+    z-index: 2000;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+/* =========================================================
+   FULL WIDTH DRAWER
+   Uses the complete area to the right of the sidebar.
+========================================================= */
+
+.customer-drawer {
+    width: calc(100vw - 240px);
+    max-width: none;
+    min-width: 0;
+    height: 100vh;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    box-shadow: -8px 0 30px rgba(0, 0, 0, 0.12);
+    animation: customerDrawerIn 0.2s ease-out;
+}
+
+
+@keyframes customerDrawerIn {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.customer-drawer-header {
+    min-height: 64px;
+    padding: 10px 22px;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
+
+
+.customer-drawer-header h2 {
+    margin: 0;
+    color: #172033;
+    font-size: 18px;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+
+.customer-drawer-header p {
+    margin: 3px 0 0;
+    color: #64748b;
+    font-size: 11px;
+}
+
+
+.customer-drawer-close {
+    width: 34px;
+    height: 34px;
+    border: 1px solid #dbe2ea;
+    border-radius: 7px;
+    background: #ffffff;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+
+.customer-drawer-close:hover {
+    background: #f8fafc;
+    color: #1e293b;
+}
+
+
+/* =========================================================
+   MAIN FORM LAYOUT
+
+   Desktop:
+   LEFT  = Customer Information
+   RIGHT = Assigned Machines + Rental + Documents
+
+   BELOW:
+   LEFT  = Address
+   RIGHT = Tax Details
+
+   THEN:
+   Full width Financial / Remarks / Status
+========================================================= */
+
+.customer-form {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px 24px 82px;
+    box-sizing: border-box;
+
+    display: grid;
+    grid-template-columns: minmax(320px, 0.72fr) minmax(620px, 1.28fr);
+    grid-template-rows: auto auto auto auto auto;
+    column-gap: 18px;
+    row-gap: 16px;
+    align-items: start;
+}
+
+
+.customer-form::-webkit-scrollbar {
+    width: 6px;
+}
+
+
+.customer-form::-webkit-scrollbar-track {
+    background: #f8fafc;
+}
+
+
+.customer-form::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+}
+
+
+/* =========================================================
+   SECTION BASE
+========================================================= */
+
+.customer-form-section {
+    min-width: 0;
+    box-sizing: border-box;
+    padding-bottom: 16px;
+    margin: 0;
+    border-bottom: 1px solid #eef2f7;
+}
+
+
+.customer-form-section-title {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 11px;
+    color: #172033;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+.customer-form-section-title svg {
+    width: 16px;
+    height: 16px;
+    color: #087f3e;
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   GRID POSITIONS
+========================================================= */
+
+.customer-information-section {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+
+.customer-machines-section {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+
+.customer-address-section {
+    grid-column: 1;
+    grid-row: 2;
+    padding: 14px;
+    border: 1px solid #eef2f7;
+    border-radius: 8px;
+    background: #ffffff;
+}
+
+
+.customer-tax-section {
+    grid-column: 1;
+    grid-row: 3;
+    padding: 14px;
+    border: 1px solid #eef2f7;
+    border-radius: 8px;
+    background: #ffffff;
+}
+
+
+.customer-financial-section {
+    grid-column: 1 / -1;
+    grid-row: 4;
+    padding-top: 14px;
+}
+
+
+.customer-remarks-section {
+    grid-column: 1 / -1;
+    grid-row: 5;
+    padding-bottom: 10px;
+}
+
+
+.customer-status-section {
+    grid-column: 1 / -1;
+    grid-row: 6;
+    margin: 0;
+}
+
+
+.customer-drawer-footer {
+    grid-column: 1 / -1;
+    grid-row: 7;
+}
+
+
+/* =========================================================
+   CUSTOMER INFORMATION
+========================================================= */
+
+.customer-information-section {
+    padding-bottom: 12px;
+}
+
+
+.customer-information-section .customer-form-section-title {
+    margin-bottom: 9px;
+}
+
+
+.customer-information-section .customer-form-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px 10px;
+}
+
+
+.customer-information-section .customer-form-group.full {
+    grid-column: 1 / -1;
+}
+
+
+.customer-information-section .customer-form-group label {
+    font-size: 10px;
+}
+
+
+.customer-information-section .customer-form-group input {
+    height: 32px;
+    padding: 0 9px;
+    font-size: 11px;
+    border-radius: 5px;
+}
+
+
+/* =========================================================
+   COMMON FORM GRID
+========================================================= */
+
+.customer-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px 12px;
+}
+
+
+.customer-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+}
+
+
+.customer-form-group.full {
+    grid-column: 1 / -1;
+}
+
+
+.customer-form-group label {
+    color: #475569;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+
+.customer-form-group label span {
+    color: #dc2626;
+    margin-left: 3px;
+}
+
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+.customer-form-group input,
+.customer-form-group textarea,
+.customer-form-group select {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    background: #ffffff;
+    color: #172033;
+    font-family: inherit;
+    font-size: 12px;
+    outline: none;
+}
+
+
+.customer-form-group input,
+.customer-form-group select {
+    height: 36px;
+    padding: 0 10px;
+}
+
+
+.customer-form-group textarea {
+    min-height: 64px;
+    padding: 8px 10px;
+    resize: vertical;
+}
+
+
+.customer-form-group input:focus,
+.customer-form-group textarea:focus,
+.customer-form-group select:focus {
+    border-color: #087f3e;
+    box-shadow: 0 0 0 2px rgba(8, 127, 62, 0.07);
+}
+
+
+.customer-form-group input::placeholder,
+.customer-form-group textarea::placeholder {
+    color: #94a3b8;
+}
+
+
+.customer-form-group input:disabled,
+.customer-form-group textarea:disabled,
+.customer-form-group select:disabled {
+    background: #f8fafc;
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   ADDRESS / TAX
+========================================================= */
+
+.customer-address-section .customer-form-grid,
+.customer-tax-section .customer-form-grid {
+    gap: 9px 11px;
+}
+
+
+.customer-tax-section .customer-form-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+
+/* =========================================================
+   MACHINE SECTION HEADER
+========================================================= */
+
+.customer-machine-section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+
+.customer-machine-section-title {
+    margin-bottom: 0;
+}
+
+
+.customer-add-machine-btn {
+    height: 34px;
+    padding: 0 12px;
+    border: 1px solid #087f3e;
+    border-radius: 6px;
+    background: #087f3e;
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+
+.customer-add-machine-btn:hover {
+    background: #066b34;
+    border-color: #066b34;
+}
+
+
+.customer-add-machine-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   MACHINE LIST
+========================================================= */
+
+.customer-machines-list {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+}
+
+
+/* =========================================================
+   MACHINE CARD
+========================================================= */
+
+.customer-machine-card {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    padding: 11px;
+    border: 1px solid #dbe3ec;
+    border-radius: 8px;
+    background: #f8fafc;
+}
+
+
+.customer-machine-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding-bottom: 7px;
+    margin-bottom: 9px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+
+.customer-machine-number {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+
+.customer-machine-number span {
+    min-width: 25px;
+    height: 23px;
+    padding: 0 6px;
+    border: 1px solid #dbe2ea;
+    border-radius: 5px;
+    background: #ffffff;
+    color: #334155;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+
+.customer-machine-number strong {
+    color: #172033;
+    font-size: 12px;
+}
+
+
+.customer-machine-card-remove {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #fecaca;
+    border-radius: 6px;
+    background: #ffffff;
+    color: #dc2626;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+
+.customer-machine-card-remove:hover {
+    background: #fef2f2;
+}
+
+
+.customer-machine-card-remove:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   MACHINE BASIC DETAILS
+========================================================= */
+
+.customer-machine-card > .customer-form-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px 11px;
+}
+
+
+/* =========================================================
+   RENTAL & BILLING TERMS
+========================================================= */
+
+.customer-rental-information {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #dbe7df;
+    border-radius: 7px;
+    background: #f8fbf9;
+}
+
+
+.customer-rental-title {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 8px;
+    color: #172033;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+
+.customer-rental-title svg {
+    width: 14px;
+    height: 14px;
+    color: #087f3e;
+}
+
+
+.customer-rental-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px;
+}
+
+
+.customer-rental-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+}
+
+
+.customer-rental-group label {
+    color: #475569;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+
+.customer-rental-group input {
+    width: 100%;
+    height: 34px;
+    box-sizing: border-box;
+    padding: 0 9px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    background: #ffffff;
+    color: #172033;
+    font-family: inherit;
+    font-size: 11px;
+    outline: none;
+}
+
+
+.customer-rental-group input:focus {
+    border-color: #087f3e;
+    box-shadow: 0 0 0 2px rgba(8, 127, 62, 0.07);
+}
+
+
+.customer-rental-group input::placeholder {
+    color: #94a3b8;
+}
+
+
+/* =========================================================
+   MACHINE DOCUMENTS
+========================================================= */
+
+.customer-machine-documents {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #e2e8f0;
+    border-radius: 7px;
+    background: #ffffff;
+}
+
+
+.customer-documents-title {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 8px;
+    color: #172033;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+
+.customer-documents-title svg {
+    width: 14px;
+    height: 14px;
+    color: #087f3e;
+}
+
+
+.customer-document-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+}
+
+
+.customer-document-box {
+    min-width: 0;
+    padding: 8px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    background: #f8fafc;
+}
+
+
+.customer-document-box-header {
+    margin-bottom: 6px;
+}
+
+
+.customer-document-box-header strong {
+    display: block;
+    color: #334155;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+
+.customer-document-box-header span {
+    display: block;
+    margin-top: 2px;
+    color: #94a3b8;
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   PDF UPLOAD
+========================================================= */
+
+.customer-document-upload {
+    position: relative;
+    min-height: 58px;
+    box-sizing: border-box;
+    padding: 7px;
+    border: 1px dashed #cbd5e1;
+    border-radius: 6px;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+.customer-document-upload:hover {
+    border-color: #087f3e;
+    background: #f8fbf9;
+}
+
+
+.customer-document-upload-icon {
+    width: 25px;
+    height: 25px;
+    margin-bottom: 3px;
+    border-radius: 50%;
+    background: #e8f5ed;
+    color: #087f3e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.customer-document-upload-icon svg {
+    width: 13px;
+    height: 13px;
+}
+
+
+.customer-document-upload strong {
+    color: #334155;
+    font-size: 9px;
+    font-weight: 700;
+}
+
+
+.customer-document-upload span {
+    margin-top: 2px;
+    color: #94a3b8;
+    font-size: 8px;
+}
+
+
+.customer-document-upload input[type="file"] {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   EXISTING DOCUMENT
+========================================================= */
+
+.customer-document-existing {
+    min-height: 58px;
+    box-sizing: border-box;
+    padding: 7px;
+    border: 1px solid #dbe7df;
+    border-radius: 6px;
+    background: #f8fbf9;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+}
+
+
+.customer-document-existing-info {
+    min-width: 0;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+
+.customer-document-existing-info > svg {
+    width: 15px;
+    height: 15px;
+    color: #087f3e;
+    flex-shrink: 0;
+}
+
+
+.customer-document-existing-info div {
+    min-width: 0;
+}
+
+
+.customer-document-existing-info strong {
+    display: block;
+    color: #334155;
+    font-size: 9px;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.customer-document-existing-info span {
+    display: block;
+    margin-top: 2px;
+    color: #16a34a;
+    font-size: 8px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   DOCUMENT BUTTONS
+========================================================= */
+
+.customer-document-actions {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
+}
+
+
+.customer-document-btn {
+    height: 26px;
+    padding: 0 7px;
+    border: 1px solid #d1d5db;
+    border-radius: 5px;
+    background: #ffffff;
+    color: #475569;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    font-family: inherit;
+    font-size: 9px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+.customer-document-btn:hover {
+    background: #f1f5f9;
+}
+
+
+.customer-document-btn svg {
+    width: 12px;
+    height: 12px;
+}
+
+
+/* =========================================================
+   REPLACE DOCUMENT
+========================================================= */
+
+.customer-document-replace {
+    position: relative;
+    width: fit-content;
+    margin: 4px auto 0;
+    padding: 3px 6px;
+    color: #087f3e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    font-size: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+.customer-document-replace input {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   FINANCIAL INFORMATION
+========================================================= */
+
+.customer-financial-section .customer-form-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+
+/* =========================================================
+   ACTIVE CUSTOMER
+========================================================= */
+
+.customer-active-row {
+    margin-bottom: 0;
+}
+
+
+.customer-active-row label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #334155;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+.customer-active-row input {
+    width: 15px;
+    height: 15px;
+    accent-color: #087f3e;
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.customer-drawer-footer {
+    position: sticky;
+    bottom: 0;
+    margin: 0 -24px;
+    padding: 10px 24px;
+    background: #ffffff;
+    border-top: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    z-index: 10;
+}
+
+
+.customer-cancel-btn,
+.customer-save-btn {
+    height: 36px;
+    padding: 0 14px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+.customer-cancel-btn {
+    border: 1px solid #d1d5db;
+    background: #ffffff;
+    color: #475569;
+}
+
+
+.customer-cancel-btn:hover {
+    background: #f8fafc;
+}
+
+
+.customer-save-btn {
+    border: none;
+    background: #087f3e;
+    color: #ffffff;
+}
+
+
+.customer-save-btn:hover {
+    background: #066b34;
+}
+
+
+.customer-save-btn:disabled,
+.customer-cancel-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   LARGE TABLET
+========================================================= */
+
+@media (max-width: 1250px) {
+
+    .customer-drawer {
+        width: calc(100vw - 220px);
+    }
+
+
+    .customer-form {
+        grid-template-columns:
+            minmax(290px, 0.7fr)
+            minmax(500px, 1.3fr);
+
+        column-gap: 14px;
+
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+
+    .customer-drawer-footer {
+        margin-left: -18px;
+        margin-right: -18px;
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+
+    .customer-rental-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 950px) {
+
+    .customer-drawer {
+        width: 100%;
+    }
+
+
+    .customer-form {
+        display: block;
+        padding: 14px 16px 80px;
+    }
+
+
+    .customer-information-section,
+    .customer-machines-section,
+    .customer-address-section,
+    .customer-tax-section,
+    .customer-financial-section,
+    .customer-remarks-section,
+    .customer-status-section {
+        margin-bottom: 16px;
+    }
+
+
+    .customer-machines-section {
+        padding-bottom: 0;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .customer-drawer {
+        width: 100%;
+    }
+
+
+    .customer-drawer-header {
+        min-height: 60px;
+        padding: 10px 13px;
+    }
+
+
+    .customer-drawer-header h2 {
+        font-size: 17px;
+    }
+
+
+    .customer-form {
+        padding: 12px 12px 78px;
+    }
+
+
+    .customer-form-grid,
+    .customer-information-section .customer-form-grid,
+    .customer-machine-card > .customer-form-grid,
+    .customer-tax-section .customer-form-grid,
+    .customer-financial-section .customer-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .customer-form-group.full {
+        grid-column: auto;
+    }
+
+
+    .customer-machine-section-header {
+        align-items: flex-start;
+    }
+
+
+    .customer-add-machine-btn {
+        height: 32px;
+        padding: 0 9px;
+    }
+
+
+    .customer-machine-card {
+        padding: 10px;
+    }
+
+
+    .customer-rental-grid,
+    .customer-document-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .customer-document-existing {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+
+    .customer-document-actions {
+        width: 100%;
+    }
+
+
+    .customer-document-btn {
+        flex: 1;
+    }
+
+
+    .customer-drawer-footer {
+        margin-left: -12px;
+        margin-right: -12px;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+
+    .customer-cancel-btn,
+    .customer-save-btn {
+        flex: 1;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+    .customer-form {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+
+    .customer-machine-section-header {
+        flex-direction: column;
+    }
+
+
+    .customer-add-machine-btn {
+        width: 100%;
+    }
+
+
+    .customer-machine-documents,
+    .customer-rental-information {
+        padding: 9px;
+    }
+
+
+    .customer-drawer-footer {
+        margin-left: -10px;
+        margin-right: -10px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+}

@@ -1,0 +1,132 @@
+/* =====================================================
+   TABLE WRAPPER
+===================================================== */
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+
+    /* Keep text rendering clean */
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    font-size: 14px;
+    color: var(--text);
+
+    /* Do not use transform/scale on tables */
+    transform: none;
+}
+
+
+/* =====================================================
+   TABLE HEADER + CELLS
+===================================================== */
+
+.table th,
+.table td {
+    padding: 12px;
+
+    border-bottom: 1px solid var(--color-border);
+
+    text-align: left;
+
+    font-family: "Segoe UI", Tahoma, sans-serif;
+
+    /* Prevent overly thin/blurry table text */
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
+
+    vertical-align: middle;
+
+    transform: none;
+}
+
+
+/* =====================================================
+   TABLE HEADER
+===================================================== */
+
+.table th {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+
+    white-space: nowrap;
+}
+
+
+/* =====================================================
+   TABLE BODY
+===================================================== */
+
+.table td {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text);
+
+    line-height: 1.45;
+}
+
+
+/* =====================================================
+   HOVER
+===================================================== */
+
+.table tbody tr {
+    transition: background-color 0.15s ease;
+}
+
+.table tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.015);
+}
+
+
+/* =====================================================
+   BUTTONS / LINKS INSIDE TABLE
+===================================================== */
+
+.table button,
+.table a {
+    font-family: inherit;
+}
+
+
+/* =====================================================
+   INPUTS INSIDE TABLE
+===================================================== */
+
+.table input,
+.table select,
+.table textarea {
+    font-family: inherit;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .table th,
+    .table td {
+        padding: 10px;
+    }
+
+    .table th {
+        font-size: 12px;
+    }
+
+    .table td {
+        font-size: 13px;
+    }
+}

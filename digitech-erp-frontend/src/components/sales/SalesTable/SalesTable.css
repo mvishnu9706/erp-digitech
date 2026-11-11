@@ -1,0 +1,1117 @@
+/* =====================================================
+   SALES TABLE
+===================================================== */
+
+.sales-table-wrapper {
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   TABLE SCROLL CONTAINER
+===================================================== */
+
+.sales-table-scroll {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid #dfe5ec;
+    border-radius: 10px;
+
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   SCROLLBAR
+===================================================== */
+
+.sales-table-scroll::-webkit-scrollbar {
+    height: 7px;
+}
+
+.sales-table-scroll::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+.sales-table-scroll::-webkit-scrollbar-thumb {
+    background: #b8c2cf;
+    border-radius: 10px;
+}
+
+.sales-table-scroll::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+.sales-table {
+    width: 100%;
+
+    /*
+       Increased minimum width so all columns have
+       enough room, especially the Items column.
+    */
+    min-width: 1200px;
+
+    table-layout: fixed;
+
+    border-collapse: separate;
+    border-spacing: 0;
+
+    background: #ffffff;
+
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   COLUMN WIDTHS
+===================================================== */
+
+/*
+   Total = 100%
+*/
+
+/* Order No. */
+.sales-table th:nth-child(1),
+.sales-table td:nth-child(1) {
+    width: 15%;
+}
+
+/* Customer */
+.sales-table th:nth-child(2),
+.sales-table td:nth-child(2) {
+    width: 12%;
+}
+
+/* Reference */
+.sales-table th:nth-child(3),
+.sales-table td:nth-child(3) {
+    width: 9%;
+}
+
+/* Warehouse */
+.sales-table th:nth-child(4),
+.sales-table td:nth-child(4) {
+    width: 9%;
+}
+
+/* Date */
+.sales-table th:nth-child(5),
+.sales-table td:nth-child(5) {
+    width: 8%;
+}
+
+/*
+   ITEMS
+   Increased from 5% to 18%
+*/
+.sales-table th:nth-child(6),
+.sales-table td:nth-child(6) {
+    width: 18%;
+}
+
+/* Amount */
+.sales-table th:nth-child(7),
+.sales-table td:nth-child(7) {
+    width: 10%;
+}
+
+/* Payment */
+.sales-table th:nth-child(8),
+.sales-table td:nth-child(8) {
+    width: 9%;
+}
+
+/* Actions */
+.sales-table th:nth-child(9),
+.sales-table td:nth-child(9) {
+    width: 10%;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.sales-table thead th {
+    height: 46px;
+
+    padding: 0 12px;
+
+    background: #f5f8fc;
+
+    color: #243b53;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    text-align: left;
+    vertical-align: middle;
+
+    white-space: nowrap;
+
+    border-bottom: 1px solid #dfe5ec;
+    border-right: 1px solid #dfe5ec;
+
+    box-sizing: border-box;
+}
+
+.sales-table thead th:last-child {
+    border-right: none;
+}
+
+
+/* =====================================================
+   BODY ROW
+===================================================== */
+
+.sales-table tbody tr {
+    min-height: 58px;
+
+    background: #ffffff;
+
+    transition: background 0.15s ease;
+}
+
+.sales-table tbody tr:hover {
+    background: #f8fbff;
+}
+
+
+/* =====================================================
+   BODY CELLS
+===================================================== */
+
+.sales-table tbody td {
+    min-height: 58px;
+
+    padding: 9px 12px;
+
+    color: #344054;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    vertical-align: middle;
+
+    /*
+       Do NOT globally force nowrap here.
+       Items needs wrapping.
+    */
+
+    overflow: hidden;
+
+    border-bottom: 1px solid #dfe5ec;
+    border-right: 1px solid #dfe5ec;
+
+    box-sizing: border-box;
+}
+
+.sales-table tbody td:last-child {
+    border-right: none;
+}
+
+.sales-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =====================================================
+   ORDER NUMBER
+===================================================== */
+
+.sales-order-number {
+    display: inline-block;
+
+    max-width: 100%;
+
+    color: #00833e;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    vertical-align: middle;
+}
+
+
+/* =====================================================
+   CUSTOMER
+===================================================== */
+
+.sales-customer {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    min-width: 0;
+
+    gap: 3px;
+}
+
+.sales-customer-name {
+    color: #1f2937;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.sales-customer-phone {
+    color: #98a2b3;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+
+/* =====================================================
+   REFERENCE BY
+===================================================== */
+
+.sales-reference-by {
+    display: inline-block;
+
+    max-width: 100%;
+
+    color: #475467;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* =====================================================
+   WAREHOUSE
+===================================================== */
+
+.sales-warehouse-name {
+    display: inline-block;
+
+    max-width: 100%;
+
+    color: #475467;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* =====================================================
+   DATE
+===================================================== */
+
+.sales-date {
+    display: inline-block;
+
+    color: #475467;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+/* =====================================================
+   ITEMS COLUMN
+===================================================== */
+
+/*
+   This is the important part.
+
+   The Items column can contain multiple products.
+   Each product appears on its own line.
+*/
+
+.sales-item-list {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    gap: 4px;
+
+    width: 100%;
+
+    min-width: 0;
+
+    padding: 2px 0;
+}
+
+
+/* =====================================================
+   INDIVIDUAL ITEM ROW
+===================================================== */
+
+.sales-item-row {
+    display: flex;
+
+    align-items: flex-start;
+
+    width: 100%;
+
+    min-width: 0;
+
+    line-height: 1.35;
+
+    gap: 5px;
+}
+
+
+/* =====================================================
+   ITEM NAME
+===================================================== */
+
+.sales-item-name {
+    display: block;
+
+    min-width: 0;
+
+    flex: 1;
+
+    color: #172b4d;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    /*
+       Allow long product names to wrap.
+    */
+
+    white-space: normal;
+
+    overflow-wrap: anywhere;
+
+    word-break: break-word;
+}
+
+
+/* =====================================================
+   ITEM QUANTITY
+===================================================== */
+
+.sales-item-quantity {
+    flex-shrink: 0;
+
+    color: #475467;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    white-space: nowrap;
+}
+
+
+/* =====================================================
+   OLD ITEM COUNT FALLBACK
+===================================================== */
+
+.sales-item-count {
+    width: 28px;
+    height: 26px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 6px;
+
+    background: #eef3f8;
+
+    color: #344054;
+
+    font-size: 13px;
+    font-weight: 800;
+}
+
+
+/* =====================================================
+   AMOUNT
+===================================================== */
+
+.sales-amount {
+    display: inline-block;
+
+    color: #111827;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    white-space: nowrap;
+}
+
+
+/* =====================================================
+   PAYMENT BADGE
+===================================================== */
+
+.sales-status-badge {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 26px;
+
+    padding: 3px 10px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    white-space: nowrap;
+
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   PENDING
+===================================================== */
+
+.sales-status-badge.pending {
+    background: #fff2c7;
+    color: #b45309;
+}
+
+
+/* =====================================================
+   RECEIVED
+===================================================== */
+
+.sales-status-badge.received-account {
+    background: #e7f1ff;
+    color: #2563eb;
+}
+
+
+/* =====================================================
+   RECEIVED BY HAND
+===================================================== */
+
+.sales-status-badge.received-hand {
+    background: #e7f8ef;
+    color: #15803d;
+}
+
+
+/* =====================================================
+   PARTIAL
+===================================================== */
+
+.sales-status-badge.partial {
+    background: #f3e8ff;
+    color: #7e22ce;
+}
+
+
+/* =====================================================
+   DEFAULT
+===================================================== */
+
+.sales-status-badge.default {
+    background: #f1f5f9;
+    color: #64748b;
+}
+
+
+/* =====================================================
+   ACTIONS
+===================================================== */
+
+.sales-actions {
+    display: flex;
+
+    align-items: center;
+    justify-content: flex-start;
+
+    gap: 5px;
+
+    width: 100%;
+
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   ALL ACTION BUTTONS
+===================================================== */
+
+.sales-action {
+    width: 30px;
+    height: 30px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    padding: 0;
+
+    background: #ffffff;
+
+    border: 1px solid #d8e0e8;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.15s ease,
+        border-color 0.15s ease,
+        transform 0.1s ease;
+
+    box-sizing: border-box;
+}
+
+.sales-action:hover {
+    background: #f8fafc;
+
+    transform: translateY(-1px);
+}
+
+.sales-action:active {
+    transform: scale(0.95);
+}
+
+
+/* =====================================================
+   VIEW BUTTON
+===================================================== */
+
+.sales-action.view {
+    color: #2563eb;
+}
+
+.sales-action.view:hover {
+    border-color: #93c5fd;
+    background: #eff6ff;
+}
+
+
+/* =====================================================
+   PDF DOWNLOAD BUTTON
+===================================================== */
+
+.sales-action.pdf {
+    color: #dc2626;
+
+    background: #ffffff;
+}
+
+.sales-action.pdf:hover {
+    border-color: #fca5a5;
+
+    background: #fff1f2;
+
+    color: #b91c1c;
+}
+
+
+/* =====================================================
+   EDIT BUTTON
+===================================================== */
+
+.sales-action.edit {
+    color: #7c3aed;
+}
+
+.sales-action.edit:hover {
+    border-color: #c4b5fd;
+
+    background: #f5f3ff;
+}
+
+
+/* =====================================================
+   DELETE BUTTON
+===================================================== */
+
+.sales-action.delete {
+    color: #ef4444;
+}
+
+.sales-action.delete:hover {
+    border-color: #fecaca;
+
+    background: #fff1f2;
+
+    color: #dc2626;
+}
+
+
+/* =====================================================
+   EMPTY STATE
+===================================================== */
+
+.sales-empty-state {
+    min-height: 260px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    background: #ffffff;
+
+    border: 1px solid #dfe5ec;
+
+    border-radius: 10px;
+
+    box-sizing: border-box;
+
+    text-align: center;
+}
+
+
+.sales-empty-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 9px;
+
+    border-radius: 50%;
+
+    background: #f3f6f9;
+
+    font-size: 22px;
+}
+
+
+.sales-empty-state h3 {
+    margin: 0 0 5px;
+
+    color: #344054;
+
+    font-size: 18px;
+    font-weight: 800;
+}
+
+
+.sales-empty-state p {
+    margin: 0;
+
+    color: #98a2b3;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   SALES TABLE CONTAINER
+===================================================== */
+
+.sales-table-container {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+
+/* =====================================================
+   TABLE WRAPPER
+===================================================== */
+
+.sales-table-wrapper {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+
+/* =====================================================
+   SALES PAGE TABLE
+===================================================== */
+
+.sales-page table {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+
+/* =====================================================
+   REMOVE DEFAULT TABLE SPACING
+===================================================== */
+
+.sales-page table:first-child {
+    margin-top: 0;
+}
+
+.sales-page table:last-child {
+    margin-bottom: 0;
+}
+
+
+
+
+/* =====================================================
+   SALES PAGINATION
+   TOP RIGHT - ABOVE TABLE
+===================================================== */
+
+.sales-pagination {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 14px;
+    padding: 8px 0 10px 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.sales-pagination-left {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+}
+
+.sales-pagination-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: #334155;
+}
+
+.sales-page-size {
+    height: 30px;
+    min-width: 58px;
+    padding: 3px 24px 3px 8px;
+    border: 1px solid #cbd5e1;
+    border-radius: 5px;
+    background: #ffffff;
+    color: #1e293b;
+    font-size: 13px;
+    cursor: pointer;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.sales-page-size:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.12);
+}
+
+.sales-pagination-center {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.sales-page-button,
+.sales-page-number {
+    width: 30px;
+    height: 30px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: 1px solid #cbd5e1;
+    border-radius: 5px;
+
+    background: #ffffff;
+    color: #334155;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        background 0.15s ease,
+        border-color 0.15s ease,
+        color 0.15s ease;
+}
+
+.sales-page-button:hover:not(:disabled),
+.sales-page-number:hover {
+    background: #f1f5f9;
+    border-color: #94a3b8;
+}
+
+.sales-page-number.active {
+    background: #2563eb;
+    border-color: #2563eb;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.sales-page-button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    background: #f8fafc;
+}
+
+.sales-pagination-right {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    font-size: 13px;
+    color: #334155;
+
+    white-space: nowrap;
+}
+
+.sales-pagination-right strong {
+    color: #0f172a;
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   PAGINATION RESPONSIVE
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .sales-pagination {
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .sales-pagination {
+        justify-content: flex-start;
+    }
+
+}
+
+
+/* =====================================================
+   RESPONSIVE - LARGE
+===================================================== */
+
+@media (max-width: 1400px) {
+
+    .sales-table {
+        min-width: 1150px;
+    }
+
+    .sales-table thead th {
+        font-size: 13px;
+    }
+
+    .sales-table tbody td {
+        font-size: 13px;
+    }
+
+    .sales-item-name {
+        font-size: 13px;
+    }
+}
+
+
+/* =====================================================
+   RESPONSIVE - MEDIUM
+===================================================== */
+
+@media (max-width: 1100px) {
+
+    .sales-table {
+        min-width: 1100px;
+    }
+
+    .sales-table th,
+    .sales-table td {
+        padding-left: 9px;
+        padding-right: 9px;
+    }
+
+    .sales-action {
+        width: 29px;
+        height: 29px;
+    }
+}
+
+
+/* =====================================================
+   RESPONSIVE - TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .sales-table {
+        min-width: 1050px;
+    }
+
+    .sales-table thead th {
+        height: 44px;
+
+        font-size: 13px;
+    }
+
+    .sales-table tbody td {
+        min-height: 54px;
+
+        padding: 8px 9px;
+
+        font-size: 13px;
+    }
+
+    .sales-item-name {
+        font-size: 12.5px;
+    }
+
+    .sales-item-quantity {
+        font-size: 12.5px;
+    }
+}
+
+
+/* =====================================================
+   RESPONSIVE - MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .sales-table {
+        min-width: 1050px;
+    }
+
+    .sales-table-scroll {
+        border-radius: 8px;
+    }
+
+    .sales-table thead th {
+        height: 42px;
+
+        padding: 0 8px;
+
+        font-size: 12px;
+    }
+
+    .sales-table tbody td {
+        padding: 8px;
+
+        font-size: 12px;
+    }
+
+    .sales-order-number {
+        font-size: 12px;
+    }
+
+    .sales-customer-name,
+    .sales-reference-by,
+    .sales-warehouse-name,
+    .sales-date,
+    .sales-amount {
+        font-size: 12px;
+    }
+
+    .sales-item-name {
+        font-size: 12px;
+    }
+
+    .sales-item-quantity {
+        font-size: 12px;
+    }
+
+    .sales-action {
+        width: 28px;
+        height: 28px;
+    }
+
+    .sales-actions {
+        gap: 4px;
+    }
+}
+/* ==========================================================
+   SALES PAGINATION
+   ========================================================== */
+
+.sales-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    min-height: 38px;
+    height: 38px;
+
+    gap: 12px;
+}
+
+/* Remove extra space around pagination */
+.sales-table-wrapper {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.sales-pagination-left,
+.sales-pagination-center,
+.sales-pagination-right {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* Keep pagination immediately above table */
+.sales-table-scroll {
+    margin-top: 0;
+    padding-top: 0;
+}

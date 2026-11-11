@@ -1,0 +1,144 @@
+/* ==========================================================
+   INVENTORY PAGE HEADER
+========================================================== */
+
+.inventory-page {
+    padding-top: 8px !important;
+}
+
+/* Header row */
+.inventory-header {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: flex-start !important;
+    width: 100% !important;
+
+    margin-top: 0 !important;
+    margin-bottom: 22px !important;
+    padding-top: 0 !important;
+}
+
+/* Left side - title + description */
+.inventory-header-content {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.inventory-header h1 {
+    margin: 0 0 8px 0 !important;
+    padding: 0 !important;
+}
+
+.inventory-header p {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* ==========================================================
+   HEADER ACTION BUTTONS
+========================================================== */
+
+.inventory-header-actions {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 12px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    white-space: nowrap !important;
+}
+
+/* Buttons */
+.inventory-header-actions button {
+    margin: 0 !important;
+}
+
+
+/* ==========================================================
+   REDUCE SPACE BETWEEN HEADER AND CARDS
+========================================================== */
+
+.inventory-stats,
+.inventory-cards,
+.stats-grid {
+    margin-top: 0 !important;
+}
+
+
+/* ==========================================================
+   REDUCE SPACE BETWEEN CARDS AND SEARCH
+========================================================== */
+
+.inventory-filters,
+.inventory-search-section,
+.search-filter-container {
+    margin-top: 18px !important;
+}
+
+
+/* ==========================================================
+   REDUCE SPACE BETWEEN SEARCH AND TABLE
+========================================================== */
+
+.inventory-table-container,
+.inventory-table-wrapper,
+.table-container {
+    margin-top: 18px !important;
+}
+
+
+/* ==========================================================
+   DESKTOP
+========================================================== */
+
+@media (min-width: 1024px) {
+
+    .inventory-header {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: flex-start !important;
+    }
+
+    .inventory-header-actions {
+        margin-left: auto !important;
+    }
+}
+
+
+/* ==========================================================
+   MOBILE / SMALL SCREENS
+========================================================== */
+
+@media (max-width: 900px) {
+
+    .inventory-header {
+        flex-direction: column !important;
+        gap: 15px !important;
+    }
+
+    .inventory-header-actions {
+        width: 100% !important;
+        justify-content: flex-start !important;
+        flex-wrap: wrap !important;
+    }
+}
+
+/* ==========================================================
+   REMOVE TOP SPACE ABOVE INVENTORY MANAGEMENT
+========================================================== */
+
+.inventory-page {
+    margin-top: 0 !important;
+    padding-top: 1px !important;
+}
+
+.inventory-page > *:first-child {
+    margin-top: 0 !important;
+}
+
+.inventory-header {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}

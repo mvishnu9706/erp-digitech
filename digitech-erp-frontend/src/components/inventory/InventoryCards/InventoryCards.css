@@ -1,0 +1,432 @@
+/* =====================================================
+   INVENTORY CARDS
+===================================================== */
+
+.inventory-cards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(6, minmax(0, 1fr));
+
+    gap: 16px;
+
+    width: 100%;
+
+    margin: 0 0 20px 0;
+
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.inventory-card {
+    position: relative;
+
+    width: 100%;
+    min-width: 0;
+    min-height: 84px;
+
+    padding: 14px 15px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 12px;
+
+    display: flex;
+
+    flex-direction: row;
+
+    align-items: center;
+
+    gap: 12px;
+
+    box-sizing: border-box;
+
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        border-color 0.18s ease,
+        background-color 0.18s ease;
+}
+
+
+/* =====================================================
+   CLICKABLE CARDS
+===================================================== */
+
+.inventory-card-clickable {
+    cursor: pointer;
+
+    user-select: none;
+}
+
+
+/* =====================================================
+   HOVER
+===================================================== */
+
+.inventory-card-clickable:hover {
+    transform: translateY(-2px);
+
+    border-color: #d1d5db;
+
+    box-shadow:
+        0 6px 16px rgba(15, 23, 42, 0.08);
+}
+
+
+/* =====================================================
+   ACTIVE / CLICK
+===================================================== */
+
+.inventory-card-clickable:active {
+    transform: translateY(0);
+
+    box-shadow:
+        0 3px 8px rgba(15, 23, 42, 0.06);
+}
+
+
+/* =====================================================
+   KEYBOARD FOCUS
+===================================================== */
+
+.inventory-card-clickable:focus {
+    outline: none;
+
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+
+/* =====================================================
+   ICON
+===================================================== */
+
+.inventory-icon {
+    width: 50px;
+
+    height: 50px;
+
+    min-width: 50px;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    color: #ffffff;
+
+    box-sizing: border-box;
+
+    transition:
+        transform 0.18s ease;
+}
+
+
+/* =====================================================
+   ICON HOVER
+===================================================== */
+
+.inventory-card-clickable:hover .inventory-icon {
+    transform: scale(1.04);
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.inventory-content {
+    flex: 1;
+
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.inventory-content h4 {
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    line-height: 1.2;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+/* =====================================================
+   VALUE
+===================================================== */
+
+.inventory-content h2 {
+    margin: 4px 0 0;
+
+    color: #111827;
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    line-height: 1.15;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+/* =====================================================
+   ICON COLORS
+===================================================== */
+
+.inventory-icon.blue {
+    background: #2563eb;
+}
+
+
+.inventory-icon.cyan {
+    background: #0891b2;
+}
+
+
+.inventory-icon.orange {
+    background: #ea580c;
+}
+
+
+.inventory-icon.red {
+    background: #dc2626;
+}
+
+
+.inventory-icon.teal {
+    background: #0f766e;
+}
+
+
+.inventory-icon.gold {
+    background: #ca8a04;
+}
+
+
+/* =====================================================
+   LARGE DESKTOP
+===================================================== */
+
+@media (min-width: 1400px) {
+
+    .inventory-cards {
+        gap: 16px;
+    }
+
+    .inventory-card {
+        min-height: 84px;
+
+        padding: 14px 15px;
+
+        gap: 12px;
+    }
+
+    .inventory-icon {
+        width: 50px;
+
+        height: 50px;
+
+        min-width: 50px;
+    }
+
+    .inventory-content h4 {
+        font-size: 13px;
+    }
+
+    .inventory-content h2 {
+        font-size: 22px;
+    }
+}
+
+
+/* =====================================================
+   DESKTOP / SMALL LAPTOP
+===================================================== */
+
+@media (max-width: 1250px) {
+
+    .inventory-cards {
+        gap: 12px;
+    }
+
+    .inventory-card {
+        padding: 12px;
+
+        gap: 9px;
+    }
+
+    .inventory-icon {
+        width: 46px;
+
+        height: 46px;
+
+        min-width: 46px;
+    }
+
+    .inventory-content h4 {
+        font-size: 12px;
+    }
+
+    .inventory-content h2 {
+        font-size: 20px;
+    }
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1100px) {
+
+    .inventory-cards {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
+        gap: 14px;
+    }
+
+    .inventory-card {
+        min-height: 82px;
+
+        padding: 13px 14px;
+
+        gap: 11px;
+    }
+
+    .inventory-icon {
+        width: 48px;
+
+        height: 48px;
+
+        min-width: 48px;
+    }
+
+    .inventory-content h4 {
+        font-size: 12px;
+    }
+
+    .inventory-content h2 {
+        font-size: 21px;
+    }
+}
+
+
+/* =====================================================
+   SMALL TABLET
+===================================================== */
+
+@media (max-width: 750px) {
+
+    .inventory-cards {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 12px;
+    }
+
+    .inventory-card {
+        min-height: 80px;
+
+        padding: 12px;
+
+        gap: 10px;
+    }
+
+    .inventory-icon {
+        width: 46px;
+
+        height: 46px;
+
+        min-width: 46px;
+    }
+
+    .inventory-content h4 {
+        font-size: 12px;
+    }
+
+    .inventory-content h2 {
+        font-size: 20px;
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 500px) {
+
+    .inventory-cards {
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+
+        margin-bottom: 16px;
+    }
+
+    .inventory-card {
+        min-height: 78px;
+
+        padding: 12px 14px;
+
+        gap: 12px;
+    }
+
+    .inventory-icon {
+        width: 46px;
+
+        height: 46px;
+
+        min-width: 46px;
+    }
+
+    .inventory-content h4 {
+        font-size: 12px;
+    }
+
+    .inventory-content h2 {
+        font-size: 21px;
+    }
+}

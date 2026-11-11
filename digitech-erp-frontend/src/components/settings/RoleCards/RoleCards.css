@@ -1,0 +1,3364 @@
+/* =========================================================
+   ROLE MANAGEMENT PAGE
+========================================================= */
+
+.role-management {
+    width: 100%;
+    min-height: 100%;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.role-management-header {
+    width: 100%;
+    margin-bottom: 18px;
+}
+
+.role-management-header h1 {
+    margin: 0;
+    color: #071a33;
+    font-size: 28px;
+    line-height: 1.2;
+    font-weight: 800;
+}
+
+.role-management-header p {
+    margin: 6px 0 0;
+    color: #58708e;
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   HORIZONTAL ROLE TABS
+========================================================= */
+
+.role-tabs {
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    gap: 8px;
+    padding: 7px;
+
+    background: #ffffff;
+    border: 1px solid #d9e2ed;
+    border-radius: 10px;
+
+    box-sizing: border-box;
+
+    overflow-x: auto;
+    scrollbar-width: thin;
+}
+
+
+/* =========================================================
+   ROLE TAB
+========================================================= */
+
+.role-tab {
+    position: relative;
+
+    flex: 1 1 0;
+    min-width: 0;
+    min-height: 64px;
+
+    padding: 10px 14px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    border: 1px solid transparent;
+    border-radius: 9px;
+
+    background: #ffffff;
+    color: #18314f;
+
+    font-family: inherit;
+    cursor: pointer;
+    text-align: left;
+
+    box-sizing: border-box;
+
+    transition:
+        background 0.18s ease,
+        border-color 0.18s ease,
+        box-shadow 0.18s ease,
+        transform 0.18s ease;
+}
+
+
+/* =========================================================
+   ROLE TAB HOVER
+========================================================= */
+
+.role-tab-hover-text {
+    position: absolute;
+
+    left: 50%;
+    bottom: 4px;
+
+    transform: translate(-50%, 5px);
+
+    padding: 4px 9px;
+
+    border-radius: 5px;
+
+    background: #071a33;
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 12px;
+    line-height: 1.2;
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    opacity: 0;
+    visibility: hidden;
+
+    pointer-events: none;
+
+    z-index: 20;
+
+    transition:
+        opacity 0.16s ease,
+        visibility 0.16s ease,
+        transform 0.16s ease;
+}
+
+.role-tab:hover .role-tab-hover-text,
+.role-tab:focus-visible .role-tab-hover-text {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translate(-50%, 0);
+}
+
+.role-tab:hover {
+    background: #f7faff;
+    border-color: #b9d3ff;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 4px 12px rgba(37, 99, 235, 0.08);
+}
+
+.role-tab:focus-visible {
+    outline: none;
+
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* =========================================================
+   ACTIVE ROLE TAB
+========================================================= */
+
+.role-tab.active {
+    background: #f5f9ff;
+
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 1px rgba(37, 99, 235, 0.08),
+        0 3px 10px rgba(37, 99, 235, 0.10);
+}
+
+
+/* =========================================================
+   ACTIVE ROLE HOVER
+========================================================= */
+
+.role-tab.active:hover {
+    background: #eef5ff;
+
+    border-color: #2563eb;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 16px rgba(37, 99, 235, 0.14);
+}
+
+
+/* =========================================================
+   ROLE TAB ICON
+========================================================= */
+
+.role-tab-icon {
+    width: 40px;
+    height: 40px;
+
+    flex: 0 0 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   SUPER ADMIN
+========================================================= */
+
+.role-tab.super-admin .role-tab-icon {
+    color: #7c3aed;
+    background: #eee7ff;
+}
+
+
+/* =========================================================
+   ADMIN
+========================================================= */
+
+.role-tab.admin .role-tab-icon {
+    color: #2563eb;
+    background: #e1edff;
+}
+
+
+/* =========================================================
+   CUSTOMER
+========================================================= */
+
+.role-tab.customer .role-tab-icon {
+    color: #16a34a;
+    background: #dcfce7;
+}
+
+
+/* =========================================================
+   ENGINEER
+========================================================= */
+
+.role-tab.engineer .role-tab-icon {
+    color: #f59e0b;
+    background: #fff1c7;
+}
+
+
+/* =========================================================
+   SALES PERSON
+========================================================= */
+
+.role-tab.sales-person .role-tab-icon {
+    color: #db2777;
+    background: #fce7f3;
+}
+
+
+/* =========================================================
+   ROLE TAB CONTENT
+========================================================= */
+
+.role-tab-content {
+    min-width: 0;
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.role-tab-content strong {
+    display: block;
+    overflow: hidden;
+
+    color: #071a33;
+
+    font-size: 14px;
+    line-height: 1.3;
+    font-weight: 800;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.role-tab-content small {
+    display: block;
+    overflow: hidden;
+
+    color: #71839a;
+
+    font-size: 11px;
+    line-height: 1.3;
+    font-weight: 500;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   ROLE TAB COUNT
+========================================================= */
+
+.role-tab-count {
+    min-width: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 4px 7px;
+
+    border-radius: 20px;
+
+    background: #f1f5f9;
+    color: #18314f;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    box-sizing: border-box;
+}
+
+.role-tab.active .role-tab-count {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+
+/* =========================================================
+   SELECTED ROLE HEADER
+   ONLY DISPLAYED AFTER CLICK
+========================================================= */
+
+.selected-role-header {
+    width: 100%;
+    min-height: 78px;
+
+    margin-top: 16px;
+    padding: 14px 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    background: #ffffff;
+
+    border: 1px solid #dbe3ee;
+    border-radius: 11px;
+
+    box-sizing: border-box;
+
+    box-shadow:
+        0 2px 8px rgba(15, 23, 42, 0.04);
+
+    animation: role-details-enter 0.2s ease;
+}
+
+
+/* =========================================================
+   DETAILS APPEAR ANIMATION
+========================================================= */
+
+@keyframes role-details-enter {
+
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================================
+   SELECTED ROLE INFO
+========================================================= */
+
+.selected-role-info {
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+}
+
+.selected-role-icon {
+    width: 46px;
+    height: 46px;
+
+    flex: 0 0 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+}
+
+
+/* =========================================================
+   SELECTED ROLE COLORS
+========================================================= */
+
+.selected-role-header.super-admin .selected-role-icon {
+    color: #7c3aed;
+    background: #eee7ff;
+}
+
+.selected-role-header.admin .selected-role-icon {
+    color: #2563eb;
+    background: #e1edff;
+}
+
+.selected-role-header.customer .selected-role-icon {
+    color: #16a34a;
+    background: #dcfce7;
+}
+
+.selected-role-header.engineer .selected-role-icon {
+    color: #f59e0b;
+    background: #fff1c7;
+}
+
+.selected-role-header.sales-person .selected-role-icon {
+    color: #db2777;
+    background: #fce7f3;
+}
+
+
+/* =========================================================
+   SELECTED ROLE TITLE
+========================================================= */
+
+.selected-role-info h2 {
+    margin: 0;
+
+    color: #071a33;
+
+    font-size: 19px;
+    line-height: 1.3;
+
+    font-weight: 800;
+}
+
+.selected-role-info p {
+    margin: 4px 0 0;
+
+    color: #58708e;
+
+    font-size: 12px;
+    line-height: 1.3;
+
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   SELECTED ROLE ACTIONS
+========================================================= */
+
+.selected-role-actions {
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+}
+
+.selected-role-count {
+    color: #071a33;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   ADD USER BUTTON
+========================================================= */
+
+.role-add-user-btn {
+    height: 36px;
+    padding: 0 13px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    border: 1px solid #bcd5ff;
+    border-radius: 7px;
+
+    background: #f7faff;
+    color: #2563eb;
+
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 700;
+
+    cursor: pointer;
+    white-space: nowrap;
+
+    transition:
+        background 0.18s ease,
+        border-color 0.18s ease,
+        transform 0.18s ease;
+}
+
+.role-add-user-btn:hover {
+    background: #eaf2ff;
+    border-color: #91baff;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   SELECTED ROLE PANEL
+   ONLY DISPLAYED AFTER CLICK
+========================================================= */
+
+.selected-role-panel {
+    width: 100%;
+
+    margin-top: 14px;
+    padding: 14px;
+
+    background: #ffffff;
+
+    border: 1px solid #dbe3ee;
+    border-radius: 11px;
+
+    box-sizing: border-box;
+
+    box-shadow:
+        0 2px 8px rgba(15, 23, 42, 0.04);
+
+    animation: role-details-enter 0.2s ease;
+}
+
+
+/* =========================================================
+   USERS LIST
+========================================================= */
+
+.selected-role-users {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 12px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   USER CARD
+========================================================= */
+
+.selected-role-user {
+    width: 100%;
+    min-width: 0;
+    min-height: 175px;
+
+    padding: 14px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 12px;
+
+    background: #ffffff;
+
+    border: 1px solid #dce5f0;
+    border-radius: 10px;
+
+    box-sizing: border-box;
+
+    transition:
+        border-color 0.18s ease,
+        box-shadow 0.18s ease,
+        background 0.18s ease,
+        transform 0.18s ease;
+}
+
+.selected-role-user:hover {
+    background: #fbfdff;
+
+    border-color: #b9d3ff;
+
+    box-shadow:
+        0 5px 14px rgba(15, 23, 42, 0.07);
+
+    transform: translateY(-2px);
+}
+
+.selected-role-user-top {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+
+    min-width: 0;
+}
+
+.role-user-extra {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 4px;
+
+    min-width: 0;
+}
+
+
+/* =========================================================
+   USER AVATAR
+========================================================= */
+
+.role-user-avatar {
+    width: 44px;
+    height: 44px;
+
+    flex: 0 0 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #eef5ff;
+    color: #2563eb;
+
+    font-size: 15px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   USER DETAILS
+========================================================= */
+
+.role-user-details {
+    min-width: 0;
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+.role-user-details strong {
+    display: block;
+    overflow: hidden;
+
+    color: #071a33;
+
+    font-size: 15px;
+    line-height: 1.3;
+
+    font-weight: 800;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.role-user-details > span {
+    display: block;
+    overflow: hidden;
+
+    color: #3e5875;
+
+    font-size: 13px;
+    line-height: 1.35;
+
+    font-weight: 500;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.role-user-details small {
+    display: block;
+
+    color: #71839a;
+
+    font-size: 12px;
+    line-height: 1.3;
+
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   PASSWORD
+========================================================= */
+
+.role-user-password {
+    display: flex !important;
+    align-items: center;
+    gap: 5px;
+
+    color: #3e5875 !important;
+}
+
+.password-hidden {
+    color: #071a33 !important;
+
+    font-size: 12px !important;
+
+    letter-spacing: 1.5px;
+
+    font-weight: 800 !important;
+}
+
+
+/* =========================================================
+   EDIT USER BUTTON
+========================================================= */
+
+.change-password-btn {
+    width: 100%;
+
+    flex-shrink: 0;
+
+    height: 36px;
+
+    margin-top: auto;
+
+    padding: 0 12px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    border: 1px solid #c8dbff;
+    border-radius: 7px;
+
+    background: #f5f9ff;
+    color: #2563eb;
+
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+
+    transition:
+        background 0.18s ease,
+        border-color 0.18s ease,
+        transform 0.18s ease;
+}
+
+.change-password-btn:hover {
+    background: #eaf2ff;
+    border-color: #9fc0ff;
+    color: #1d4ed8;
+
+    transform: translateY(-1px);
+}
+
+.change-password-btn:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   EMPTY / LOADING / ERROR
+========================================================= */
+
+.role-panel-state {
+    min-height: 230px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    color: #c7d5e5;
+}
+
+.role-panel-state svg {
+    margin-bottom: 10px;
+}
+
+.role-panel-state h3 {
+    margin: 0;
+
+    color: #18314f;
+
+    font-size: 15px;
+
+    font-weight: 800;
+}
+
+.role-panel-state p {
+    max-width: 400px;
+
+    margin: 6px 0 0;
+
+    color: #8ca0b8;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    font-weight: 500;
+}
+
+.role-panel-state.error {
+    color: #94a3b8;
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.role-loading-icon {
+    animation: role-spin 0.9s linear infinite;
+}
+
+@keyframes role-spin {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =========================================================
+   EMPTY ADD USER BUTTON
+========================================================= */
+
+.empty-add-user-btn {
+    height: 36px;
+
+    margin-top: 15px;
+
+    padding: 0 13px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    border: 1px solid #bcd5ff;
+    border-radius: 7px;
+
+    background: #f7faff;
+    color: #2563eb;
+
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.empty-add-user-btn:hover {
+    background: #eaf2ff;
+    border-color: #91baff;
+}
+
+
+/* =========================================================
+   RETRY BUTTON
+========================================================= */
+
+.retry-users-btn {
+    height: 36px;
+
+    margin-top: 14px;
+
+    padding: 0 15px;
+
+    border: 1px solid #bcd5ff;
+    border-radius: 7px;
+
+    background: #f7faff;
+    color: #2563eb;
+
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.retry-users-btn:hover {
+    background: #eaf2ff;
+}
+
+
+/* =========================================================
+   ADD USER MODAL
+   COMPANY + CONTACT PERSON FORM
+========================================================= */
+
+.add-user-modal {
+    width: 100%;
+    max-width: 560px;
+
+    max-height: calc(100vh - 40px);
+
+    background: #ffffff;
+
+    border: 1px solid #dbe3ee;
+    border-radius: 13px;
+
+    box-shadow:
+        0 20px 50px rgba(15, 23, 42, 0.20);
+
+    overflow-y: auto;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   ADD USER ROLE PREVIEW
+========================================================= */
+
+.add-user-role-preview {
+    margin: 18px 20px 0;
+    padding: 13px 14px;
+
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    background: #f7faff;
+
+    border: 1px solid #dce7f4;
+    border-radius: 8px;
+
+    box-sizing: border-box;
+}
+
+.add-user-role-preview-icon {
+    width: 38px;
+    height: 38px;
+
+    flex: 0 0 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    background: #e7f0ff;
+    color: #2563eb;
+}
+
+.add-user-role-preview-content {
+    min-width: 0;
+    flex: 1;
+}
+
+.add-user-role-preview-content strong {
+    display: block;
+
+    color: #071a33;
+
+    font-size: 14px;
+    line-height: 1.3;
+    font-weight: 800;
+}
+
+.add-user-role-preview-content span {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #60748c;
+
+    font-size: 11px;
+    line-height: 1.3;
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   ADD USER FORM
+========================================================= */
+
+.add-user-form {
+    padding: 20px;
+}
+
+.add-user-form-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 0 14px;
+}
+
+.add-user-form-grid .password-field {
+    min-width: 0;
+}
+
+
+/* Company Name + Contact Person */
+
+.add-user-form .password-field input,
+.add-user-form .password-input-wrapper input {
+    width: 100%;
+}
+
+
+/* =========================================================
+   FULL WIDTH FORM FIELD
+========================================================= */
+
+.add-user-form .form-field-full,
+.add-user-form .full-width {
+    grid-column: 1 / -1;
+}
+
+
+/* =========================================================
+   ADD USER INPUT LABEL
+========================================================= */
+
+.add-user-form .password-field label {
+    color: #18314f;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   ADD USER INPUT
+========================================================= */
+
+.add-user-form .password-field > input,
+.add-user-form .password-input-wrapper input {
+    height: 42px;
+
+    border: 1px solid #cfdbe9;
+    border-radius: 7px;
+
+    background: #ffffff;
+    color: #071a33;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 500;
+
+    outline: none;
+
+    box-sizing: border-box;
+
+    transition:
+        border-color 0.18s ease,
+        box-shadow 0.18s ease,
+        background 0.18s ease;
+}
+
+.add-user-form .password-field > input:focus,
+.add-user-form .password-input-wrapper input:focus {
+    border-color: #7aa9f7;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.10);
+}
+
+.add-user-form .password-field > input::placeholder,
+.add-user-form .password-input-wrapper input::placeholder {
+    color: #9aabbe;
+}
+
+
+/* =========================================================
+   MOBILE NUMBER
+========================================================= */
+
+.add-user-form input[type="tel"] {
+    letter-spacing: 0.2px;
+}
+
+
+/* =========================================================
+   FORM VALIDATION ERROR
+========================================================= */
+
+.add-user-form .field-error,
+.add-user-form .input-error {
+    margin-top: 5px;
+
+    color: #dc2626;
+
+    font-size: 11px;
+    line-height: 1.35;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   SELECTED ROLE INFORMATION
+========================================================= */
+
+.add-user-role-note {
+    margin-top: 4px;
+    margin-bottom: 4px;
+
+    padding: 10px 12px;
+
+    display: flex;
+    align-items: flex-start;
+
+    gap: 8px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 7px;
+
+    color: #64748b;
+
+    font-size: 11px;
+    line-height: 1.45;
+    font-weight: 500;
+}
+
+.add-user-role-note strong {
+    color: #18314f;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   ADD USER ACTIONS
+========================================================= */
+
+.add-user-form .password-modal-actions {
+    margin-top: 20px;
+}
+
+
+/* =========================================================
+   CREATE USER BUTTON
+========================================================= */
+
+.create-user-btn {
+    height: 38px;
+
+    padding: 0 16px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    border: 1px solid #2563eb;
+    border-radius: 7px;
+
+    background: #2563eb;
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+
+    transition:
+        background 0.18s ease,
+        border-color 0.18s ease,
+        transform 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+.create-user-btn:hover {
+    background: #1d4ed8;
+    border-color: #1d4ed8;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 4px 10px rgba(37, 99, 235, 0.18);
+}
+
+.create-user-btn:active {
+    transform: translateY(0);
+}
+
+.create-user-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   ADD USER SPINNER
+========================================================= */
+
+.create-user-btn .role-loading-icon {
+    width: 15px;
+    height: 15px;
+}
+
+
+/* =========================================================
+   ADD USER RESPONSIVE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .add-user-modal {
+        max-width: 100%;
+    }
+
+    .add-user-form {
+        padding: 15px;
+    }
+
+    .add-user-form-grid {
+        grid-template-columns: 1fr;
+
+        gap: 0;
+    }
+
+    .add-user-form-grid .form-field-full,
+    .add-user-form-grid .full-width {
+        grid-column: auto;
+    }
+
+    .add-user-role-preview {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+}
+
+
+/* =========================================================
+   EDIT USER MODAL OVERLAY
+========================================================= */
+
+.password-modal-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(15, 23, 42, 0.48);
+
+    backdrop-filter: blur(3px);
+
+    box-sizing: border-box;
+
+    overflow-y: auto;
+}
+
+
+/* =========================================================
+   EDIT USER MODAL
+========================================================= */
+
+.password-modal {
+    width: 100%;
+
+    max-width: 460px;
+
+    max-height: calc(100vh - 40px);
+
+    background: #ffffff;
+
+    border: 1px solid #dbe3ee;
+
+    border-radius: 13px;
+
+    box-shadow:
+        0 20px 50px rgba(15, 23, 42, 0.20);
+
+    overflow-y: auto;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   EDIT USER MODAL
+========================================================= */
+
+.edit-user-modal {
+    max-width: 520px;
+}
+
+
+/* =========================================================
+   MODAL HEADER
+========================================================= */
+
+.password-modal-header {
+    min-height: 76px;
+
+    padding: 18px 20px;
+
+    display: flex;
+
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    border-bottom: 1px solid #e5eaf1;
+
+    box-sizing: border-box;
+}
+
+.password-modal-header h2 {
+    margin: 0;
+
+    color: #071a33;
+
+    font-size: 19px;
+
+    font-weight: 800;
+}
+
+.password-modal-header p {
+    margin: 4px 0 0;
+
+    color: #71839a;
+
+    font-size: 12px;
+
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
+.password-modal-close {
+    width: 32px;
+    height: 32px;
+
+    flex: 0 0 32px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #dbe3ee;
+
+    border-radius: 7px;
+
+    background: #ffffff;
+
+    color: #60748c;
+
+    cursor: pointer;
+}
+
+.password-modal-close:hover {
+    background: #f4f7fb;
+    color: #071a33;
+}
+
+
+/* =========================================================
+   MODAL USER
+========================================================= */
+
+.password-modal-user {
+    margin: 18px 20px 0;
+
+    padding: 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    background: #f7faff;
+
+    border: 1px solid #dce7f4;
+
+    border-radius: 8px;
+
+    box-sizing: border-box;
+}
+
+.password-modal-avatar {
+    width: 40px;
+    height: 40px;
+
+    flex: 0 0 40px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #e7f0ff;
+
+    color: #2563eb;
+
+    font-size: 14px;
+
+    font-weight: 800;
+}
+
+.password-modal-user strong {
+    display: block;
+
+    color: #071a33;
+
+    font-size: 14px;
+
+    font-weight: 800;
+}
+
+.password-modal-user span {
+    display: block;
+
+    margin-top: 2px;
+
+    color: #60748c;
+
+    font-size: 12px;
+
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.password-modal form {
+    padding: 20px;
+}
+
+.password-field {
+    margin-bottom: 16px;
+}
+
+.password-field label {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #18314f;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   NORMAL INPUTS
+========================================================= */
+
+.password-field > input {
+    width: 100%;
+
+    height: 42px;
+
+    padding: 0 12px;
+
+    border: 1px solid #cfdbe9;
+
+    border-radius: 7px;
+
+    background: #ffffff;
+
+    color: #071a33;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    outline: none;
+
+    box-sizing: border-box;
+
+    transition:
+        border-color 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+.password-field > input::placeholder {
+    color: #9aabbe;
+}
+
+.password-field > input:focus {
+    border-color: #7aa9f7;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.10);
+}
+
+.password-field > input:disabled {
+    background: #f4f7fa;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   PASSWORD INPUT
+========================================================= */
+
+.password-input-wrapper {
+    position: relative;
+
+    width: 100%;
+}
+
+.password-input-wrapper input {
+    width: 100%;
+
+    height: 42px;
+
+    padding: 0 42px 0 12px;
+
+    border: 1px solid #cfdbe9;
+
+    border-radius: 7px;
+
+    background: #ffffff;
+
+    color: #071a33;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    outline: none;
+
+    box-sizing: border-box;
+
+    transition:
+        border-color 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+.password-input-wrapper input::placeholder {
+    color: #9aabbe;
+}
+
+.password-input-wrapper input:focus {
+    border-color: #7aa9f7;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.10);
+}
+
+.password-input-wrapper input:disabled {
+    background: #f4f7fa;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   PASSWORD EYE
+========================================================= */
+
+.password-eye-btn {
+    position: absolute;
+
+    top: 50%;
+    right: 7px;
+
+    width: 30px;
+    height: 30px;
+
+    transform: translateY(-50%);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 0;
+
+    border-radius: 6px;
+
+    background: transparent;
+
+    color: #71839a;
+
+    cursor: pointer;
+}
+
+.password-eye-btn:hover {
+    background: #eef4fb;
+
+    color: #2563eb;
+}
+
+.password-eye-btn:disabled {
+    opacity: 0.5;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   PASSWORD INFORMATION NOTE
+========================================================= */
+
+.password-info-note {
+    margin-top: -3px;
+    margin-bottom: 4px;
+
+    padding: 10px 12px;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 8px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 7px;
+
+    color: #64748b;
+
+    font-size: 11px;
+
+    line-height: 1.45;
+
+    font-weight: 500;
+}
+
+.password-info-note svg {
+    flex: 0 0 auto;
+
+    margin-top: 1px;
+
+    color: #2563eb;
+}
+
+
+/* =========================================================
+   MODAL ACTIONS
+========================================================= */
+
+.password-modal-actions {
+    display: flex;
+
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 9px;
+
+    margin-top: 20px;
+}
+
+
+/* =========================================================
+   CANCEL
+========================================================= */
+
+.password-cancel-btn {
+    height: 38px;
+
+    padding: 0 15px;
+
+    border: 1px solid #d1dce9;
+
+    border-radius: 7px;
+
+    background: #ffffff;
+
+    color: #425b77;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.password-cancel-btn:hover {
+    background: #f5f7fa;
+}
+
+
+/* =========================================================
+   SAVE CHANGES
+========================================================= */
+
+.password-save-btn {
+    height: 38px;
+
+    padding: 0 15px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    border: 1px solid #2563eb;
+
+    border-radius: 7px;
+
+    background: #2563eb;
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.password-save-btn:hover {
+    background: #1d4ed8;
+
+    border-color: #1d4ed8;
+}
+
+
+/* =========================================================
+   DISABLED
+========================================================= */
+
+.password-save-btn:disabled,
+.password-cancel-btn:disabled,
+.password-modal-close:disabled,
+.change-password-btn:disabled,
+.role-add-user-btn:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1400px) {
+
+    .role-tab {
+        min-height: 68px;
+
+        padding: 10px 16px;
+    }
+
+    .role-tab-content strong {
+        font-size: 15px;
+    }
+
+    .role-tab-content small {
+        font-size: 12px;
+    }
+
+    .selected-role-header {
+        min-height: 82px;
+    }
+
+}
+
+
+/* =========================================================
+   MEDIUM DESKTOP
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .role-tab {
+        min-width: 140px;
+    }
+
+    .role-tab-content small {
+        display: none;
+    }
+
+    .selected-role-header {
+        padding: 13px 15px;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .role-tab-hover-text {
+        display: none;
+    }
+
+
+
+    .role-tabs {
+        overflow-x: auto;
+
+        justify-content: flex-start;
+    }
+
+    .role-tab {
+        flex: 0 0 auto;
+
+        min-width: 160px;
+    }
+
+    .selected-role-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 13px;
+    }
+
+    .selected-role-actions {
+        width: 100%;
+
+        justify-content: space-between;
+    }
+
+}
+
+
+/* =========================================================
+   USER GRID - TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .selected-role-users {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .role-management-header h1 {
+        font-size: 23px;
+    }
+
+    .role-management-header p {
+        font-size: 12px;
+    }
+
+    .role-tabs {
+        padding: 5px;
+
+        gap: 5px;
+
+        border-radius: 8px;
+    }
+
+    .role-tab {
+        min-width: 145px;
+
+        min-height: 58px;
+
+        padding: 8px 10px;
+
+        gap: 8px;
+    }
+
+    .role-tab-icon {
+        width: 35px;
+        height: 35px;
+
+        flex-basis: 35px;
+    }
+
+    .role-tab-content strong {
+        font-size: 13px;
+    }
+
+    .role-tab-count {
+        display: none;
+    }
+
+    .selected-role-header {
+        margin-top: 12px;
+
+        padding: 12px;
+    }
+
+    .selected-role-icon {
+        width: 40px;
+        height: 40px;
+
+        flex-basis: 40px;
+    }
+
+    .selected-role-info h2 {
+        font-size: 17px;
+    }
+
+    .selected-role-info p {
+        font-size: 11px;
+    }
+
+    .selected-role-actions {
+        width: 100%;
+    }
+
+    .selected-role-panel {
+        padding: 10px;
+    }
+
+    .selected-role-users {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 10px;
+    }
+
+    .selected-role-user {
+        min-height: 165px;
+
+        padding: 13px;
+    }
+
+    .role-user-details {
+        min-width: 0;
+        width: auto;
+
+        flex: 1;
+    }
+
+    .change-password-btn {
+        width: 100%;
+
+        margin-left: 0;
+    }
+
+    .edit-user-modal {
+        max-width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   SINGLE COLUMN USER GRID
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .selected-role-users {
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+    }
+
+    .selected-role-user {
+        min-height: 155px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 450px) {
+
+    .role-management-header h1 {
+        font-size: 21px;
+    }
+
+    .role-tab {
+        min-width: 135px;
+    }
+
+    .selected-role-actions {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .selected-role-count {
+        text-align: left;
+    }
+
+    .role-add-user-btn {
+        width: 100%;
+    }
+
+    .password-modal-overlay {
+        padding: 10px;
+    }
+
+    .password-modal {
+        max-height: calc(100vh - 20px);
+
+        border-radius: 10px;
+    }
+
+    .password-modal-header {
+        padding: 15px;
+    }
+
+    .password-modal-user {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    .password-modal form {
+        padding: 15px;
+    }
+
+    .password-modal-actions {
+        flex-direction: column-reverse;
+    }
+
+    .password-cancel-btn,
+    .password-save-btn {
+        width: 100%;
+    }
+
+}
+
+/* =========================================================
+   ADD USER FORM CLASS FALLBACK
+========================================================= */
+
+.user-form .password-field {
+    margin-bottom: 16px;
+}
+
+.user-form .password-field label {
+    display: block;
+    margin-bottom: 6px;
+
+    color: #18314f;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.user-form .password-field > input,
+.user-form .password-input-wrapper input {
+    width: 100%;
+    height: 42px;
+
+    padding: 0 12px;
+
+    border: 1px solid #cfdbe9;
+    border-radius: 7px;
+
+    background: #ffffff;
+    color: #071a33;
+
+    font-family: inherit;
+    font-size: 13px;
+
+    outline: none;
+    box-sizing: border-box;
+}
+
+.user-form .password-field > input:focus,
+.user-form .password-input-wrapper input:focus {
+    border-color: #7aa9f7;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.10);
+}
+
+
+/* =========================================================
+   ROLE PERMISSIONS PANEL
+   ========================================================= */
+
+.role-permissions-panel {
+    width: 100%;
+    margin-top: 14px;
+    background: #ffffff;
+    border: 1px solid #dbe3ee;
+    border-radius: 11px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+    overflow: hidden;
+    animation: role-details-enter 0.2s ease;
+}
+
+.role-permissions-header {
+    min-height: 70px;
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    border-bottom: 1px solid #e5eaf1;
+    box-sizing: border-box;
+}
+
+.role-permissions-header h3 {
+    margin: 0;
+    color: #071a33;
+    font-size: 17px;
+    line-height: 1.3;
+    font-weight: 800;
+}
+
+.role-permissions-header p {
+    margin: 4px 0 0;
+    color: #71839a;
+    font-size: 12px;
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+.role-permissions-legend {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-shrink: 0;
+}
+
+.role-permissions-legend span {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: #60748c;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.role-permissions-legend svg {
+    color: #2563eb;
+}
+
+/* =========================================================
+   PERMISSION TABLE
+   ========================================================= */
+
+.role-permissions-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.role-permissions-table {
+    width: 100%;
+    min-width: 650px;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.role-permissions-table th {
+    height: 45px;
+    padding: 0 12px;
+    background: #f7faff;
+    border-bottom: 1px solid #dbe3ee;
+    color: #526b87;
+    font-size: 11px;
+    font-weight: 800;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.role-permissions-table th:first-child {
+    width: 38%;
+    text-align: left;
+}
+
+.role-permissions-table td {
+    height: 50px;
+    padding: 0 12px;
+    border-bottom: 1px solid #edf1f6;
+    color: #18314f;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.role-permissions-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.role-permissions-table tbody tr:hover td {
+    background: #fbfdff;
+}
+
+.permission-page-name {
+    text-align: left !important;
+    color: #071a33 !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+}
+
+/* =========================================================
+   PERMISSION CHECKBOX BUTTON
+   ========================================================= */
+
+.permission-checkbox-cell {
+    width: 15.5%;
+}
+
+.permission-checkbox {
+    width: 31px;
+    height: 31px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #cbd7e6;
+    border-radius: 7px;
+    background: #ffffff;
+    color: #a0aec0;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition:
+        background 0.16s ease,
+        border-color 0.16s ease,
+        color 0.16s ease,
+        transform 0.16s ease,
+        box-shadow 0.16s ease;
+}
+
+.permission-checkbox:hover:not(:disabled) {
+    background: #f3f7fc;
+    border-color: #8eacd1;
+    color: #52769f;
+    transform: translateY(-1px);
+}
+
+.permission-checkbox.checked {
+    background: #2563eb;
+    border-color: #2563eb;
+    color: #ffffff;
+    box-shadow: 0 2px 7px rgba(37, 99, 235, 0.18);
+}
+
+.permission-checkbox.checked:hover:not(:disabled) {
+    background: #1d4ed8;
+    border-color: #1d4ed8;
+    color: #ffffff;
+}
+
+.permission-checkbox:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.permission-checkbox:focus-visible {
+    outline: none;
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* =========================================================
+   PERMISSION LOADING / ERROR
+   ========================================================= */
+
+.role-permissions-state {
+    min-height: 170px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    color: #71839a;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.role-permissions-state span {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.role-permissions-state.error {
+    color: #dc2626;
+}
+
+.role-permissions-state .retry-users-btn {
+    margin-top: 4px;
+}
+
+/* =========================================================
+   ROLE PERMISSIONS RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 800px) {
+    .role-permissions-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .role-permissions-legend {
+        width: 100%;
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 600px) {
+    .role-permissions-header {
+        padding: 13px;
+    }
+
+    .role-permissions-table th,
+    .role-permissions-table td {
+        padding: 0 9px;
+    }
+
+    .role-permissions-table th:first-child {
+        width: 34%;
+    }
+
+    .permission-checkbox {
+        width: 29px;
+        height: 29px;
+    }
+}
+
+@media (max-width: 450px) {
+    .role-permissions-header h3 {
+        font-size: 15px;
+    }
+
+    .role-permissions-header p {
+        font-size: 11px;
+    }
+
+    .role-permissions-legend {
+        flex-wrap: wrap;
+        gap: 8px 12px;
+    }
+}
+
+
+/* =========================================================
+   ROLE PERMISSIONS HEADER + ROLE DROPDOWN
+   ========================================================= */
+
+.role-permissions-title {
+    min-width: 0;
+}
+
+.role-permissions-controls {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    gap: 18px;
+    flex-shrink: 0;
+}
+
+.role-permission-role-selector {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.role-permission-role-selector label {
+    color: #526b87;
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.role-permission-role-selector select {
+    min-width: 170px;
+    height: 36px;
+    padding: 0 34px 0 11px;
+    border: 1px solid #cbd7e6;
+    border-radius: 7px;
+    background: #ffffff;
+    color: #071a33;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    outline: none;
+    cursor: pointer;
+    appearance: auto;
+    transition:
+        border-color 0.16s ease,
+        box-shadow 0.16s ease,
+        background 0.16s ease;
+}
+
+.role-permission-role-selector select:hover {
+    border-color: #8eacd1;
+    background: #fbfdff;
+}
+
+.role-permission-role-selector select:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.10);
+}
+
+@media (max-width: 850px) {
+    .role-permissions-header {
+        align-items: flex-start;
+    }
+
+    .role-permissions-controls {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .role-permission-role-selector {
+        width: 100%;
+    }
+
+    .role-permission-role-selector select {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .role-permissions-legend {
+        width: 100%;
+    }
+}
+/* =========================================================
+   CUSTOMER PORTAL MANAGEMENT
+   ========================================================= */
+
+.customer-portal-panel {
+    width: 100%;
+    margin-top: 14px;
+    background: #ffffff;
+    border: 1px solid #dbe3ee;
+    border-radius: 11px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+    overflow: hidden;
+    animation: role-details-enter 0.2s ease;
+}
+
+.customer-portal-header {
+    min-height: 70px;
+    padding: 16px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    border-bottom: 1px solid #e5eaf1;
+    box-sizing: border-box;
+}
+
+.customer-portal-title {
+    min-width: 0;
+}
+
+.customer-portal-title h2,
+.customer-portal-title h3 {
+    margin: 0;
+    color: #071a33;
+    font-size: 18px;
+    line-height: 1.3;
+    font-weight: 800;
+}
+
+.customer-portal-title p {
+    margin: 5px 0 0;
+    color: #71839a;
+    font-size: 12px;
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+.customer-portal-toolbar {
+    padding: 12px 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #e5eaf1;
+    background: #ffffff;
+}
+
+.customer-portal-search {
+    position: relative;
+    flex: 1 1 340px;
+    max-width: 500px;
+    min-width: 220px;
+}
+
+.customer-portal-search input {
+    width: 100%;
+    height: 38px;
+    padding: 0 12px 0 36px;
+    border: 1px solid #cbd7e6;
+    border-radius: 7px;
+    background: #ffffff;
+    color: #071a33;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 500;
+    outline: none;
+    box-sizing: border-box;
+    transition:
+        border-color 0.16s ease,
+        box-shadow 0.16s ease,
+        background 0.16s ease;
+}
+
+.customer-portal-search input::placeholder {
+    color: #9aabbe;
+}
+
+.customer-portal-search input:hover {
+    border-color: #8eacd1;
+    background: #fbfdff;
+}
+
+.customer-portal-search input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.10);
+}
+
+.customer-portal-search svg {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #71839a;
+    pointer-events: none;
+}
+
+.customer-portal-refresh-btn {
+    height: 38px;
+    padding: 0 13px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    border: 1px solid #cbd7e6;
+    border-radius: 7px;
+    background: #ffffff;
+    color: #334155;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+    transition:
+        background 0.16s ease,
+        border-color 0.16s ease,
+        transform 0.16s ease;
+}
+
+.customer-portal-refresh-btn:hover {
+    background: #f7faff;
+    border-color: #9eb9df;
+    transform: translateY(-1px);
+}
+
+.customer-portal-refresh-btn:active {
+    transform: translateY(0);
+}
+
+.customer-portal-refresh-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.customer-portal-search-hint {
+    color: #64748b;
+    font-size: 11px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.customer-portal-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.customer-portal-table {
+    width: 100%;
+    min-width: 900px;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.customer-portal-table th {
+    height: 43px;
+    padding: 0 12px;
+    background: #f7faff;
+    border-bottom: 1px solid #dbe3ee;
+    color: #526b87;
+    font-size: 11px;
+    font-weight: 800;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.customer-portal-table td {
+    height: 58px;
+    padding: 8px 12px;
+    border-bottom: 1px solid #edf1f6;
+    color: #18314f;
+    font-size: 12px;
+    font-weight: 500;
+    vertical-align: middle;
+    box-sizing: border-box;
+}
+
+.customer-portal-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.customer-portal-table tbody tr:hover td {
+    background: #fbfdff;
+}
+
+.customer-portal-customer-cell {
+    min-width: 190px;
+}
+
+.customer-portal-customer-name {
+    display: block;
+    overflow: hidden;
+    color: #071a33;
+    font-size: 13px;
+    line-height: 1.35;
+    font-weight: 800;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.customer-portal-customer-code {
+    display: block;
+    margin-top: 3px;
+    color: #71839a;
+    font-size: 10px;
+    line-height: 1.25;
+    font-weight: 500;
+}
+
+.customer-portal-mobile,
+.customer-portal-email,
+.customer-portal-last-login {
+    color: #526b87;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.customer-portal-access-badge,
+.customer-portal-status-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 25px;
+    padding: 4px 9px;
+    border-radius: 20px;
+    box-sizing: border-box;
+    font-size: 10px;
+    line-height: 1;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.customer-portal-access-badge.enabled {
+    background: #ecfdf5;
+    color: #047857;
+}
+
+.customer-portal-access-badge.not-given {
+    background: #f1f5f9;
+    color: #64748b;
+}
+
+.customer-portal-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #64748b;
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.customer-portal-status-dot {
+    width: 7px;
+    height: 7px;
+    flex: 0 0 7px;
+    border-radius: 50%;
+    background: #cbd5e1;
+}
+
+.customer-portal-status.active {
+    color: #047857;
+}
+
+.customer-portal-status.active .customer-portal-status-dot {
+    background: #10b981;
+}
+
+.customer-portal-status.disabled {
+    color: #b45309;
+}
+
+.customer-portal-status.disabled .customer-portal-status-dot {
+    background: #f59e0b;
+}
+
+.customer-portal-action-btn {
+    min-height: 34px;
+    padding: 0 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    border: 1px solid #bcd5ff;
+    border-radius: 7px;
+    background: #f7faff;
+    color: #2563eb;
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 800;
+    cursor: pointer;
+    white-space: nowrap;
+    transition:
+        background 0.16s ease,
+        border-color 0.16s ease,
+        transform 0.16s ease;
+}
+
+.customer-portal-action-btn:hover {
+    background: #eaf2ff;
+    border-color: #91baff;
+    transform: translateY(-1px);
+}
+
+.customer-portal-action-btn:active {
+    transform: translateY(0);
+}
+
+.customer-portal-action-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.customer-portal-state {
+    min-height: 210px;
+    padding: 25px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-align: center;
+    color: #71839a;
+    box-sizing: border-box;
+}
+
+.customer-portal-state p {
+    max-width: 520px;
+    margin: 0;
+    color: #71839a;
+    font-size: 12px;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+.customer-portal-state.error {
+    color: #dc2626;
+}
+
+.customer-portal-state.error p {
+    color: #dc2626;
+}
+
+.customer-portal-access-modal .password-modal-user {
+    margin-bottom: 0;
+}
+
+.customer-portal-access-modal .password-modal form {
+    padding-top: 18px;
+}
+
+.customer-portal-mobile-field {
+    position: relative;
+}
+
+.customer-portal-mobile-field input:disabled {
+    background: #f8fafc;
+    color: #475569;
+    opacity: 1;
+    cursor: not-allowed;
+}
+
+.customer-portal-mobile-field input:disabled::placeholder {
+    color: #94a3b8;
+}
+
+.customer-portal-access-toggle {
+    width: 100%;
+    min-height: 57px;
+    margin: 2px 0 16px;
+    padding: 10px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.customer-portal-access-toggle-content {
+    min-width: 0;
+    flex: 1;
+}
+
+.customer-portal-access-toggle-content strong {
+    display: block;
+    color: #071a33;
+    font-size: 13px;
+    line-height: 1.3;
+    font-weight: 800;
+}
+
+.customer-portal-access-toggle-content span {
+    display: block;
+    margin-top: 3px;
+    color: #64748b;
+    font-size: 11px;
+    line-height: 1.35;
+    font-weight: 500;
+}
+
+.customer-portal-access-toggle-btn {
+    min-width: 82px;
+    height: 34px;
+    padding: 0 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    background: #ffffff;
+    color: #64748b;
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 800;
+    cursor: pointer;
+    white-space: nowrap;
+    transition:
+        background 0.16s ease,
+        border-color 0.16s ease,
+        color 0.16s ease;
+}
+
+.customer-portal-access-toggle-btn.active {
+    background: #f0fdf4;
+    border-color: #86efac;
+    color: #15803d;
+}
+
+.customer-portal-access-toggle-btn:hover {
+    background: #f7faff;
+    border-color: #94a3b8;
+}
+
+.customer-portal-access-toggle-btn.active:hover {
+    background: #dcfce7;
+    border-color: #4ade80;
+}
+
+.customer-portal-access-toggle-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.customer-portal-security-note {
+    margin-top: -1px;
+}
+
+.customer-portal-access-modal .password-modal-actions {
+    margin-top: 18px;
+}
+
+
+
+
+/* =========================================================
+   CUSTOMER PORTAL MODULE ACCESS
+   Service / Rental visibility controls
+   ========================================================= */
+
+.customer-portal-module-access {
+    width: 100%;
+    margin-top: 8px;
+    padding: 12px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.customer-portal-module-access-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.customer-portal-module-access-header > div {
+    min-width: 0;
+}
+
+.customer-portal-module-access-header strong {
+    display: block;
+    color: #0f172a;
+    font-size: 13px;
+    line-height: 1.3;
+    font-weight: 800;
+}
+
+.customer-portal-module-access-header span {
+    display: block;
+    margin-top: 3px;
+    color: #64748b;
+    font-size: 10px;
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+.customer-portal-module-access-header > svg {
+    flex: 0 0 auto;
+    color: #2563eb;
+}
+
+.customer-portal-module-option {
+    position: relative;
+    width: 100%;
+    min-height: 62px;
+    margin-top: 8px;
+    padding: 10px 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #ffffff;
+    border: 1px solid #dbe3ee;
+    border-radius: 9px;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition:
+        border-color 0.16s ease,
+        background 0.16s ease,
+        box-shadow 0.16s ease,
+        transform 0.16s ease;
+}
+
+.customer-portal-module-option:hover {
+    border-color: #a9c5f2;
+    background: #fbfdff;
+    transform: translateY(-1px);
+}
+
+.customer-portal-module-option.selected {
+    border-color: #86efac;
+    background: #f0fdf4;
+    box-shadow: 0 2px 7px rgba(22, 163, 74, 0.07);
+}
+
+.customer-portal-module-option.selected.rental {
+    border-color: #bfdbfe;
+    background: #eff6ff;
+    box-shadow: 0 2px 7px rgba(37, 99, 235, 0.07);
+}
+
+.customer-portal-module-option > input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.customer-portal-module-check {
+    width: 22px;
+    height: 22px;
+    flex: 0 0 22px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 5px;
+    background: #ffffff;
+    color: #ffffff;
+    box-sizing: border-box;
+    transition:
+        background 0.16s ease,
+        border-color 0.16s ease;
+}
+
+.customer-portal-module-option.selected .customer-portal-module-check {
+    background: #16a34a;
+    border-color: #16a34a;
+}
+
+.customer-portal-module-option.selected.rental .customer-portal-module-check {
+    background: #2563eb;
+    border-color: #2563eb;
+}
+
+.customer-portal-module-icon {
+    width: 34px;
+    height: 34px;
+    flex: 0 0 34px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.customer-portal-module-icon.service {
+    color: #15803d;
+    background: #dcfce7;
+}
+
+.customer-portal-module-icon.rental {
+    color: #2563eb;
+    background: #dbeafe;
+}
+
+.customer-portal-module-content {
+    min-width: 0;
+    flex: 1;
+}
+
+.customer-portal-module-content strong {
+    display: block;
+    color: #0f172a;
+    font-size: 12px;
+    line-height: 1.3;
+    font-weight: 800;
+}
+
+.customer-portal-module-content small {
+    display: block;
+    margin-top: 3px;
+    color: #64748b;
+    font-size: 10px;
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+.customer-portal-access-toggle {
+    margin-top: 10px;
+}
+
+.customer-portal-access-selection-note {
+    margin-top: 8px;
+    padding: 7px 9px;
+    border-radius: 6px;
+    background: #ffffff;
+    border: 1px dashed #cbd5e1;
+    color: #475569;
+    font-size: 10px;
+    line-height: 1.35;
+    font-weight: 700;
+}
+
+@media (max-width: 520px) {
+    .customer-portal-module-option {
+        align-items: flex-start;
+    }
+
+    .customer-portal-module-icon {
+        margin-top: 1px;
+    }
+
+    .customer-portal-module-content small {
+        font-size: 9px;
+    }
+}
+
+
+/* =========================================================
+   CUSTOMER PORTAL RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+    .customer-portal-table {
+        min-width: 820px;
+    }
+
+    .customer-portal-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .customer-portal-search {
+        max-width: none;
+    }
+}
+
+@media (max-width: 650px) {
+    .customer-portal-toolbar {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .customer-portal-search {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .customer-portal-search-hint {
+        white-space: normal;
+    }
+
+    .customer-portal-refresh-btn {
+        width: fit-content;
+    }
+
+    .customer-portal-header {
+        padding: 14px;
+    }
+
+    .customer-portal-title h2,
+    .customer-portal-title h3 {
+        font-size: 16px;
+    }
+
+    .customer-portal-title p {
+        font-size: 11px;
+    }
+
+    .customer-portal-access-toggle {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .customer-portal-access-toggle-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 450px) {
+    .customer-portal-header {
+        padding: 13px;
+    }
+
+    .customer-portal-toolbar {
+        padding: 11px 13px;
+    }
+
+    .customer-portal-table {
+        min-width: 780px;
+    }
+
+    .customer-portal-table th,
+    .customer-portal-table td {
+        padding-left: 9px;
+        padding-right: 9px;
+    }
+
+    .customer-portal-action-btn {
+        min-height: 32px;
+        padding: 0 8px;
+    }
+}
+
+
+/* =========================================================
+   CUSTOMER PORTAL EMAIL FIELD FIX
+   The email input is inside an icon wrapper in JSX.
+   The normal .password-field > input rule does not reach it,
+   so it needs its own full-width input styling.
+   ========================================================= */
+
+.password-field > div:has(> input[type="email"]) {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.password-field > div > input[type="email"] {
+    display: block;
+    width: 100%;
+    height: 42px;
+
+    padding: 0 12px 0 38px;
+
+    border: 1px solid #cfdbe9;
+    border-radius: 7px;
+
+    background: #ffffff;
+    color: #071a33;
+
+    font-family: inherit;
+    font-size: 13px;
+    line-height: 1.2;
+    font-weight: 500;
+
+    outline: none;
+    box-sizing: border-box;
+
+    appearance: none;
+    -webkit-appearance: none;
+
+    transition:
+        border-color 0.18s ease,
+        box-shadow 0.18s ease,
+        background 0.18s ease;
+}
+
+.password-field > div > input[type="email"]::placeholder {
+    color: #9aabbe;
+    opacity: 1;
+}
+
+.password-field > div > input[type="email"]:hover {
+    border-color: #9eb9df;
+    background: #fbfdff;
+}
+
+.password-field > div > input[type="email"]:focus {
+    border-color: #7aa9f7;
+    background: #ffffff;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.10);
+}
+
+.password-field > div > input[type="email"]:disabled,
+.password-field > div > input[type="email"][readonly] {
+    background: #f8fafc;
+    color: #475569;
+}
+
+.password-field > div > svg {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 16px;
+    height: 16px;
+
+    color: #64748b;
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   CUSTOMER PORTAL FORM FIELD CONSISTENCY
+   ========================================================= */
+
+.customer-portal-access-modal .password-field {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.customer-portal-access-modal .password-field > input,
+.customer-portal-access-modal .password-field > div > input[type="email"],
+.customer-portal-access-modal .password-input-wrapper input {
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+.customer-portal-access-modal .password-field > input[type="tel"] {
+    display: block;
+    width: 100%;
+    height: 42px;
+}
+
+.customer-portal-access-modal .password-input-wrapper {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.customer-portal-access-modal .password-modal form {
+    width: 100%;
+    box-sizing: border-box;
+}

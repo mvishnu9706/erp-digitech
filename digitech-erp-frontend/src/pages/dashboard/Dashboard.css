@@ -1,0 +1,1018 @@
+/* ============================================================
+   DASHBOARD
+   ============================================================ */
+
+.dashboard-layout {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    background: #f5f7fb;
+}
+
+.dashboard-main {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard-content {
+    width: 100%;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+.dashboard-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.dashboard-title-row {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.dashboard-title-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #111827;
+    color: #ffffff;
+}
+
+.dashboard-header h1 {
+    margin: 0;
+    color: #111827;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.dashboard-header p {
+    margin: 5px 0 0;
+    color: #6b7280;
+    font-size: 13px;
+}
+
+.dashboard-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.last-updated {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #6b7280;
+    font-size: 12px;
+}
+
+.refresh-button {
+    height: 38px;
+    padding: 0 14px;
+    border: 1px solid #dfe3ea;
+    border-radius: 9px;
+    background: #ffffff;
+    color: #374151;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.refresh-button:hover {
+    background: #f9fafb;
+}
+
+.refresh-button:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+
+/* ============================================================
+   KPI
+   ============================================================ */
+
+.dashboard-kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 14px;
+    margin-bottom: 18px;
+}
+
+.dashboard-kpi-card {
+    min-width: 0;
+    padding: 17px;
+    border: 1px solid #e5e7eb;
+    border-radius: 13px;
+    background: #ffffff;
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.dashboard-kpi-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(15, 23, 42, 0.07);
+    border-color: #d1d5db;
+}
+
+.kpi-card-top {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 15px;
+}
+
+.kpi-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.sales-card .kpi-icon {
+    background: #ecfdf5;
+    color: #059669;
+}
+
+.revenue-card .kpi-icon {
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+.receivable-card .kpi-icon {
+    background: #fff7ed;
+    color: #ea580c;
+}
+
+.service-card .kpi-icon {
+    background: #f5f3ff;
+    color: #7c3aed;
+}
+
+.stock-card .kpi-icon {
+    background: #fef2f2;
+    color: #dc2626;
+}
+
+.rental-card .kpi-icon {
+    background: #ecfeff;
+    color: #0891b2;
+}
+
+.kpi-label {
+    color: #6b7280;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.kpi-value {
+    color: #111827;
+    font-size: 21px;
+    font-weight: 750;
+    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.kpi-footer {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 9px;
+    color: #9ca3af;
+    font-size: 10px;
+}
+
+
+/* ============================================================
+   GRIDS
+   ============================================================ */
+
+.dashboard-main-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 18px;
+}
+
+.dashboard-bottom-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: 18px;
+}
+
+
+/* ============================================================
+   PANELS
+   ============================================================ */
+
+.dashboard-panel {
+    min-width: 0;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    background: #ffffff;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.panel-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.panel-header h2 {
+    margin: 0;
+    color: #111827;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.panel-header p {
+    margin: 5px 0 0;
+    color: #9ca3af;
+    font-size: 11px;
+}
+
+.panel-header-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f3f4f6;
+    color: #374151;
+    flex-shrink: 0;
+}
+
+.panel-header-icon.service {
+    background: #f5f3ff;
+    color: #7c3aed;
+}
+
+.panel-header-icon.rental {
+    background: #ecfeff;
+    color: #0891b2;
+}
+
+.panel-header-icon.inventory {
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+.panel-header-icon.warning {
+    background: #fff7ed;
+    color: #ea580c;
+}
+
+
+/* ============================================================
+   SALES / PURCHASE
+   ============================================================ */
+
+.finance-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.finance-row-left {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    min-width: 0;
+}
+
+.finance-small-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.finance-small-icon.sales {
+    background: #ecfdf5;
+    color: #059669;
+}
+
+.finance-small-icon.purchase {
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+.finance-small-icon.pending {
+    background: #fff7ed;
+    color: #ea580c;
+}
+
+.finance-row-left span {
+    display: block;
+    color: #6b7280;
+    font-size: 11px;
+    margin-bottom: 3px;
+}
+
+.finance-row-left strong {
+    display: block;
+    color: #111827;
+    font-size: 15px;
+}
+
+.finance-row-right {
+    color: #9ca3af;
+    font-size: 10px;
+    white-space: nowrap;
+}
+
+.finance-row-right.positive {
+    color: #059669;
+}
+
+.finance-row-right.warning {
+    color: #ea580c;
+}
+
+.finance-divider {
+    height: 1px;
+    background: #f0f1f3;
+    margin: 15px 0;
+}
+
+.panel-link-button {
+    width: 100%;
+    margin-top: 18px;
+    padding: 10px 12px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #374151;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.panel-link-button:hover {
+    background: #f9fafb;
+    border-color: #d1d5db;
+}
+
+
+/* ============================================================
+   SERVICE
+   ============================================================ */
+
+.service-status-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 9px;
+}
+
+.service-status-box {
+    padding: 13px 10px;
+    border: 1px solid #e5e7eb;
+    border-radius: 9px;
+    background: #fafafa;
+}
+
+.service-status-box span {
+    display: block;
+    color: #6b7280;
+    font-size: 10px;
+    margin-bottom: 5px;
+}
+
+.service-status-box strong {
+    color: #111827;
+    font-size: 18px;
+}
+
+.service-status-box.warning {
+    background: #fffaf0;
+    border-color: #fde68a;
+}
+
+.service-status-box.warning strong {
+    color: #d97706;
+}
+
+.service-status-box.assigned {
+    background: #eff6ff;
+    border-color: #bfdbfe;
+}
+
+.service-status-box.assigned strong {
+    color: #2563eb;
+}
+
+.service-status-box.progress {
+    background: #f5f3ff;
+    border-color: #ddd6fe;
+}
+
+.service-status-box.progress strong {
+    color: #7c3aed;
+}
+
+.service-status-box.completed {
+    background: #ecfdf5;
+    border-color: #a7f3d0;
+}
+
+.service-status-box.completed strong {
+    color: #059669;
+}
+
+.service-status-box.monthly {
+    background: #ecfeff;
+    border-color: #a5f3fc;
+}
+
+.service-status-box.monthly strong {
+    color: #0891b2;
+}
+
+
+/* ============================================================
+   RENTAL
+   ============================================================ */
+
+.rental-main-amount {
+    padding: 15px;
+    border-radius: 10px;
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+}
+
+.rental-main-amount span {
+    display: block;
+    color: #6b7280;
+    font-size: 11px;
+    margin-bottom: 5px;
+}
+
+.rental-main-amount strong {
+    color: #111827;
+    font-size: 22px;
+}
+
+.rental-stat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 9px;
+    margin-top: 10px;
+}
+
+.rental-stat {
+    padding: 12px 10px;
+    border-radius: 9px;
+    background: #fafafa;
+    border: 1px solid #eeeeee;
+}
+
+.rental-stat span {
+    display: block;
+    color: #6b7280;
+    font-size: 10px;
+    margin-bottom: 5px;
+}
+
+.rental-stat strong {
+    color: #111827;
+    font-size: 16px;
+}
+
+.rental-pending {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 10px 11px;
+    border-radius: 8px;
+    background: #fff7ed;
+    color: #c2410c;
+    font-size: 11px;
+}
+
+.rental-pending strong {
+    margin-left: auto;
+}
+
+
+/* ============================================================
+   INVENTORY
+   ============================================================ */
+
+.inventory-highlight {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 15px;
+    border-radius: 10px;
+    background: #eff6ff;
+    border: 1px solid #dbeafe;
+    color: #2563eb;
+}
+
+.inventory-highlight span {
+    display: block;
+    color: #64748b;
+    font-size: 11px;
+    margin-bottom: 4px;
+}
+
+.inventory-highlight strong {
+    color: #111827;
+    font-size: 21px;
+}
+
+.inventory-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.inventory-box {
+    padding: 13px;
+    border-radius: 9px;
+    background: #fafafa;
+    border: 1px solid #eeeeee;
+}
+
+.inventory-box span {
+    display: block;
+    color: #6b7280;
+    font-size: 10px;
+    margin-bottom: 5px;
+}
+
+.inventory-box strong {
+    color: #111827;
+    font-size: 18px;
+}
+
+.inventory-box.danger {
+    background: #fef2f2;
+    border-color: #fecaca;
+}
+
+.inventory-box.danger strong {
+    color: #dc2626;
+}
+
+.inventory-warning {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 10px;
+    padding: 10px 11px;
+    border-radius: 8px;
+    background: #fff7ed;
+    color: #c2410c;
+    font-size: 11px;
+}
+
+
+/* ============================================================
+   ATTENTION
+   ============================================================ */
+
+.attention-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.attention-item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 11px;
+    border: 1px solid #eeeeee;
+    border-radius: 9px;
+    background: #ffffff;
+    text-align: left;
+    cursor: pointer;
+}
+
+.attention-item:hover {
+    background: #fafafa;
+    border-color: #d1d5db;
+}
+
+.attention-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.attention-icon.danger {
+    background: #fef2f2;
+    color: #dc2626;
+}
+
+.attention-icon.service {
+    background: #f5f3ff;
+    color: #7c3aed;
+}
+
+.attention-icon.money {
+    background: #fff7ed;
+    color: #ea580c;
+}
+
+.attention-icon.rental {
+    background: #ecfeff;
+    color: #0891b2;
+}
+
+.attention-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.attention-content strong {
+    display: block;
+    color: #111827;
+    font-size: 12px;
+    margin-bottom: 3px;
+}
+
+.attention-content span {
+    display: block;
+    color: #9ca3af;
+    font-size: 10px;
+}
+
+.attention-item > svg {
+    color: #9ca3af;
+    flex-shrink: 0;
+}
+
+.attention-empty {
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #10b981;
+}
+
+.attention-empty strong {
+    margin-top: 8px;
+    color: #374151;
+    font-size: 13px;
+}
+
+.attention-empty span {
+    margin-top: 4px;
+    color: #9ca3af;
+    font-size: 11px;
+}
+
+
+/* ============================================================
+   QUICK ACTIONS
+   ============================================================ */
+
+.quick-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+}
+
+.quick-action {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 10px;
+    border: 1px solid #eeeeee;
+    border-radius: 9px;
+    background: #ffffff;
+    text-align: left;
+    cursor: pointer;
+}
+
+.quick-action:hover {
+    background: #fafafa;
+    border-color: #d1d5db;
+}
+
+.quick-action-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.quick-action-icon.sales {
+    background: #ecfdf5;
+    color: #059669;
+}
+
+.quick-action-icon.purchase {
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+.quick-action-icon.service {
+    background: #f5f3ff;
+    color: #7c3aed;
+}
+
+.quick-action-icon.customer {
+    background: #fff7ed;
+    color: #ea580c;
+}
+
+.quick-action-icon.inventory {
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+.quick-action-icon.rental {
+    background: #ecfeff;
+    color: #0891b2;
+}
+
+.quick-action > div:nth-child(2) {
+    flex: 1;
+    min-width: 0;
+}
+
+.quick-action strong {
+    display: block;
+    color: #111827;
+    font-size: 11px;
+    margin-bottom: 2px;
+}
+
+.quick-action span {
+    display: block;
+    color: #9ca3af;
+    font-size: 9px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.quick-action > svg {
+    color: #9ca3af;
+    flex-shrink: 0;
+}
+
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+.dashboard-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 20px 0 5px;
+    color: #9ca3af;
+    font-size: 10px;
+}
+
+
+/* ============================================================
+   LOADING
+   ============================================================ */
+
+.dashboard-loading {
+    min-height: calc(100vh - 100px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.dashboard-spinner {
+    width: 52px;
+    height: 52px;
+    border-radius: 13px;
+    background: #111827;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 14px;
+}
+
+.dashboard-loading h3 {
+    margin: 0;
+    color: #111827;
+    font-size: 16px;
+}
+
+.dashboard-loading p {
+    margin: 6px 0 0;
+    color: #9ca3af;
+    font-size: 12px;
+}
+
+.spin {
+    animation: dashboard-spin 0.9s linear infinite;
+}
+
+@keyframes dashboard-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 1250px) {
+    .dashboard-kpi-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 1000px) {
+    .dashboard-content {
+        padding: 18px;
+    }
+
+    .dashboard-main-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-bottom-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 760px) {
+    .dashboard-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .dashboard-header-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .dashboard-kpi-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .service-status-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .quick-actions {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 520px) {
+    .dashboard-content {
+        padding: 12px;
+    }
+
+    .dashboard-title-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .dashboard-header h1 {
+        font-size: 21px;
+    }
+
+    .last-updated {
+        display: none;
+    }
+
+    .dashboard-header-actions {
+        width: 100%;
+    }
+
+    .refresh-button {
+        width: 100%;
+    }
+
+    .dashboard-kpi-grid {
+        gap: 9px;
+    }
+
+    .dashboard-kpi-card {
+        padding: 12px;
+    }
+
+    .kpi-icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .kpi-label {
+        font-size: 9px;
+    }
+
+    .kpi-value {
+        font-size: 16px;
+    }
+
+    .kpi-footer {
+        font-size: 8px;
+    }
+
+    .dashboard-panel {
+        padding: 15px;
+    }
+
+    .panel-header {
+        margin-bottom: 15px;
+    }
+
+    .panel-header h2 {
+        font-size: 14px;
+    }
+
+    .service-status-box {
+        padding: 10px 8px;
+    }
+
+    .service-status-box strong {
+        font-size: 16px;
+    }
+
+    .dashboard-footer {
+        font-size: 9px;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 380px) {
+    .dashboard-kpi-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-status-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .inventory-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .rental-stat-grid {
+        grid-template-columns: 1fr;
+    }
+}

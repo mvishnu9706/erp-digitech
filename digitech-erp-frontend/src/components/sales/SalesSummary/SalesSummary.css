@@ -1,0 +1,170 @@
+.sales-summary {
+    width: 100%;
+
+    margin-bottom: 24px;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   Header
+========================================= */
+
+.sales-summary-header {
+    padding: 14px 16px;
+
+    background: #f8faf9;
+
+    border-bottom: 1px solid #edf0f2;
+}
+
+.sales-summary-title {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+.sales-summary-icon {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+
+    background: #e8f7ee;
+
+    color: #0b6b2d;
+}
+
+.sales-summary-title h3 {
+    margin: 0;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    color: #111827;
+}
+
+.sales-summary-title p {
+    margin: 3px 0 0;
+
+    font-size: 11px;
+
+    color: #9ca3af;
+}
+
+
+/* =========================================
+   Content
+========================================= */
+
+.sales-summary-content {
+    padding: 16px;
+}
+
+
+/* =========================================
+   Row
+========================================= */
+
+.sales-summary-row {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 6px 0;
+
+    font-size: 13px;
+}
+
+.sales-summary-row span {
+    color: #64748b;
+}
+
+.sales-summary-row strong {
+    color: #374151;
+
+    font-weight: 600;
+}
+
+.sales-summary-row.discount strong {
+    color: #dc2626;
+}
+
+
+/* =========================================
+   Divider
+========================================= */
+
+.sales-summary-divider {
+    height: 1px;
+
+    margin: 12px 0;
+
+    background: #e5e7eb;
+}
+
+
+/* =========================================
+   Grand Total
+========================================= */
+
+.sales-summary-grand-total {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding-top: 3px;
+}
+
+.sales-summary-grand-total span {
+    color: #111827;
+
+    font-size: 15px;
+
+    font-weight: 700;
+}
+
+.sales-summary-grand-total strong {
+    color: #0b6b2d;
+
+    font-size: 20px;
+
+    font-weight: 800;
+}
+
+
+/* =========================================
+   Responsive
+========================================= */
+
+@media (max-width: 500px) {
+
+    .sales-summary-content {
+        padding: 14px;
+    }
+
+    .sales-summary-grand-total strong {
+        font-size: 18px;
+    }
+}

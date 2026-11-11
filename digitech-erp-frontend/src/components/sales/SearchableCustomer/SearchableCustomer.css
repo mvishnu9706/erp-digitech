@@ -1,0 +1,659 @@
+/* =========================================
+   Container
+========================================= */
+
+.searchable-customer {
+    position: relative;
+    width: 100%;
+}
+
+
+/* =========================================
+   Main Customer Control
+========================================= */
+
+.searchable-customer-control {
+
+    width: 100%;
+    min-height: 43px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 7px 12px;
+
+    border: 1px solid #d5dbe3;
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+
+    font-family: inherit;
+
+    text-align: left;
+}
+
+
+.searchable-customer-control:hover {
+
+    border-color: #aab4c2;
+
+}
+
+
+.searchable-customer-control.open {
+
+    border-color: #087f32;
+
+    box-shadow:
+        0 0 0 2px rgba(8, 127, 50, 0.08);
+
+}
+
+
+/* =========================================
+   Left Side
+========================================= */
+
+.customer-control-left {
+
+    display: flex;
+    align-items: center;
+
+    min-width: 0;
+
+    gap: 10px;
+
+}
+
+
+.customer-control-icon {
+
+    flex-shrink: 0;
+
+    color: #8995a5;
+
+}
+
+
+.customer-control-text {
+
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+}
+
+
+.customer-placeholder {
+
+    color: #6f7c8f;
+
+    font-size: 14px;
+
+}
+
+
+.customer-selected-name {
+
+    color: #1d2735;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+}
+
+
+.customer-selected-code {
+
+    padding: 3px 7px;
+
+    border-radius: 5px;
+
+    background: #eef8f1;
+
+    color: #087f32;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+
+}
+
+
+/* =========================================
+   Arrow
+========================================= */
+
+.customer-control-arrow {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    color: #536173;
+
+}
+
+
+/* =========================================
+   Dropdown
+========================================= */
+
+.searchable-customer-dropdown {
+
+    position: absolute;
+
+    top: calc(100% + 6px);
+
+    left: 0;
+
+    width: 100%;
+
+    min-width: 360px;
+
+    z-index: 1000;
+
+    background: #ffffff;
+
+    border: 1px solid #d9dfe7;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 12px 30px rgba(20, 30, 45, 0.14),
+        0 3px 8px rgba(20, 30, 45, 0.06);
+
+    overflow: hidden;
+
+}
+
+
+/* =========================================
+   Search Box
+========================================= */
+
+.customer-search-box {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 10px 12px;
+
+    border-bottom: 1px solid #edf0f4;
+
+    background: #ffffff;
+
+}
+
+
+.customer-search-icon {
+
+    flex-shrink: 0;
+
+    color: #91a0b4;
+
+}
+
+
+.customer-search-box input {
+
+    width: 100%;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: #202a38;
+
+    font-size: 13px;
+
+    font-family: inherit;
+
+}
+
+
+.customer-search-box input::placeholder {
+
+    color: #9aa6b7;
+
+}
+
+
+.customer-search-clear {
+
+    border: none;
+
+    background: transparent;
+
+    color: #7c8797;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    line-height: 1;
+
+    padding: 0 2px;
+
+}
+
+
+/* =========================================
+   Results Header
+========================================= */
+
+.customer-results-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 8px 13px;
+
+    background: #fafbfc;
+
+    border-bottom: 1px solid #edf0f4;
+
+    color: #7a8798;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.03em;
+
+}
+
+
+.customer-results-header span:last-child {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 22px;
+
+    height: 20px;
+
+    padding: 0 6px;
+
+    border-radius: 10px;
+
+    background: #eef1f5;
+
+    color: #536173;
+
+}
+
+
+/* =========================================
+   Results Container
+========================================= */
+
+.customer-results {
+
+    max-height: 290px;
+
+    overflow-y: auto;
+
+    padding: 5px;
+
+}
+
+
+/* Scrollbar */
+
+.customer-results::-webkit-scrollbar {
+
+    width: 6px;
+
+}
+
+
+.customer-results::-webkit-scrollbar-track {
+
+    background: transparent;
+
+}
+
+
+.customer-results::-webkit-scrollbar-thumb {
+
+    background: #d1d7df;
+
+    border-radius: 10px;
+
+}
+
+
+/* =========================================
+   Customer Option
+========================================= */
+
+.customer-option {
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 10px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    text-align: left;
+
+    font-family: inherit;
+
+    transition:
+        background 0.15s ease;
+
+}
+
+
+.customer-option:hover {
+
+    background: #f5f8f6;
+
+}
+
+
+.customer-option.selected {
+
+    background: #eefaf2;
+
+}
+
+
+/* =========================================
+   Customer Avatar
+========================================= */
+
+.customer-avatar {
+
+    width: 36px;
+
+    height: 36px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+
+    background: #eef2f6;
+
+    color: #445366;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+}
+
+
+.customer-option.selected .customer-avatar {
+
+    background: #d9f2e1;
+
+    color: #087f32;
+
+}
+
+
+/* =========================================
+   Customer Content
+========================================= */
+
+.customer-option-content {
+
+    flex: 1;
+
+    min-width: 0;
+
+}
+
+
+.customer-option-top {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    min-width: 0;
+
+    margin-bottom: 4px;
+
+}
+
+
+.customer-name {
+
+    color: #202a38;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+}
+
+
+.customer-code {
+
+    flex-shrink: 0;
+
+    padding: 2px 6px;
+
+    border-radius: 4px;
+
+    background: #f0f2f5;
+
+    color: #667386;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+}
+
+
+.customer-option.selected .customer-code {
+
+    background: #d9f2e1;
+
+    color: #087f32;
+
+}
+
+
+/* =========================================
+   Customer Details
+========================================= */
+
+.customer-option-bottom {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: #7b8798;
+
+    font-size: 11px;
+
+    min-width: 0;
+
+}
+
+
+.customer-detail {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 4px;
+
+    white-space: nowrap;
+
+}
+
+
+.customer-detail.email {
+
+    max-width: 180px;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+}
+
+
+/* =========================================
+   Selected Check
+========================================= */
+
+.customer-selected-check {
+
+    width: 26px;
+
+    height: 26px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #087f32;
+
+    color: #ffffff;
+
+}
+
+
+/* =========================================
+   Empty State
+========================================= */
+
+.customer-empty {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 30px 20px;
+
+    text-align: center;
+
+}
+
+
+.customer-empty-icon {
+
+    width: 42px;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 10px;
+
+    border-radius: 50%;
+
+    background: #f2f5f8;
+
+    color: #94a2b4;
+
+}
+
+
+.customer-empty strong {
+
+    color: #344054;
+
+    font-size: 13px;
+
+    margin-bottom: 4px;
+
+}
+
+
+.customer-empty span {
+
+    max-width: 250px;
+
+    color: #98a3b3;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+
+}

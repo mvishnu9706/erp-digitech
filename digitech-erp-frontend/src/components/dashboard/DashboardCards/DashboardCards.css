@@ -1,0 +1,13 @@
+.dashboard-grid{
+    display:flex;
+    flex-wrap:wrap;
+    gap:16px;
+    align-items:stretch;
+    justify-content:flex-start;
+}
+
+.dashboard-grid > * {
+    flex:1 1 220px;
+    min-width:220px;
+    max-width:280px;
+}

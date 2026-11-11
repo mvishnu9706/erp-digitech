@@ -1,0 +1,204 @@
+/* =========================================================
+   SERVICE ENGINEER TOOLBAR
+   File:
+   src/components/service/ServiceEngineerToolbar/
+   ServiceEngineerToolbar.css
+   ========================================================= */
+
+.service-engineer-toolbar {
+    width: 100%;
+    min-width: 0;
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+    padding: 13px;
+    margin: 0 0 16px;
+    border: 1px solid #dce5ef;
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 0 3px 12px rgba(15, 35, 63, 0.045);
+}
+
+/* =========================================================
+   SEARCH
+   ========================================================= */
+
+.service-engineer-toolbar-search {
+    min-width: 220px;
+    flex: 1.6 1 280px;
+    height: 39px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 11px;
+    border: 1px solid #d3deea;
+    border-radius: 7px;
+    background: #ffffff;
+    color: #6f8197;
+}
+
+.service-engineer-toolbar-search:focus-within {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.service-engineer-toolbar-search input {
+    width: 100%;
+    min-width: 0;
+    height: 100%;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: #142b48;
+    font-size: 12px;
+}
+
+.service-engineer-toolbar-search input::placeholder {
+    color: #91a1b4;
+}
+
+/* =========================================================
+   FIELDS
+   ========================================================= */
+
+.service-engineer-toolbar-field {
+    min-width: 135px;
+    flex: 1 1 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.service-engineer-toolbar-field.engineer-select-field {
+    flex: 1.1 1 190px;
+}
+
+.service-engineer-toolbar-field label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #52657c;
+    font-size: 10px;
+    line-height: 1;
+    font-weight: 800;
+}
+
+.service-engineer-toolbar-field select,
+.service-engineer-toolbar-field input[type="date"] {
+    width: 100%;
+    height: 39px;
+    min-width: 0;
+    padding: 0 10px;
+    border: 1px solid #d3deea;
+    border-radius: 7px;
+    outline: none;
+    background: #ffffff;
+    color: #142b48;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.service-engineer-toolbar-field select:focus,
+.service-engineer-toolbar-field input[type="date"]:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.service-engineer-toolbar-filter,
+.service-engineer-toolbar-reset {
+    height: 39px;
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 0 14px;
+    border-radius: 7px;
+    font-size: 12px;
+    font-weight: 800;
+    cursor: pointer;
+    white-space: nowrap;
+    transition:
+        background 0.18s ease,
+        border-color 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+.service-engineer-toolbar-filter {
+    border: 1px solid #2563eb;
+    background: #2563eb;
+    color: #ffffff;
+}
+
+.service-engineer-toolbar-filter:hover {
+    border-color: #1d4ed8;
+    background: #1d4ed8;
+}
+
+.service-engineer-toolbar-reset {
+    border: 1px solid #d3deea;
+    background: #ffffff;
+    color: #53677f;
+}
+
+.service-engineer-toolbar-reset:hover {
+    border-color: #b9c8d9;
+    background: #f8fafc;
+    color: #10233f;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1050px) {
+    .service-engineer-toolbar {
+        flex-wrap: wrap;
+        align-items: flex-end;
+    }
+
+    .service-engineer-toolbar-search {
+        flex: 1 1 100%;
+    }
+
+    .service-engineer-toolbar-field {
+        flex: 1 1 calc(33.333% - 10px);
+    }
+
+    .service-engineer-toolbar-filter,
+    .service-engineer-toolbar-reset {
+        flex: 1 1 calc(50% - 5px);
+    }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+    .service-engineer-toolbar {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .service-engineer-toolbar-search,
+    .service-engineer-toolbar-field,
+    .service-engineer-toolbar-field.engineer-select-field,
+    .service-engineer-toolbar-filter,
+    .service-engineer-toolbar-reset {
+        width: 100%;
+        min-width: 0;
+        flex: none;
+    }
+
+    .service-engineer-toolbar-filter,
+    .service-engineer-toolbar-reset {
+        min-height: 39px;
+    }
+}

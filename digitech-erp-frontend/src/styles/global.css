@@ -1,0 +1,41 @@
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+body{
+
+    font-family:Segoe UI,Tahoma,sans-serif;
+
+    background: var(--background);
+
+    color: var(--text);
+
+    transition: background .25s ease, color .25s ease;
+
+}
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+button{
+
+    cursor:pointer;
+
+}
+
+input{
+
+    outline:none;
+
+}

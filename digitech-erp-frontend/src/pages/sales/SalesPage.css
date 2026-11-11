@@ -1,0 +1,262 @@
+/* =========================================================
+   SALES PAGE
+========================================================= */
+
+.sales-page {
+    width: 100%;
+    min-height: 100vh;
+
+    margin: 0;
+    padding: 1px 0 40px;
+
+    box-sizing: border-box;
+
+    background: #f8eee7;
+
+    color: #111827;
+
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    border: none;
+    border-radius: 0;
+}
+
+
+/* =========================================================
+   SALES PAGE HEADER
+========================================================= */
+
+.sales-page-header {
+    width: 100%;
+
+    margin: 0;
+    padding: 0 30px;
+
+    box-sizing: border-box;
+
+    background: transparent;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   HEADER CONTENT
+========================================================= */
+
+.sales-page-header > div {
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: row;
+
+    align-items: baseline;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   SALES HEADING
+========================================================= */
+
+.sales-page-header h1 {
+    margin: 0;
+    padding: 0;
+
+    color: #111827;
+
+    font-size: 32px;
+
+    font-weight: 700;
+
+    line-height: 1.2;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   SALES DESCRIPTION
+========================================================= */
+
+.sales-page-header p {
+    margin: 0;
+    padding: 0;
+
+    color: #111827;
+
+    font-size: 15px;
+
+    font-weight: 400;
+
+    line-height: 1.2;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   SALES CARDS
+========================================================= */
+
+.sales-cards {
+    width: 100%;
+
+    background: transparent;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   SALES TOOLBAR
+========================================================= */
+
+.sales-toolbar {
+    width: 100%;
+
+    background: #ffffff;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   SALES TABLE AREA
+========================================================= */
+
+.sales-table-container,
+.sales-table-wrapper {
+    width: 100%;
+
+    background: transparent;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   SALES TABLE
+========================================================= */
+
+.sales-table {
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   PAGE CHILDREN
+========================================================= */
+
+.sales-page > * {
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .sales-page {
+        padding-bottom: 25px;
+    }
+
+    .sales-page-header {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .sales-page-header h1 {
+        font-size: 28px;
+    }
+
+    .sales-page-header p {
+        font-size: 14px;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - SMALL SCREEN
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .sales-page-header {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .sales-page-header > div {
+        gap: 5px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    .sales-page-header h1 {
+        font-size: 25px;
+    }
+
+    .sales-page-header p {
+        font-size: 13px;
+
+        white-space: normal;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - VERY SMALL SCREEN
+========================================================= */
+
+@media (max-width: 450px) {
+
+    .sales-page-header {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .sales-page-header > div {
+        flex-direction: column;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 2px;
+    }
+
+    .sales-page-header h1 {
+        font-size: 24px;
+    }
+
+    .sales-page-header p {
+        font-size: 12px;
+
+        white-space: normal;
+    }
+
+}

@@ -1,0 +1,204 @@
+/* ==========================================================
+   PRODUCT FORM
+========================================================== */
+
+.product-form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+    align-items:stretch;
+
+    /* use vertical scrolling in the drawer body instead of horizontal */
+    overflow-x:visible;
+
+    padding-bottom:8px;
+
+}
+
+/* ==========================================================
+   FORM SECTION
+========================================================== */
+
+.form-section{
+
+    background:#ffffff;
+
+    border:1px solid #e5e7eb;
+
+    border-radius:12px;
+
+    padding:18px;
+
+    box-shadow:0 3px 12px rgba(15,23,42,.05);
+
+    transition:.18s;
+
+    width:100%;
+
+}
+
+.form-section:hover{
+
+    box-shadow:0 10px 25px rgba(15,23,42,.08);
+
+}
+
+/* ==========================================================
+   SECTION TITLE
+========================================================== */
+
+.form-section h3{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin:0;
+
+    margin-bottom:22px;
+
+    padding-bottom:15px;
+
+    border-bottom:1px solid #eef2f7;
+
+    font-size:21px;
+
+    font-weight:700;
+
+    color:#111827;
+
+}
+
+/* ==========================================================
+   GRID
+========================================================== */
+
+.form-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:22px;
+
+}
+
+/* ==========================================================
+   FULL WIDTH
+========================================================== */
+
+.full-width{
+
+    grid-column:1/-1;
+
+}
+
+/* ==========================================================
+   LABEL
+========================================================== */
+
+.product-form label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:#374151;
+
+}
+
+/* ==========================================================
+   INPUT
+========================================================== */
+
+.product-form input,
+
+.product-form select{
+
+    width:100%;
+
+    height:48px;
+
+    border:1px solid #d1d5db;
+
+    border-radius:12px;
+
+    padding:0 14px;
+
+    background:#fff;
+
+    font-size:15px;
+
+    transition:.25s;
+
+}
+
+.product-form input:focus,
+
+.product-form select:focus{
+
+    outline:none;
+
+    border-color:#2563eb;
+
+    box-shadow:0 0 0 4px rgba(37,99,235,.08);
+
+}
+
+/* ==========================================================
+   TEXTAREA
+========================================================== */
+
+.description{
+
+    width:100%;
+
+    min-height:140px;
+
+    border:1px solid #d1d5db;
+
+    border-radius:12px;
+
+    padding:15px;
+
+    font-size:15px;
+
+    resize:vertical;
+
+    transition:.25s;
+
+}
+
+.description:focus{
+
+    outline:none;
+
+    border-color:#2563eb;
+
+    box-shadow:0 0 0 4px rgba(37,99,235,.08);
+
+}
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media(max-width:900px){
+
+    .form-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}

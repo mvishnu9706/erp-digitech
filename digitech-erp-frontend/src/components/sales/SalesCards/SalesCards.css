@@ -1,0 +1,436 @@
+/* =========================================================
+   SALES CARDS CONTAINER
+========================================================= */
+
+.sales-cards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, minmax(0, 1fr));
+
+    width: 100%;
+
+    gap: 10px;
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   SALES CARD
+========================================================= */
+
+.sales-card {
+    position: relative;
+
+    min-height: 86px;
+
+    /* Reduced padding */
+    padding: 10px 12px;
+
+    display: flex;
+
+    flex-direction: row;
+
+    align-items: center;
+
+    gap: 12px;
+
+    box-sizing: border-box;
+
+    background: #ffffff;
+
+    /* BLUE BORDER */
+    border: 1px solid #3b82f6;
+
+    /* Rounded corners */
+    border-radius: 30px;
+
+    box-shadow:
+        0 2px 6px rgba(15, 23, 42, 0.04);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+/* =========================================================
+   CARD HOVER
+========================================================= */
+
+.sales-card:hover {
+    transform: translateY(-2px);
+
+    border-color: #2563eb;
+
+    box-shadow:
+        0 7px 18px rgba(15, 23, 42, 0.08);
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   CARD ICON
+========================================================= */
+
+.sales-card-icon {
+    width: 50px;
+
+    height: 50px;
+
+    min-width: 50px;
+
+    border-radius: 14px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    color: #ffffff;
+
+    box-shadow:
+        inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+
+    transition:
+        transform 0.2s ease;
+}
+
+
+/* =========================================================
+   ICON HOVER
+========================================================= */
+
+.sales-card:hover .sales-card-icon {
+    transform: scale(1.04);
+}
+
+
+/* =========================================================
+   ICON COLORS
+========================================================= */
+
+.sales-card-icon.blue {
+    background: #3b82f6;
+}
+
+.sales-card-icon.purple {
+    background: #8b5cf6;
+}
+
+.sales-card-icon.green {
+    background: #10b981;
+}
+
+.sales-card-icon.orange {
+    background: #ea580c;
+}
+
+.sales-card-icon.teal {
+    background: #0f766e;
+}
+
+.sales-card-icon.red {
+    background: #ef4444;
+}
+
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.sales-card-content {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    min-width: 0;
+
+    flex: 1;
+
+    gap: 4px;
+}
+
+
+/* =========================================================
+   CARD TITLE
+========================================================= */
+
+.sales-card-content p {
+    margin: 0;
+
+    padding: 0;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    line-height: 1.2;
+
+    color: #64748b;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+/* =========================================================
+   CARD VALUE
+========================================================= */
+
+.sales-card-content h3 {
+    margin: 0;
+
+    padding: 0;
+
+    font-size: 21px;
+
+    font-weight: 700;
+
+    line-height: 1.15;
+
+    letter-spacing: -0.3px;
+
+    color: #0f172a;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+/* =========================================================
+   CHANGE INDICATOR
+========================================================= */
+
+.sales-card-change {
+    display: inline-block;
+
+    margin-top: 2px;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    line-height: 1.2;
+}
+
+
+/* =========================================================
+   CHANGE COLORS
+========================================================= */
+
+.sales-card-change.green {
+    color: #10b981;
+}
+
+.sales-card-change.blue {
+    color: #3b82f6;
+}
+
+.sales-card-change.purple {
+    color: #8b5cf6;
+}
+
+.sales-card-change.red {
+    color: #ef4444;
+}
+
+.sales-card-change.orange {
+    color: #f59e0b;
+}
+
+.sales-card-change.teal {
+    color: #0f766e;
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1401px) {
+
+    .sales-cards {
+        grid-template-columns:
+            repeat(5, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =========================================================
+   DESKTOP / LAPTOP
+========================================================= */
+
+@media (max-width: 1400px) {
+
+    .sales-cards {
+        grid-template-columns:
+            repeat(5, minmax(0, 1fr));
+
+        gap: 8px;
+    }
+
+    .sales-card {
+        min-height: 84px;
+
+        padding: 9px 11px;
+
+        gap: 10px;
+
+        border-radius: 30px;
+    }
+
+    .sales-card-icon {
+        width: 48px;
+
+        height: 48px;
+
+        min-width: 48px;
+    }
+
+    .sales-card-content h3 {
+        font-size: 20px;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .sales-cards {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
+        gap: 10px;
+    }
+
+    .sales-card {
+        border-radius: 30px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL TABLET
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .sales-cards {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 10px;
+    }
+
+    .sales-card {
+        min-height: 82px;
+
+        padding: 9px 11px;
+
+        border-radius: 30px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 580px) {
+
+    .sales-cards {
+        grid-template-columns: 1fr;
+
+        gap: 8px;
+
+        margin: 0;
+
+        padding: 0;
+    }
+
+    .sales-card {
+        min-height: 78px;
+
+        padding: 9px 11px;
+
+        border-radius: 30px;
+
+        gap: 12px;
+    }
+
+    .sales-card-icon {
+        width: 46px;
+
+        height: 46px;
+
+        min-width: 46px;
+
+        border-radius: 13px;
+    }
+
+    .sales-card-content p {
+        font-size: 12px;
+    }
+
+    .sales-card-content h3 {
+        font-size: 20px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .sales-card {
+        padding: 8px 10px;
+
+        gap: 10px;
+
+        border-radius: 30px;
+    }
+
+    .sales-card-icon {
+        width: 43px;
+
+        height: 43px;
+
+        min-width: 43px;
+
+        border-radius: 12px;
+    }
+
+    .sales-card-content h3 {
+        font-size: 19px;
+    }
+
+}

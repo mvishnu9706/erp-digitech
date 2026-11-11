@@ -1,0 +1,119 @@
+/* =====================================================
+   Purchase Form Container
+===================================================== */
+.purchase-form {
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 18px;
+    border: 1px solid #eef2ff;
+}
+
+/* =====================================================
+   Form Grid (3 Columns)
+===================================================== */
+.purchase-form-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-bottom: 12px;
+}
+
+/* =====================================================
+   Form Groups & Inputs
+===================================================== */
+.purchase-form .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 2px;
+}
+
+/* Shared Input/Select/Textarea styles */
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #d7dce5;
+    font-size: 14px;
+    outline: none;
+    transition: 0.3s;
+}
+
+/* Specific heights and padding for inputs & selects */
+.form-group input,
+.form-group select {
+    height: 42px;
+    padding: 0 14px;
+}
+
+/* Single-row textarea for Remarks */
+.purchase-form textarea {
+    height: 42px;
+    min-height: 42px;
+    resize: none;
+    padding: 10px 14px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #2563eb;
+}
+
+/* =====================================================
+   React Select Custom Styling
+===================================================== */
+.react-select__control {
+    min-height: 42px !important;
+    height: 42px !important;
+    border-radius: 8px !important;
+    border-color: #d7dce5 !important;
+    box-shadow: none !important;
+}
+
+.react-select__control--is-focused {
+    border-color: #2563eb !important;
+}
+
+.react-select__value-container {
+    height: 42px;
+    padding: 0 14px !important;
+}
+
+.react-select__input-container {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.react-select__indicator {
+    padding: 6px !important;
+}
+
+.react-select__menu {
+    z-index: 9999 !important;
+}
+
+/* =====================================================
+   Responsive Adjustments
+===================================================== */
+@media (max-width: 900px) {
+    .purchase-form-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .purchase-form-grid {
+        grid-template-columns: 1fr;
+    }
+}

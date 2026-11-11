@@ -1,0 +1,803 @@
+/* =====================================================
+   SERVICE TABLE WRAPPER
+===================================================== */
+
+.service-table-wrapper {
+
+    width: 100%;
+
+    overflow-x: auto;
+
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 12px;
+
+    box-sizing: border-box;
+
+    box-shadow:
+        0 2px 8px rgba(15, 23, 42, 0.04);
+
+}
+
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+.service-data-table {
+
+    width: 100%;
+
+    min-width: 1180px;
+
+    border-collapse: separate;
+
+    border-spacing: 0;
+
+    font-size: 13px;
+
+}
+
+
+/* =====================================================
+   TABLE HEADER
+===================================================== */
+
+.service-data-table thead th {
+
+    height: 50px;
+
+    padding: 0 13px;
+
+    background: #f8fafc;
+
+    color: #475569;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    text-align: left;
+
+    white-space: nowrap;
+
+    border-bottom: 1px solid #e2e8f0;
+
+}
+
+
+/* =====================================================
+   FIRST HEADER
+===================================================== */
+
+.service-data-table thead th:first-child {
+
+    border-top-left-radius: 12px;
+
+}
+
+
+/* =====================================================
+   LAST HEADER
+===================================================== */
+
+.service-data-table thead th:last-child {
+
+    border-top-right-radius: 12px;
+
+}
+
+
+/* =====================================================
+   BODY CELLS
+===================================================== */
+
+.service-data-table tbody td {
+
+    height: 56px;
+
+    padding: 8px 13px;
+
+    color: #334155;
+
+    font-size: 13px;
+
+    vertical-align: middle;
+
+    white-space: nowrap;
+
+    border-bottom: 1px solid #edf1f5;
+
+}
+
+
+/* =====================================================
+   LAST ROW
+===================================================== */
+
+.service-data-table tbody tr:last-child td {
+
+    border-bottom: none;
+
+}
+
+
+/* =====================================================
+   ROW HOVER
+===================================================== */
+
+.service-data-table tbody tr {
+
+    transition:
+        background-color 0.15s ease;
+
+}
+
+
+.service-data-table tbody tr:hover {
+
+    background: #fafcff;
+
+}
+
+
+/* =====================================================
+   TICKET NUMBER
+===================================================== */
+
+.service-ticket-number {
+
+    color: #172033;
+
+    font-weight: 600;
+
+}
+
+
+/* =====================================================
+   CUSTOMER
+===================================================== */
+
+.service-customer {
+
+    color: #334155;
+
+}
+
+
+/* =====================================================
+   ISSUE
+===================================================== */
+
+.service-issue {
+
+    display: inline-block;
+
+    max-width: 190px;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+}
+
+
+/* =====================================================
+   PRIORITY
+===================================================== */
+
+.service-priority {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 60px;
+
+    height: 26px;
+
+    padding: 0 9px;
+
+    border-radius: 999px;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+
+}
+
+
+/* =====================================================
+   LOW
+===================================================== */
+
+.service-priority.low {
+
+    color: #15803d;
+
+    background: #dcfce7;
+
+}
+
+
+/* =====================================================
+   MEDIUM
+===================================================== */
+
+.service-priority.medium {
+
+    color: #0369a1;
+
+    background: #e0f2fe;
+
+}
+
+
+/* =====================================================
+   NORMAL
+===================================================== */
+
+.service-priority.normal {
+
+    color: #475569;
+
+    background: #f1f5f9;
+
+}
+
+
+/* =====================================================
+   HIGH
+===================================================== */
+
+.service-priority.high {
+
+    color: #c2410c;
+
+    background: #ffedd5;
+
+}
+
+
+/* =====================================================
+   URGENT
+===================================================== */
+
+.service-priority.urgent {
+
+    color: #b91c1c;
+
+    background: #fee2e2;
+
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.service-status-badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 78px;
+
+    height: 26px;
+
+    padding: 0 9px;
+
+    border-radius: 999px;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+
+}
+
+
+/* =====================================================
+   OPEN
+===================================================== */
+
+.service-status-badge.open {
+
+    color: #1d4ed8;
+
+    background: #dbeafe;
+
+}
+
+
+/* =====================================================
+   REQUESTED
+===================================================== */
+
+.service-status-badge.requested {
+
+    color: #1d4ed8;
+
+    background: #dbeafe;
+
+}
+
+
+/* =====================================================
+   ASSIGNED
+===================================================== */
+
+.service-status-badge.assigned {
+
+    color: #0369a1;
+
+    background: #e0f2fe;
+
+}
+
+
+/* =====================================================
+   IN PROGRESS
+===================================================== */
+
+.service-status-badge.in_progress {
+
+    color: #7c3aed;
+
+    background: #ede9fe;
+
+}
+
+
+/* =====================================================
+   ON HOLD
+===================================================== */
+
+.service-status-badge.on_hold {
+
+    color: #a16207;
+
+    background: #fef3c7;
+
+}
+
+
+/* =====================================================
+   WAITING FOR PARTS
+===================================================== */
+
+.service-status-badge.waiting_for_parts {
+
+    color: #c2410c;
+
+    background: #ffedd5;
+
+}
+
+
+/* =====================================================
+   PARTS PENDING
+===================================================== */
+
+.service-status-badge.parts_pending {
+
+    color: #c2410c;
+
+    background: #ffedd5;
+
+}
+
+
+/* =====================================================
+   PENDING
+===================================================== */
+
+.service-status-badge.pending {
+
+    color: #a16207;
+
+    background: #fef3c7;
+
+}
+
+
+/* =====================================================
+   COMPLETED
+===================================================== */
+
+.service-status-badge.completed {
+
+    color: #15803d;
+
+    background: #dcfce7;
+
+}
+
+
+/* =====================================================
+   CLOSED
+===================================================== */
+
+.service-status-badge.closed {
+
+    color: #15803d;
+
+    background: #dcfce7;
+
+}
+
+
+/* =====================================================
+   CANCELLED
+===================================================== */
+
+.service-status-badge.cancelled {
+
+    color: #b91c1c;
+
+    background: #fee2e2;
+
+}
+
+
+/* =====================================================
+   ACTIONS
+===================================================== */
+
+.service-table-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+}
+
+
+/* =====================================================
+   ACTION BUTTON
+===================================================== */
+
+.service-table-action {
+
+    width: 32px;
+
+    height: 32px;
+
+    padding: 0;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 7px;
+
+    background: #ffffff;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.15s ease,
+        border-color 0.15s ease,
+        transform 0.15s ease;
+
+}
+
+
+.service-table-action:hover {
+
+    transform: translateY(-1px);
+
+}
+
+
+/* =====================================================
+   VIEW
+===================================================== */
+
+.service-table-action.view {
+
+    color: #2563eb;
+
+    border: 1px solid #bfdbfe;
+
+    background: #eff6ff;
+
+}
+
+
+.service-table-action.view:hover {
+
+    background: #dbeafe;
+
+}
+
+
+/* =====================================================
+   ASSIGN ENGINEER WRAPPER
+===================================================== */
+
+.service-engineer-action {
+
+    position: relative;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+/* =====================================================
+   ASSIGN ENGINEER BUTTON
+===================================================== */
+
+.service-table-action.assign {
+
+    color: #7c3aed;
+
+    border: 1px solid #ddd6fe;
+
+    background: #f5f3ff;
+
+}
+
+
+.service-table-action.assign:hover {
+
+    color: #6d28d9;
+
+    background: #ede9fe;
+
+    border-color: #c4b5fd;
+
+}
+
+
+/* =====================================================
+   ENGINEER TOOLTIP
+===================================================== */
+
+.service-engineer-tooltip {
+
+    position: absolute;
+
+    bottom: calc(100% + 8px);
+
+    left: 50%;
+
+    transform:
+        translateX(-50%)
+        translateY(4px);
+
+    padding: 7px 10px;
+
+    background: #172033;
+
+    color: #ffffff;
+
+    border-radius: 6px;
+
+    font-size: 11px;
+
+    font-weight: 500;
+
+    line-height: 1;
+
+    white-space: nowrap;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    z-index: 1000;
+
+    transition:
+        opacity 0.15s ease,
+        visibility 0.15s ease,
+        transform 0.15s ease;
+
+}
+
+
+/* =====================================================
+   TOOLTIP ARROW
+===================================================== */
+
+.service-engineer-tooltip::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 100%;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    border-left: 5px solid transparent;
+
+    border-right: 5px solid transparent;
+
+    border-top: 5px solid #172033;
+
+}
+
+
+/* =====================================================
+   SHOW ENGINEER TOOLTIP
+===================================================== */
+
+.service-engineer-action:hover
+.service-engineer-tooltip {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        translateX(-50%)
+        translateY(0);
+
+}
+
+
+/* =====================================================
+   EDIT
+===================================================== */
+
+.service-table-action.edit {
+
+    color: #d97706;
+
+    border: 1px solid #fde68a;
+
+    background: #fffbeb;
+
+}
+
+
+.service-table-action.edit:hover {
+
+    background: #fef3c7;
+
+}
+
+
+/* =====================================================
+   CANCEL SERVICE
+===================================================== */
+
+.service-table-action.delete {
+
+    color: #dc2626;
+
+    border: 1px solid #fecaca;
+
+    background: #fef2f2;
+
+}
+
+
+/* Cancel button hover */
+
+.service-table-action.delete:hover {
+
+    background: #fee2e2;
+
+}
+
+
+/* Cancel button after service is already cancelled */
+
+.service-table-action.delete:disabled {
+
+    color: #94a3b8;
+
+    border-color: #e2e8f0;
+
+    background: #f8fafc;
+
+    cursor: not-allowed;
+
+    opacity: 0.75;
+
+    transform: none;
+
+}
+
+
+/* Do not animate a disabled Cancel button */
+
+.service-table-action.delete:disabled:hover {
+
+    background: #f8fafc;
+
+    transform: none;
+
+}
+
+
+/* =====================================================
+   EMPTY STATE
+===================================================== */
+
+.service-table-empty {
+
+    height: 150px !important;
+
+    padding: 20px !important;
+
+    text-align: center !important;
+
+    color: #64748b !important;
+
+    font-size: 14px !important;
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1000px) {
+
+    .service-data-table {
+
+        min-width: 1120px;
+
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .service-table-wrapper {
+
+        border-radius: 10px;
+
+    }
+
+
+    .service-data-table {
+
+        min-width: 1120px;
+
+    }
+
+
+    /* Hide tooltip on touch devices */
+
+    .service-engineer-tooltip {
+
+        display: none;
+
+    }
+
+}

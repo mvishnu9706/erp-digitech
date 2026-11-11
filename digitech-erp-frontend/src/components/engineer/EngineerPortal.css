@@ -1,0 +1,911 @@
+/* =========================================================
+   ENGINEER PORTAL
+   Customer Portal inspired UI
+   ========================================================= */
+
+.engineer-portal {
+    min-height: 100vh;
+    width: 100%;
+    background: #f4f7fb;
+    color: #0f172a;
+    box-sizing: border-box;
+}
+
+.engineer-portal *,
+.engineer-portal *::before,
+.engineer-portal *::after {
+    box-sizing: border-box;
+}
+
+/* =========================================================
+   MAIN CONTENT
+   ========================================================= */
+
+.engineer-portal-main {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 22px 28px 36px;
+}
+
+/* =========================================================
+   PAGE HEADER
+   ========================================================= */
+
+.engineer-page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    margin-bottom: 20px;
+}
+
+.engineer-page-header-content {
+    min-width: 0;
+}
+
+.engineer-page-label {
+    margin: 0;
+    color: #071d3b;
+    font-size: 22px;
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: -0.35px;
+}
+
+.engineer-page-subtitle {
+    margin: 5px 0 0;
+    color: #60748d;
+    font-size: 12px;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+.engineer-page-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+/* =========================================================
+   REFRESH BUTTON
+   ========================================================= */
+
+.engineer-refresh-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    min-height: 36px;
+    padding: 0 13px;
+
+    border: 1px solid #d7e2ef;
+    border-radius: 7px;
+
+    background: #ffffff;
+    color: #16324f;
+
+    font-size: 12px;
+    line-height: 1;
+    font-weight: 800;
+
+    cursor: pointer;
+    transition:
+        background-color 0.18s ease,
+        border-color 0.18s ease,
+        box-shadow 0.18s ease,
+        transform 0.18s ease;
+}
+
+.engineer-refresh-button:hover:not(:disabled) {
+    background: #f8fafc;
+    border-color: #bfd0e3;
+    box-shadow: 0 3px 10px rgba(15, 23, 42, 0.06);
+}
+
+.engineer-refresh-button:active:not(:disabled) {
+    transform: translateY(1px);
+}
+
+.engineer-refresh-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* =========================================================
+   LOADING / PAGE STATES
+   ========================================================= */
+
+.engineer-loading {
+    min-height: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+    color: #60748d;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.engineer-loading-content {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.engineer-loading-spinner {
+    width: 18px;
+    height: 18px;
+
+    border: 2px solid #d9e3ef;
+    border-top-color: #1d4ed8;
+    border-radius: 50%;
+
+    animation: engineer-spin 0.8s linear infinite;
+}
+
+@keyframes engineer-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* =========================================================
+   ALERTS
+   ========================================================= */
+
+.engineer-alert {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+
+    width: 100%;
+    margin-bottom: 16px;
+    padding: 11px 13px;
+
+    border: 1px solid transparent;
+    border-radius: 8px;
+
+    font-size: 12px;
+    line-height: 1.5;
+    font-weight: 600;
+}
+
+.engineer-alert svg {
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+.engineer-alert-error {
+    color: #991b1b;
+    background: #fef2f2;
+    border-color: #fecaca;
+}
+
+.engineer-alert-success {
+    color: #166534;
+    background: #f0fdf4;
+    border-color: #bbf7d0;
+}
+
+.engineer-alert-warning {
+    color: #92400e;
+    background: #fffbeb;
+    border-color: #fde68a;
+}
+
+.engineer-alert-info {
+    color: #1e40af;
+    background: #eff6ff;
+    border-color: #bfdbfe;
+}
+
+/* =========================================================
+   CONTENT SECTIONS
+   ========================================================= */
+
+.engineer-section {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.engineer-section:last-child {
+    margin-bottom: 0;
+}
+
+.engineer-section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+
+    margin-bottom: 10px;
+}
+
+.engineer-section-title {
+    margin: 0;
+    color: #071d3b;
+    font-size: 15px;
+    line-height: 1.3;
+    font-weight: 800;
+}
+
+.engineer-section-description {
+    margin: 3px 0 0;
+    color: #71839a;
+    font-size: 11px;
+    line-height: 1.45;
+}
+
+/* =========================================================
+   CARD / PANEL BASE
+   ========================================================= */
+
+.engineer-panel {
+    width: 100%;
+
+    background: #ffffff;
+    border: 1px solid #dfe7f1;
+    border-radius: 10px;
+
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.035);
+}
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.engineer-empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 220px;
+    padding: 32px 20px;
+
+    text-align: center;
+}
+
+.engineer-empty-state-icon {
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 12px;
+
+    border: 1px solid #dbe5f0;
+    border-radius: 10px;
+
+    background: #f8fafc;
+    color: #7a8ca3;
+}
+
+.engineer-empty-state-title {
+    margin: 0;
+    color: #1e293b;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.engineer-empty-state-text {
+    max-width: 420px;
+    margin: 5px 0 0;
+
+    color: #71839a;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+/* =========================================================
+   SERVICE SUMMARY
+   ========================================================= */
+
+.engineer-summary {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+
+    margin-bottom: 20px;
+}
+
+.engineer-summary-item {
+    min-width: 0;
+    padding: 14px 15px;
+
+    background: #ffffff;
+    border: 1px solid #dfe7f1;
+    border-radius: 9px;
+}
+
+.engineer-summary-label {
+    color: #71839a;
+    font-size: 10px;
+    line-height: 1.3;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.45px;
+}
+
+.engineer-summary-value {
+    margin-top: 5px;
+
+    color: #071d3b;
+    font-size: 20px;
+    line-height: 1;
+    font-weight: 800;
+}
+
+/* =========================================================
+   COMPLETION MODAL OVERLAY
+   ========================================================= */
+
+.engineer-completion-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(15, 23, 42, 0.48);
+    backdrop-filter: blur(2px);
+}
+
+.engineer-completion-modal {
+    width: min(100%, 560px);
+    max-height: calc(100vh - 40px);
+
+    overflow-y: auto;
+
+    background: #ffffff;
+    border: 1px solid #dfe7f1;
+    border-radius: 12px;
+
+    box-shadow:
+        0 20px 50px rgba(15, 23, 42, 0.18),
+        0 5px 15px rgba(15, 23, 42, 0.08);
+}
+
+.engineer-completion-modal-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 14px;
+
+    padding: 18px 20px;
+
+    border-bottom: 1px solid #e5ebf2;
+}
+
+.engineer-completion-modal-title {
+    margin: 0;
+
+    color: #071d3b;
+    font-size: 16px;
+    line-height: 1.3;
+    font-weight: 800;
+}
+
+.engineer-completion-modal-subtitle {
+    margin: 4px 0 0;
+
+    color: #71839a;
+    font-size: 11px;
+    line-height: 1.45;
+}
+
+.engineer-completion-modal-close {
+    width: 30px;
+    height: 30px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border: 1px solid #d9e3ee;
+    border-radius: 7px;
+
+    background: #ffffff;
+    color: #64748b;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.18s ease,
+        border-color 0.18s ease,
+        color 0.18s ease;
+}
+
+.engineer-completion-modal-close:hover {
+    background: #f8fafc;
+    border-color: #cbd8e6;
+    color: #1e293b;
+}
+
+.engineer-completion-modal-body {
+    padding: 20px;
+}
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.engineer-form-group {
+    margin-bottom: 15px;
+}
+
+.engineer-form-group:last-child {
+    margin-bottom: 0;
+}
+
+.engineer-form-label {
+    display: block;
+    margin-bottom: 6px;
+
+    color: #334155;
+    font-size: 11px;
+    line-height: 1.3;
+    font-weight: 800;
+}
+
+.engineer-form-label-required::after {
+    content: " *";
+    color: #dc2626;
+}
+
+.engineer-form-input,
+.engineer-form-select,
+.engineer-form-textarea {
+    width: 100%;
+
+    border: 1px solid #d5e0ec;
+    border-radius: 7px;
+
+    background: #ffffff;
+    color: #1e293b;
+
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 500;
+
+    outline: none;
+
+    transition:
+        border-color 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+.engineer-form-input,
+.engineer-form-select {
+    height: 37px;
+    padding: 0 10px;
+}
+
+.engineer-form-textarea {
+    min-height: 92px;
+    padding: 9px 10px;
+    resize: vertical;
+    line-height: 1.5;
+}
+
+.engineer-form-input::placeholder,
+.engineer-form-textarea::placeholder {
+    color: #9aaabd;
+}
+
+.engineer-form-input:focus,
+.engineer-form-select:focus,
+.engineer-form-textarea:focus {
+    border-color: #93b4d8;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+.engineer-form-input:disabled,
+.engineer-form-select:disabled,
+.engineer-form-textarea:disabled {
+    background: #f8fafc;
+    color: #64748b;
+    cursor: not-allowed;
+}
+
+.engineer-form-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+/* =========================================================
+   MODAL ACTIONS
+   ========================================================= */
+
+.engineer-completion-modal-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+
+    padding: 14px 20px;
+
+    border-top: 1px solid #e5ebf2;
+    background: #fafcff;
+}
+
+.engineer-modal-cancel-button,
+.engineer-modal-submit-button {
+    min-height: 36px;
+    padding: 0 14px;
+
+    border-radius: 7px;
+
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.18s ease,
+        border-color 0.18s ease,
+        box-shadow 0.18s ease,
+        transform 0.18s ease;
+}
+
+.engineer-modal-cancel-button {
+    border: 1px solid #d5e0ec;
+    background: #ffffff;
+    color: #475569;
+}
+
+.engineer-modal-cancel-button:hover:not(:disabled) {
+    background: #f8fafc;
+    border-color: #c5d2e1;
+}
+
+.engineer-modal-submit-button {
+    border: 1px solid #163d69;
+    background: #163d69;
+    color: #ffffff;
+}
+
+.engineer-modal-submit-button:hover:not(:disabled) {
+    background: #102f52;
+    border-color: #102f52;
+    box-shadow: 0 4px 10px rgba(22, 61, 105, 0.16);
+}
+
+.engineer-modal-cancel-button:active:not(:disabled),
+.engineer-modal-submit-button:active:not(:disabled) {
+    transform: translateY(1px);
+}
+
+.engineer-modal-cancel-button:disabled,
+.engineer-modal-submit-button:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+/* =========================================================
+   UPDATE / COMPLETION INFO
+   ========================================================= */
+
+.engineer-completion-info {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+
+    margin-bottom: 16px;
+}
+
+.engineer-completion-info-item {
+    padding: 10px 11px;
+
+    border: 1px solid #e1e8f0;
+    border-radius: 7px;
+
+    background: #f8fafc;
+}
+
+.engineer-completion-info-label {
+    display: block;
+    margin-bottom: 3px;
+
+    color: #71839a;
+    font-size: 9px;
+    line-height: 1.3;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.35px;
+}
+
+.engineer-completion-info-value {
+    color: #1e293b;
+    font-size: 11px;
+    line-height: 1.4;
+    font-weight: 700;
+    word-break: break-word;
+}
+
+/* =========================================================
+   SUCCESS STATE
+   ========================================================= */
+
+.engineer-completion-success {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 28px 20px;
+
+    text-align: center;
+}
+
+.engineer-completion-success-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 11px;
+
+    border-radius: 50%;
+
+    background: #ecfdf3;
+    color: #16a34a;
+}
+
+.engineer-completion-success-title {
+    margin: 0;
+
+    color: #166534;
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.engineer-completion-success-text {
+    max-width: 390px;
+    margin: 5px 0 0;
+
+    color: #64748b;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+/* =========================================================
+   SERVICE TABLE WRAPPER
+   ========================================================= */
+
+.engineer-table-section {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.engineer-table-container {
+    width: 100%;
+    overflow: hidden;
+
+    background: #ffffff;
+    border: 1px solid #dfe7f1;
+    border-radius: 10px;
+
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.035);
+}
+
+/* =========================================================
+   GENERAL BUTTON RESET
+   ========================================================= */
+
+.engineer-portal button {
+    font-family: inherit;
+}
+
+.engineer-portal button:focus-visible,
+.engineer-portal input:focus-visible,
+.engineer-portal select:focus-visible,
+.engineer-portal textarea:focus-visible {
+    outline: 2px solid rgba(37, 99, 235, 0.3);
+    outline-offset: 1px;
+}
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+.engineer-completion-modal::-webkit-scrollbar {
+    width: 7px;
+}
+
+.engineer-completion-modal::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.engineer-completion-modal::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 20px;
+}
+
+.engineer-completion-modal::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+    .engineer-portal-main {
+        padding: 20px 20px 32px;
+    }
+
+    .engineer-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+    .engineer-portal-main {
+        padding: 17px 14px 28px;
+    }
+
+    .engineer-page-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 11px;
+        margin-bottom: 16px;
+    }
+
+    .engineer-page-label {
+        font-size: 19px;
+    }
+
+    .engineer-page-subtitle {
+        font-size: 11px;
+    }
+
+    .engineer-page-actions {
+        width: 100%;
+    }
+
+    .engineer-refresh-button {
+        width: 100%;
+    }
+
+    .engineer-summary {
+        gap: 9px;
+        margin-bottom: 16px;
+    }
+
+    .engineer-summary-item {
+        padding: 12px;
+    }
+
+    .engineer-summary-value {
+        font-size: 18px;
+    }
+
+    .engineer-section {
+        margin-bottom: 16px;
+    }
+
+    .engineer-section-header {
+        margin-bottom: 8px;
+    }
+
+    .engineer-completion-modal-overlay {
+        align-items: flex-end;
+        padding: 0;
+    }
+
+    .engineer-completion-modal {
+        width: 100%;
+        max-height: 92vh;
+
+        border-radius: 14px 14px 0 0;
+        border-bottom: 0;
+    }
+
+    .engineer-completion-modal-header {
+        padding: 16px;
+    }
+
+    .engineer-completion-modal-body {
+        padding: 16px;
+    }
+
+    .engineer-completion-modal-footer {
+        padding: 12px 16px;
+    }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+    .engineer-portal-main {
+        padding: 14px 10px 24px;
+    }
+
+    .engineer-page-label {
+        font-size: 18px;
+    }
+
+    .engineer-page-subtitle {
+        font-size: 10px;
+    }
+
+    .engineer-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    .engineer-summary-item {
+        min-height: 78px;
+        padding: 10px;
+    }
+
+    .engineer-summary-label {
+        font-size: 8px;
+    }
+
+    .engineer-summary-value {
+        margin-top: 6px;
+        font-size: 17px;
+    }
+
+    .engineer-form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .engineer-completion-info {
+        grid-template-columns: 1fr;
+    }
+
+    .engineer-completion-modal-footer {
+        flex-direction: column-reverse;
+    }
+
+    .engineer-modal-cancel-button,
+    .engineer-modal-submit-button {
+        width: 100%;
+    }
+
+    .engineer-empty-state {
+        min-height: 190px;
+        padding: 25px 15px;
+    }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .engineer-portal *,
+    .engineer-portal *::before,
+    .engineer-portal *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

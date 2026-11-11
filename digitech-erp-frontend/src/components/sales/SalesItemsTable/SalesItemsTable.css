@@ -1,0 +1,1489 @@
+/* =========================================================
+   SALES ITEMS TABLE
+========================================================= */
+
+.sales-items-table-wrapper {
+    width: 100%;
+    position: relative;
+    overflow: visible !important;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+
+/* =========================================================
+   TABLE CONTAINER
+========================================================= */
+
+.sales-items-table-scroll {
+    width: 100%;
+
+    overflow: visible !important;
+
+    border: 1px solid #d9e0e7;
+
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    position: relative;
+
+    z-index: 1;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.sales-items-table {
+    width: 100%;
+
+    min-width: 1350px;
+
+    table-layout: fixed;
+
+    border-collapse: separate;
+
+    border-spacing: 0;
+
+    background: #ffffff;
+
+    position: relative;
+
+    z-index: 1;
+
+    overflow: visible !important;
+}
+
+
+.sales-items-table tbody,
+.sales-items-table tr,
+.sales-items-table td {
+    overflow: visible !important;
+}
+
+
+/* =========================================================
+   COLUMN WIDTHS
+
+   #               4%
+   Item            20%
+   Serial          9%
+   Description     13%
+   HSN/SAC         7%
+   Unit            6%
+   Qty             6%
+   Price            10%
+   Discount         7%
+   GST              6%
+   Amount           9%
+   Action           3%
+========================================================= */
+
+.sales-items-table th:nth-child(1),
+.sales-items-table td:nth-child(1) { width: 4%; }
+
+.sales-items-table th:nth-child(2),
+.sales-items-table td:nth-child(2) { width: 20%; }
+
+.sales-items-table th:nth-child(3),
+.sales-items-table td:nth-child(3) { width: 9%; }
+
+.sales-items-table th:nth-child(4),
+.sales-items-table td:nth-child(4) { width: 13%; }
+
+.sales-items-table th:nth-child(5),
+.sales-items-table td:nth-child(5) { width: 7%; }
+
+.sales-items-table th:nth-child(6),
+.sales-items-table td:nth-child(6) { width: 6%; }
+
+.sales-items-table th:nth-child(7),
+.sales-items-table td:nth-child(7) { width: 6%; }
+
+.sales-items-table th:nth-child(8),
+.sales-items-table td:nth-child(8) { width: 10%; }
+
+.sales-items-table th:nth-child(9),
+.sales-items-table td:nth-child(9) { width: 7%; }
+
+.sales-items-table th:nth-child(10),
+.sales-items-table td:nth-child(10) { width: 6%; }
+
+.sales-items-table th:nth-child(11),
+.sales-items-table td:nth-child(11) { width: 9%; }
+
+.sales-items-table th:nth-child(12),
+.sales-items-table td:nth-child(12) { width: 3%; }
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.sales-items-table thead th {
+    height: 38px;
+
+    padding: 7px 7px;
+
+    background: #f7f9fb;
+
+    color: #475467;
+
+    /* UPDATED: Increased size and weight */
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+
+    text-align: left;
+
+    vertical-align: middle;
+
+    white-space: nowrap;
+
+    border-top: 0;
+
+    border-right: 1px solid #dfe5eb;
+
+    border-bottom: 1px solid #dfe5eb;
+
+    box-sizing: border-box;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.sales-items-table thead th:first-child {
+    border-left: 0;
+}
+
+
+.sales-items-table thead th:last-child {
+    border-right: 0;
+}
+
+
+/* =========================================================
+   BODY ROW
+========================================================= */
+
+.sales-items-table tbody tr {
+    position: relative;
+
+    background: #ffffff;
+
+    z-index: 1;
+}
+
+
+.sales-items-table tbody tr:hover {
+    background: #fcfefd;
+}
+
+
+/* =========================================================
+   BODY CELLS
+
+   IMPORTANT:
+   Complete vertical separation borders.
+========================================================= */
+
+.sales-items-table tbody td {
+    position: relative;
+
+    height: 58px;
+
+    padding: 7px 6px;
+
+    background: #ffffff;
+
+    color: #344054;
+
+    /* UPDATED: Increased size and made semi-bold */
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+
+    vertical-align: middle;
+
+    white-space: nowrap;
+
+    border-right: 1px solid #e4e9ee;
+
+    border-bottom: 1px solid #e4e9ee;
+
+    box-sizing: border-box;
+
+    z-index: 1;
+}
+
+
+.sales-items-table tbody td:last-child {
+    border-right: 0;
+}
+
+
+.sales-items-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+
+/* =========================================================
+   ACTIVE PRODUCT ROW
+========================================================= */
+
+.sales-items-table tbody tr:has(.product-search-input-active) {
+    position: relative !important;
+
+    z-index: 999999 !important;
+}
+
+
+.sales-items-table tbody tr:has(.product-search-input-active) td {
+    position: relative;
+
+    z-index: 999999 !important;
+}
+
+
+/* =========================================================
+   NUMBER BADGE
+========================================================= */
+
+.sales-item-number-badge {
+    width: 25px;
+    height: 25px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 6px;
+
+    background: #f1f4f7;
+
+    color: #64748b;
+
+    /* UPDATED: Increased size */
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   PRODUCT SEARCH
+========================================================= */
+
+.product-search-container {
+    position: relative;
+
+    width: 100%;
+
+    z-index: 100000 !important;
+
+    overflow: visible !important;
+}
+
+
+.product-search-input {
+    position: relative;
+
+    width: 100%;
+    height: 35px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    padding: 0 7px;
+
+    border: 1px solid #d3dce6;
+
+    border-radius: 6px;
+
+    background: #ffffff;
+
+    box-sizing: border-box;
+
+    cursor: text;
+
+    transition:
+        border-color 0.15s ease,
+        box-shadow 0.15s ease;
+
+    z-index: 100001 !important;
+}
+
+
+.product-search-input:hover {
+    border-color: #b8c4d1;
+}
+
+
+.product-search-input-active {
+    border-color: #16803c;
+
+    box-shadow:
+        0 0 0 2px
+        rgba(22, 128, 60, 0.08);
+}
+
+
+.product-search-input svg {
+    flex-shrink: 0;
+
+    color: #64748b;
+}
+
+
+.product-search-input input {
+    flex: 1;
+
+    min-width: 0;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 0;
+
+    border: 0 !important;
+
+    outline: 0 !important;
+
+    box-shadow: none !important;
+
+    background: transparent;
+
+    color: #344054;
+
+    /* UPDATED: Increased size & bold */
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+.product-search-input input::placeholder {
+    color: #98a2b3;
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   CHEVRON
+========================================================= */
+
+.product-chevron-open {
+    transform: rotate(180deg);
+}
+
+
+/* =========================================================
+   STOCK
+========================================================= */
+
+.sales-stock-info,
+.sales-stock-warning {
+    margin-top: 3px;
+
+    /* UPDATED: Increased size and added bold */
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 14px;
+}
+
+
+.sales-stock-info {
+    color: #087f32;
+}
+
+
+.sales-stock-warning {
+    color: #dc2626;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   SERIAL BUTTON
+========================================================= */
+
+.sales-item-serial-cell {
+    text-align: center;
+}
+
+
+.serial-number-button {
+    position: relative;
+
+    width: 34px;
+    height: 32px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #d2dbe5;
+
+    border-radius: 6px;
+
+    background: #f8fafc;
+
+    color: #475467;
+
+    cursor: pointer;
+
+    transition:
+        background 0.15s ease,
+        border-color 0.15s ease;
+}
+
+
+.serial-number-button:hover {
+    background: #eff6ff;
+
+    border-color: #93b9e8;
+
+    color: #2563eb;
+}
+
+
+.serial-count {
+    position: absolute;
+
+    top: -6px;
+    right: -6px;
+
+    min-width: 16px;
+    height: 16px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 4px;
+
+    border-radius: 20px;
+
+    background: #16803c;
+
+    color: #ffffff;
+
+    /* UPDATED: Increased size */
+    font-size: 10px;
+    font-weight: 700;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   DESCRIPTION & HSN INPUTS
+========================================================= */
+
+.sales-description-input,
+.sales-text-cell-input {
+    width: 100%;
+    height: 35px;
+
+    padding: 0 7px;
+
+    border: 1px solid #d3dce6;
+
+    border-radius: 6px;
+
+    outline: none;
+
+    background: #ffffff;
+
+    color: #344054;
+
+    font-family: inherit;
+
+    /* UPDATED: Increased size & bold */
+    font-size: 12px;
+    font-weight: 600;
+
+    box-sizing: border-box;
+}
+
+
+.sales-description-input:focus,
+.sales-text-cell-input:focus {
+    border-color: #16803c;
+
+    box-shadow:
+        0 0 0 2px
+        rgba(22, 128, 60, 0.07);
+}
+
+
+.sales-description-input::placeholder,
+.sales-text-cell-input::placeholder {
+    color: #98a2b3;
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   UNIT
+========================================================= */
+
+.sales-unit-text {
+    min-height: 35px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    color: #667085;
+
+    /* UPDATED: Increased size & bold */
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   NUMBER INPUTS (Qty, Price, Discount, GST)
+========================================================= */
+
+.sales-number-input {
+    width: 100%;
+    height: 35px;
+
+    padding: 0 7px;
+
+    border: 1px solid #d3dce6;
+
+    border-radius: 6px;
+
+    outline: none;
+
+    background: #ffffff;
+
+    color: #344054;
+
+    font-family: inherit;
+
+    /* UPDATED: Increased size & bold */
+    font-size: 12px;
+    font-weight: 600;
+
+    box-sizing: border-box;
+}
+
+
+.sales-number-input:focus {
+    border-color: #16803c;
+
+    box-shadow:
+        0 0 0 2px
+        rgba(22, 128, 60, 0.07);
+}
+
+
+/* Remove number arrows */
+.sales-number-input::-webkit-inner-spin-button,
+.sales-number-input::-webkit-outer-spin-button {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   AMOUNT
+========================================================= */
+
+.sales-line-total {
+    min-height: 35px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    color: #1f2937;
+
+    /* UPDATED: Increased size */
+    font-size: 13px;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   DELETE BUTTON
+========================================================= */
+
+.sales-remove-item-btn {
+    width: 31px;
+    height: 31px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #f1cccc;
+
+    border-radius: 6px;
+
+    background: #fff7f7;
+
+    color: #dc2626;
+
+    cursor: pointer;
+
+    transition:
+        background 0.15s ease,
+        border-color 0.15s ease,
+        transform 0.1s ease;
+}
+
+
+.sales-remove-item-btn:hover {
+    background: #fee2e2;
+
+    border-color: #fecaca;
+}
+
+
+.sales-remove-item-btn:active {
+    transform: scale(0.96);
+}
+
+
+/* =========================================================
+   PORTAL DROPDOWN
+========================================================= */
+
+.product-search-dropdown-portal {
+    position: fixed !important;
+
+    z-index: 2147483647 !important;
+
+    max-height: 320px;
+
+    overflow-y: auto;
+
+    overflow-x: hidden;
+
+    padding: 5px;
+
+    background: #ffffff;
+
+    border: 1px solid #d8dee7;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 12px 30px
+        rgba(15, 23, 42, 0.18);
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   DROPDOWN SCROLLBAR
+========================================================= */
+
+.product-search-dropdown-portal::-webkit-scrollbar {
+    width: 7px;
+}
+
+.product-search-dropdown-portal::-webkit-scrollbar-track {
+    background: #f8fafc;
+    border-radius: 10px;
+}
+
+.product-search-dropdown-portal::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+}
+
+.product-search-dropdown-portal::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+
+/* =========================================================
+   PRODUCT OPTION
+========================================================= */
+
+.product-search-option {
+    width: 100%;
+    min-height: 54px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 7px 8px;
+
+    border: 0;
+
+    border-radius: 6px;
+
+    background: transparent;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    box-sizing: border-box;
+
+    transition: background 0.12s ease;
+}
+
+
+.product-search-option:hover {
+    background: #f2f8f4;
+}
+
+
+.product-search-option:active {
+    background: #e4f5e9;
+}
+
+
+/* =========================================================
+   PRODUCT OPTION ICON
+========================================================= */
+
+.product-option-icon {
+    width: 30px;
+    height: 30px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 6px;
+
+    background: #eef7f1;
+
+    color: #16803c;
+}
+
+
+/* =========================================================
+   PRODUCT OPTION CONTENT
+========================================================= */
+
+.product-option-content {
+    flex: 1;
+
+    min-width: 0;
+}
+
+
+.product-option-name {
+    color: #202938;
+
+    /* UPDATED: Increased size & made bold */
+    font-size: 13px;
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+.product-option-details {
+    display: flex;
+
+    gap: 7px;
+
+    margin-top: 2px;
+
+    color: #8a95a5;
+
+    /* UPDATED: Increased size & bold */
+    font-size: 11px;
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+}
+
+
+.product-option-details span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.product-option-price {
+    color: #16803c;
+
+    /* UPDATED: Increased size */
+    font-size: 13px;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   EMPTY PRODUCT SEARCH
+========================================================= */
+
+.product-search-empty {
+    min-height: 120px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 5px;
+
+    padding: 15px;
+
+    text-align: center;
+
+    color: #94a3b8;
+}
+
+
+.product-search-empty svg {
+    color: #cbd5e1;
+}
+
+
+.product-search-empty span {
+    color: #64748b;
+
+    /* UPDATED: Increased size & bold */
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+.product-search-empty small {
+    color: #94a3b8;
+
+    /* UPDATED: Increased size & bold */
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   EMPTY TABLE
+========================================================= */
+
+.sales-items-empty {
+    height: 170px;
+
+    padding: 20px !important;
+
+    text-align: center;
+}
+
+
+.sales-items-empty-content {
+    min-height: 130px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 6px;
+
+    color: #98a2b3;
+}
+
+
+.sales-items-empty-content svg {
+    color: #aeb8c5;
+}
+
+
+.sales-items-empty-content strong {
+    color: #475467;
+
+    /* UPDATED: Increased size */
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+.sales-items-empty-content span {
+    color: #98a2b3;
+
+    /* UPDATED: Increased size */
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   EMPTY ADD PRODUCT BUTTON
+========================================================= */
+
+.sales-empty-add-btn {
+    height: 31px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    margin-top: 5px;
+
+    padding: 0 12px;
+
+    border: 1px solid #087f32;
+
+    border-radius: 6px;
+
+    background: #ffffff;
+
+    color: #087f32;
+
+    font-family: inherit;
+
+    /* UPDATED: Increased size & bold */
+    font-size: 12px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: background 0.15s ease;
+}
+
+
+.sales-empty-add-btn:hover {
+    background: #eef9f1;
+}
+
+
+/* =========================================================
+   ADD PRODUCT BUTTON
+========================================================= */
+
+.sales-table-add-product {
+    height: 33px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    margin-top: 9px;
+
+    padding: 0 12px;
+
+    border: 1px solid #087f32;
+
+    border-radius: 6px;
+
+    background: #ffffff;
+
+    color: #087f32;
+
+    font-family: inherit;
+
+    /* UPDATED: Increased size & bold */
+    font-size: 12px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.15s ease,
+        border-color 0.15s ease;
+}
+
+
+.sales-table-add-product:hover {
+    background: #eef9f1;
+
+    border-color: #066b2a;
+}
+
+
+/* =========================================================
+   GLOBAL STOCK WARNING
+========================================================= */
+
+.sales-global-stock-warning {
+    min-height: 36px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 9px;
+
+    padding: 0 11px;
+
+    border: 1px solid #fed7aa;
+
+    border-radius: 7px;
+
+    background: #fff7ed;
+
+    color: #ea580c;
+
+    /* UPDATED: Increased size & bold */
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+.sales-global-stock-warning svg {
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   SERIAL MODAL BACKDROP
+========================================================= */
+
+.serial-modal-backdrop {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 2147483646;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(15, 23, 42, 0.42);
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   SERIAL MODAL
+========================================================= */
+
+.serial-modal {
+    width: 100%;
+
+    max-width: 480px;
+
+    max-height: 85vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    background: #ffffff;
+
+    border: 1px solid #dfe4ea;
+
+    border-radius: 10px;
+
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.22);
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   SERIAL MODAL HEADER
+========================================================= */
+
+.serial-modal-header {
+    min-height: 62px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    padding: 10px 14px;
+
+    border-bottom: 1px solid #e6eaf0;
+
+    background: #ffffff;
+
+    box-sizing: border-box;
+}
+
+
+.serial-modal-header h3 {
+    margin: 0;
+
+    color: #1f2937;
+
+    /* UPDATED: Increased size */
+    font-size: 16px;
+    font-weight: 800;
+}
+
+
+.serial-modal-header p {
+    margin: 3px 0 0;
+
+    max-width: 340px;
+
+    color: #7b8794;
+
+    /* UPDATED: Increased size & bold */
+    font-size: 12px;
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+.serial-modal-close {
+    width: 31px;
+    height: 31px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border: 1px solid #dce2e8;
+
+    border-radius: 6px;
+
+    background: #ffffff;
+
+    color: #64748b;
+
+    cursor: pointer;
+}
+
+
+.serial-modal-close:hover {
+    background: #f8fafc;
+
+    color: #dc2626;
+}
+
+
+/* =========================================================
+   SERIAL MODAL BODY
+========================================================= */
+
+.serial-modal-body {
+    flex: 1;
+
+    padding: 14px;
+
+    overflow-y: auto;
+}
+
+
+.serial-modal-label {
+    margin-bottom: 7px;
+
+    color: #475467;
+
+    /* UPDATED: Increased size & bold */
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   SERIAL INPUT
+========================================================= */
+
+.serial-input-row {
+    display: grid;
+
+    grid-template-columns:
+        27px
+        minmax(0, 1fr)
+        31px;
+
+    align-items: center;
+
+    gap: 7px;
+
+    margin-bottom: 7px;
+}
+
+
+.serial-row-number {
+    width: 27px;
+    height: 31px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 5px;
+
+    background: #f1f4f7;
+
+    color: #64748b;
+
+    /* UPDATED: Increased size */
+    font-size: 11px;
+    font-weight: 700;
+}
+
+
+.serial-input-row input {
+    width: 100%;
+    height: 34px;
+
+    padding: 0 9px;
+
+    border: 1px solid #d3dce6;
+
+    border-radius: 6px;
+
+    outline: none;
+
+    background: #ffffff;
+
+    color: #344054;
+
+    font-family: inherit;
+
+    /* UPDATED: Increased size & bold */
+    font-size: 12px;
+    font-weight: 600;
+
+    box-sizing: border-box;
+}
+
+
+.serial-input-row input:focus {
+    border-color: #16803c;
+
+    box-shadow: 0 0 0 2px rgba(22, 128, 60, 0.07);
+}
+
+
+.serial-remove-button {
+    width: 31px;
+    height: 31px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #f1cccc;
+
+    border-radius: 6px;
+
+    background: #fff7f7;
+
+    color: #dc2626;
+
+    cursor: pointer;
+}
+
+
+.serial-remove-button:hover {
+    background: #fee2e2;
+}
+
+
+/* =========================================================
+   SERIAL ADD BUTTON
+========================================================= */
+
+.serial-add-button {
+    height: 32px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    margin-top: 4px;
+
+    padding: 0 11px;
+
+    border: 1px solid #16803c;
+
+    border-radius: 6px;
+
+    background: #ffffff;
+
+    color: #16803c;
+
+    /* UPDATED: Increased size & bold */
+    font-size: 12px;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+.serial-add-button:hover {
+    background: #eef9f1;
+}
+
+
+/* =========================================================
+   SERIAL MODAL FOOTER
+========================================================= */
+
+.serial-modal-footer {
+    min-height: 57px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    padding: 9px 14px;
+
+    border-top: 1px solid #e6eaf0;
+
+    background: #fafbfc;
+
+    box-sizing: border-box;
+}
+
+
+.serial-modal-count {
+    color: #7b8794;
+
+    /* UPDATED: Increased size & bold */
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+.serial-modal-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+}
+
+
+.serial-cancel-button,
+.serial-save-button {
+    height: 32px;
+
+    padding: 0 13px;
+
+    border-radius: 6px;
+
+    font-family: inherit;
+
+    /* UPDATED: Increased size & bold */
+    font-size: 12px;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+.serial-cancel-button {
+    border: 1px solid #d4dbe4;
+
+    background: #ffffff;
+
+    color: #475467;
+}
+
+
+.serial-cancel-button:hover {
+    background: #f8fafc;
+}
+
+
+.serial-save-button {
+    border: 1px solid #087f32;
+
+    background: #087f32;
+
+    color: #ffffff;
+}
+
+
+.serial-save-button:hover {
+    background: #066b2a;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1200px) {
+    .sales-items-table { min-width: 1250px; }
+}
+
+@media (max-width: 900px) {
+    .sales-items-table { min-width: 1200px; }
+    
+    .product-search-dropdown-portal {
+        max-width: calc(100vw - 30px);
+        max-height: 300px;
+    }
+}
+
+@media (max-width: 600px) {
+    .sales-items-table { min-width: 1100px; }
+
+    .product-search-dropdown-portal {
+        max-width: calc(100vw - 20px);
+        max-height: 280px;
+    }
+
+    .serial-modal {
+        max-width: 100%;
+        max-height: 90vh;
+    }
+}
